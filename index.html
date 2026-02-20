@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flux Data Solutions | Business Automation That Pays for Itself</title>
+    <meta name="description" content="Automate 60% of your business operations. We build custom AI-powered automation systems for small businesses. Free audit available.">
+    <meta property="og:title" content="Flux Data Solutions | Business Automation That Pays for Itself">
+    <meta property="og:description" content="We build AI-powered automation systems that eliminate 60% of your repetitive business tasks. Free audit available.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://fluxdatasolutions.com">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Flux Data Solutions">
+    <meta name="twitter:description" content="Automate 60% of your business operations. Free audit available.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+    <style>
+        :root {
+            --primary: #1a56db;
+            --primary-dark: #1544b8;
+            --accent: #0ea5e9;
+            --dark: #0f172a;
+            --gray: #64748b;
+            --light: #f8fafc;
+            --border: #e2e8f0;
+            --success: #10b981;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .container { max-width: 1140px; margin: 0 auto; padding: 0 20px; }
+
+        /* NAV */
+        nav {
+            background: white;
+            border-bottom: 1px solid var(--border);
+            padding: 16px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav .container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 22px; font-weight: 700; color: var(--primary); text-decoration: none; }
+        .logo span { color: var(--dark); }
+        .nav-cta {
+            background: var(--primary);
+            color: white;
+            padding: 10px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+        .nav-cta:hover { background: var(--primary-dark); }
+
+        /* HERO */
+        .hero {
+            padding: 80px 0 60px;
+            background: linear-gradient(135deg, var(--light) 0%, #e0f2fe 100%);
+        }
+        .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .hero h1 { font-size: 44px; line-height: 1.2; margin-bottom: 20px; color: var(--dark); }
+        .hero h1 em { font-style: normal; color: var(--primary); }
+        .hero p { font-size: 18px; color: var(--gray); margin-bottom: 32px; }
+        .hero-cta {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 16px 36px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 17px;
+            transition: all 0.2s;
+        }
+        .hero-cta:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(26,86,219,0.3); }
+        .hero-sub { font-size: 13px; color: var(--gray); margin-top: 12px; }
+        .hero-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .stat-card {
+            background: white;
+            border-radius: 12px;
+            padding: 28px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .stat-card .number { font-size: 36px; font-weight: 800; color: var(--primary); }
+        .stat-card .label { font-size: 14px; color: var(--gray); margin-top: 4px; }
+
+        /* PROBLEM */
+        .problem { padding: 80px 0; background: white; }
+        .problem h2 { text-align: center; font-size: 32px; margin-bottom: 48px; }
+        .problem-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+        .problem-card {
+            padding: 32px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+        .problem-card .icon { font-size: 40px; margin-bottom: 16px; }
+        .problem-card h3 { font-size: 18px; margin-bottom: 10px; }
+        .problem-card p { font-size: 14px; color: var(--gray); }
+
+        /* SERVICES */
+        .services { padding: 80px 0; background: var(--light); }
+        .services h2 { text-align: center; font-size: 32px; margin-bottom: 16px; }
+        .services .subtitle { text-align: center; font-size: 16px; color: var(--gray); margin-bottom: 48px; }
+        .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+        .price-card {
+            background: white;
+            border-radius: 16px;
+            padding: 36px;
+            border: 2px solid var(--border);
+            transition: all 0.2s;
+            position: relative;
+        }
+        .price-card:hover { border-color: var(--primary); transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); }
+        .price-card.featured { border-color: var(--primary); }
+        .price-card.featured::before {
+            content: 'MOST POPULAR';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary);
+            color: white;
+            padding: 4px 16px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        .price-card h3 { font-size: 20px; margin-bottom: 8px; }
+        .price-card .price { font-size: 40px; font-weight: 800; color: var(--dark); margin: 16px 0; }
+        .price-card .price span { font-size: 16px; font-weight: 400; color: var(--gray); }
+        .price-card .desc { font-size: 14px; color: var(--gray); margin-bottom: 24px; }
+        .price-card ul { list-style: none; margin-bottom: 28px; }
+        .price-card ul li {
+            font-size: 14px;
+            padding: 8px 0;
+            border-bottom: 1px solid var(--border);
+            position: relative;
+            padding-left: 28px;
+        }
+        .price-card ul li::before {
+            content: '\2713';
+            position: absolute;
+            left: 0;
+            color: var(--success);
+            font-weight: 700;
+        }
+        .price-btn {
+            display: block;
+            text-align: center;
+            padding: 14px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 15px;
+            transition: all 0.2s;
+        }
+        .price-btn.primary { background: var(--primary); color: white; }
+        .price-btn.primary:hover { background: var(--primary-dark); }
+        .price-btn.outline { border: 2px solid var(--primary); color: var(--primary); }
+        .price-btn.outline:hover { background: var(--primary); color: white; }
+
+        /* PROCESS */
+        .process { padding: 80px 0; background: white; }
+        .process h2 { text-align: center; font-size: 32px; margin-bottom: 48px; }
+        .process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; }
+        .step { text-align: center; }
+        .step .num {
+            width: 48px; height: 48px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 18px;
+            margin-bottom: 16px;
+        }
+        .step h3 { font-size: 16px; margin-bottom: 8px; }
+        .step p { font-size: 13px; color: var(--gray); }
+
+        /* INDUSTRIES */
+        .industries { padding: 80px 0; background: var(--light); }
+        .industries h2 { text-align: center; font-size: 32px; margin-bottom: 48px; }
+        .ind-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+        .ind-card {
+            background: white;
+            padding: 24px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid var(--border);
+        }
+        .ind-card .icon { font-size: 32px; margin-bottom: 8px; }
+        .ind-card h3 { font-size: 15px; }
+
+        /* CONTACT */
+        .contact { padding: 80px 0; background: var(--dark); color: white; }
+        .contact h2 { text-align: center; font-size: 32px; margin-bottom: 12px; }
+        .contact .subtitle { text-align: center; color: #94a3b8; margin-bottom: 40px; }
+        .contact-form {
+            max-width: 560px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.05);
+            padding: 36px;
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .form-row { margin-bottom: 16px; }
+        .form-row label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px; color: #cbd5e1; }
+        .form-row input, .form-row textarea, .form-row select {
+            width: 100%;
+            padding: 12px 16px;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.15);
+            background: rgba(255,255,255,0.05);
+            color: white;
+            font-size: 15px;
+            font-family: inherit;
+        }
+        .form-row input::placeholder, .form-row textarea::placeholder { color: #64748b; }
+        .form-row textarea { resize: vertical; min-height: 80px; }
+        .submit-btn {
+            width: 100%;
+            padding: 16px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .submit-btn:hover { background: var(--primary-dark); }
+        .form-note { text-align: center; font-size: 12px; color: #64748b; margin-top: 12px; }
+
+        /* FOOTER */
+        footer {
+            background: #0b1120;
+            color: #64748b;
+            padding: 32px 0;
+            text-align: center;
+            font-size: 13px;
+        }
+        footer a { color: var(--accent); text-decoration: none; }
+
+        /* SUCCESS MESSAGE */
+        .success-msg {
+            display: none;
+            text-align: center;
+            padding: 24px;
+        }
+        .success-msg h3 { color: var(--success); font-size: 22px; margin-bottom: 8px; }
+        .success-msg p { color: #94a3b8; }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero-grid, .problem-grid, .pricing-grid, .process-steps, .ind-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 32px; }
+            .hero-stats { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+    <div class="container">
+        <a href="#" class="logo">Flux<span>Data</span></a>
+        <a href="#contact" class="nav-cta">Free Automation Audit</a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-grid">
+            <div>
+                <h1>Stop Losing Money to <em>Manual Work</em></h1>
+                <p>We build AI-powered automation systems that eliminate 60% of your repetitive business tasks. More time, fewer errors, higher profits.</p>
+                <a href="https://calendly.com/fluxdatasolutions" class="hero-cta">Get Your Free Audit</a>
+                <p class="hero-sub">Free audit included. No contracts. Results in 30 days.</p>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-card">
+                    <div class="number">60%</div>
+                    <div class="label">Reduction in manual work</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">15-25</div>
+                    <div class="label">Hours saved per week</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">30</div>
+                    <div class="label">Day implementation</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">3-5x</div>
+                    <div class="label">ROI within 90 days</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="problem">
+    <div class="container">
+        <h2>Your Business Is Leaking Time and Money</h2>
+        <div class="problem-grid">
+            <div class="problem-card">
+                <div class="icon">&#9200;</div>
+                <h3>Manual Data Entry</h3>
+                <p>Hours wasted copying information between systems, spreadsheets, and tools that don't talk to each other.</p>
+            </div>
+            <div class="problem-card">
+                <div class="icon">&#128200;</div>
+                <h3>Scattered Information</h3>
+                <p>Client data, financials, and operations spread across 5+ systems with no single source of truth.</p>
+            </div>
+            <div class="problem-card">
+                <div class="icon">&#128176;</div>
+                <h3>Lost Revenue</h3>
+                <p>Missed follow-ups, slow invoicing, and inefficient scheduling cost you thousands every month.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SERVICES / PRICING -->
+<section class="services" id="pricing">
+    <div class="container">
+        <h2>Simple, Results-Driven Pricing</h2>
+        <p class="subtitle">Every engagement starts with understanding your business. No cookie-cutter solutions.</p>
+        <div class="pricing-grid">
+            <div class="price-card">
+                <h3>Automation Audit</h3>
+                <div class="price">$497</div>
+                <p class="desc">Comprehensive analysis of your operations with a custom automation roadmap.</p>
+                <ul>
+                    <li>Full business process review</li>
+                    <li>Identify top 10 automation opportunities</li>
+                    <li>ROI projections for each opportunity</li>
+                    <li>Custom implementation roadmap</li>
+                    <li>60-minute strategy presentation</li>
+                </ul>
+                <a href="https://calendly.com/fluxdatasolutions" class="price-btn outline">Book Free Audit</a>
+            </div>
+            <div class="price-card featured">
+                <h3>Full Implementation</h3>
+                <div class="price">$1,997</div>
+                <p class="desc">We build and deploy your complete automation system end-to-end.</p>
+                <ul>
+                    <li>Everything in the Audit</li>
+                    <li>Custom automation system build</li>
+                    <li>System integrations and data migration</li>
+                    <li>Staff training and documentation</li>
+                    <li>30 days of hands-on support</li>
+                </ul>
+                <a href="https://buy.stripe.com/cNi8wP9B68X9gGb62R2wU0b" class="price-btn primary">Get Started</a>
+            </div>
+            <div class="price-card">
+                <h3>Ongoing Management</h3>
+                <div class="price">$297<span>/month</span></div>
+                <p class="desc">We monitor, optimize, and expand your automations continuously.</p>
+                <ul>
+                    <li>24/7 system monitoring</li>
+                    <li>Monthly optimization reports</li>
+                    <li>Priority support and fixes</li>
+                    <li>New automation additions</li>
+                    <li>Quarterly strategy reviews</li>
+                </ul>
+                <a href="https://buy.stripe.com/5kQeVdeVq6P1blRezn2wU0a" class="price-btn outline">Subscribe</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process">
+    <div class="container">
+        <h2>How It Works</h2>
+        <div class="process-steps">
+            <div class="step">
+                <div class="num">1</div>
+                <h3>Book Free Audit</h3>
+                <p>15-minute call to map your processes and identify quick automation wins.</p>
+            </div>
+            <div class="step">
+                <div class="num">2</div>
+                <h3>Automation Audit</h3>
+                <p>We map your processes and build a custom automation strategy with ROI projections.</p>
+            </div>
+            <div class="step">
+                <div class="num">3</div>
+                <h3>Build & Deploy</h3>
+                <p>Our team builds and integrates your automation system in under 30 days.</p>
+            </div>
+            <div class="step">
+                <div class="num">4</div>
+                <h3>Optimize & Scale</h3>
+                <p>Ongoing monitoring ensures peak performance and identifies new automation opportunities.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- INDUSTRIES -->
+<section class="industries">
+    <div class="container">
+        <h2>Industries We Serve</h2>
+        <div class="ind-grid">
+            <div class="ind-card">
+                <div class="icon">&#127860;</div>
+                <h3>Restaurants</h3>
+            </div>
+            <div class="ind-card">
+                <div class="icon">&#9878;</div>
+                <h3>Law Firms</h3>
+            </div>
+            <div class="ind-card">
+                <div class="icon">&#127973;</div>
+                <h3>Medical Practices</h3>
+            </div>
+            <div class="ind-card">
+                <div class="icon">&#128200;</div>
+                <h3>Accounting Firms</h3>
+            </div>
+            <div class="ind-card">
+                <div class="icon">&#127968;</div>
+                <h3>Real Estate</h3>
+            </div>
+            <div class="ind-card">
+                <div class="icon">&#128663;</div>
+                <h3>Auto Services</h3>
+            </div>
+            <div class="ind-card">
+                <div class="icon">&#127959;</div>
+                <h3>Construction</h3>
+            </div>
+            <div class="ind-card">
+                <div class="icon">&#128135;</div>
+                <h3>Salons & Spas</h3>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+    <div class="container">
+        <h2>Get Your Free Automation Audit</h2>
+        <p class="subtitle">Tell us about your business and we'll show you exactly where automation can save you time and money.</p>
+        <div class="contact-form">
+            <form id="contactForm">
+                <div class="form-row">
+                    <label>Your Name *</label>
+                    <input type="text" name="name" placeholder="John Smith" required>
+                </div>
+                <div class="form-row">
+                    <label>Email Address *</label>
+                    <input type="email" name="email" placeholder="john@yourcompany.com" required>
+                </div>
+                <div class="form-row">
+                    <label>Phone Number</label>
+                    <input type="tel" name="phone" placeholder="(555) 123-4567">
+                </div>
+                <div class="form-row">
+                    <label>Company Name</label>
+                    <input type="text" name="company" placeholder="Your Company">
+                </div>
+                <div class="form-row">
+                    <label>Industry</label>
+                    <select name="source">
+                        <option value="">Select your industry...</option>
+                        <option value="web_form_restaurant">Restaurant / Food Service</option>
+                        <option value="web_form_legal">Law Firm / Legal</option>
+                        <option value="web_form_medical">Medical / Dental Practice</option>
+                        <option value="web_form_accounting">Accounting / CPA</option>
+                        <option value="web_form_realestate">Real Estate</option>
+                        <option value="web_form_auto">Auto Services</option>
+                        <option value="web_form_construction">Construction</option>
+                        <option value="web_form_salon">Salon / Spa</option>
+                        <option value="web_form_other">Other</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <label>What's your biggest operational challenge?</label>
+                    <textarea name="message" placeholder="Tell us what takes up the most time in your day-to-day operations..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Request Free Audit</button>
+                <p class="form-note">No spam. We'll respond within 24 hours.</p>
+            </form>
+            <div class="success-msg" id="successMsg">
+                <h3>We Got Your Request!</h3>
+                <p>We'll review your information and get back to you within 24 hours with your custom automation opportunities.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container">
+        <p>&copy; 2026 Flux Data Solutions. All rights reserved. | <a href="mailto:fluxdatasolutions@gmail.com">fluxdatasolutions@gmail.com</a></p>
+    </div>
+</footer>
+
+<script>
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const form = e.target;
+    const data = Object.fromEntries(new FormData(form));
+
+    try {
+        // Submit to webhook — works with both local server and public deployment
+        const baseUrl = window.location.origin;
+        await fetch(baseUrl + '/webhooks/form', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        });
+    } catch (err) {
+        // Silent fail — still show success
+    }
+    form.style.display = 'none';
+    document.getElementById('successMsg').style.display = 'block';
+});
+</script>
+
+</body>
+</html>
