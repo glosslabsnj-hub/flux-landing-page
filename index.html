@@ -1343,6 +1343,7 @@
             .sticky-cta { display: flex; }
             footer { padding-bottom: 80px; }
         }
+        #results a:hover { transform: translateY(-6px); box-shadow: 0 12px 40px rgba(0,0,0,0.08); border-color: var(--primary); }
     </style>
     <script type="application/ld+json">
     {
@@ -1402,6 +1403,7 @@
         <div class="nav-links">
             <a href="#services">Services</a>
             <a href="#pricing">Pricing</a>
+            <a href="#results">Results</a>
             <a href="#about">About</a>
             <a href="tel:+16097318641" class="nav-phone">(609) 731-8641</a>
             <a href="#contact" class="nav-cta">Free Audit</a>
@@ -1418,6 +1420,7 @@
         <button class="mobile-menu-close" onclick="document.getElementById('mobileMenu').classList.remove('open')" aria-label="Close navigation menu">&times;</button>
         <a href="#services" onclick="document.getElementById('mobileMenu').classList.remove('open')">Services</a>
         <a href="#pricing" onclick="document.getElementById('mobileMenu').classList.remove('open')">Pricing</a>
+        <a href="#results" onclick="document.getElementById('mobileMenu').classList.remove('open')">Results</a>
         <a href="#about" onclick="document.getElementById('mobileMenu').classList.remove('open')">About</a>
         <a href="tel:+16097318641">Call (609) 731-8641</a>
         <a href="#contact" class="nav-cta" onclick="document.getElementById('mobileMenu').classList.remove('open')">Free Audit</a>
@@ -1828,64 +1831,70 @@
     </div>
 </section>
 
-<!-- CASE STUDY RESULTS -->
-<section class="case-study" id="results">
+<!-- MORE CASE STUDIES -->
+<section class="case-study" id="results" style="padding:80px 0;background:var(--gray-50);">
     <div class="container">
         <div class="section-header fade-in" style="text-align:center;">
-            <span class="section-label">Proven Results</span>
-            <h2 class="section-title">NJ Law Firm Automation: 60% Less Admin, 40% More Conversions</h2>
-            <p class="section-subtitle">A regional firm cut admin time by 60% and converted 40% more leads with custom automation.</p>
+            <span class="section-label">More Results</span>
+            <h2 class="section-title">Real Results Across Industries</h2>
+            <p class="section-subtitle">See how businesses like yours are saving time, recovering revenue, and growing faster with custom automation.</p>
         </div>
-        <div class="cs-content fade-in">
-            <div class="cs-challenge">
-                <h3>&#10060; The Challenge</h3>
-                <ul class="cs-list">
-                    <li>Paralegals spent 45 min per client on manual paper intake forms</li>
-                    <li>35% of potential clients lost due to zero follow-up after initial inquiry</li>
-                    <li>Document drafting took 3+ hours per engagement letter</li>
-                    <li>Separate email, CRM, and billing systems with no data sync</li>
-                    <li>Partners had no visibility into case pipeline or revenue forecasts</li>
-                </ul>
-            </div>
-            <div class="cs-solution">
-                <h3>&#9989; Our Solution</h3>
-                <ul class="cs-list">
-                    <li>Digital intake forms that auto-populate the CRM in under 5 minutes</li>
-                    <li>Automated follow-up sequences re-engage every lead within 24 hours</li>
-                    <li>AI-powered document drafting cuts engagement letters to 20 minutes</li>
-                    <li>Unified dashboard connects email, CRM, and billing in one view</li>
-                    <li>Real-time pipeline analytics with revenue forecasting for partners</li>
-                </ul>
-            </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:32px;" class="fade-in">
+            <!-- Law Firm Card -->
+            <a href="case-study-law-firm.html" style="text-decoration:none;background:#fff;border-radius:20px;border:2px solid var(--border);overflow:hidden;transition:all 0.3s;display:flex;flex-direction:column;">
+                <div style="background:linear-gradient(135deg,var(--dark) 0%,#1a2744 100%);padding:32px;position:relative;">
+                    <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--accent);margin-bottom:12px;">Legal</div>
+                    <h3 style="font-size:22px;font-weight:800;color:#fff;line-height:1.3;margin-bottom:8px;">50-Attorney NJ Law Firm</h3>
+                    <p style="font-size:14px;color:#9ca3af;line-height:1.5;">Automated intake, follow-ups, and document drafting</p>
+                </div>
+                <div style="padding:28px 32px;flex-grow:1;">
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px;">
+                        <div style="text-align:center;padding:16px;background:var(--gray-50);border-radius:12px;">
+                            <div style="font-size:28px;font-weight:900;color:var(--primary);letter-spacing:-1px;">60%</div>
+                            <div style="font-size:12px;color:var(--gray-500);font-weight:500;">Less Admin Time</div>
+                        </div>
+                        <div style="text-align:center;padding:16px;background:var(--gray-50);border-radius:12px;">
+                            <div style="font-size:28px;font-weight:900;color:var(--success);letter-spacing:-1px;">$180K</div>
+                            <div style="font-size:12px;color:var(--gray-500);font-weight:500;">Annual Savings</div>
+                        </div>
+                    </div>
+                    <p style="font-size:14px;color:var(--gray-500);line-height:1.6;margin-bottom:16px;font-style:italic;">"The ROI was obvious within the first month."</p>
+                    <div style="font-size:14px;font-weight:700;color:var(--primary);display:flex;align-items:center;gap:6px;">
+                        Read Full Case Study
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </div>
+                </div>
+            </a>
+            <!-- Dental Practice Card -->
+            <a href="case-study-dental.html" style="text-decoration:none;background:#fff;border-radius:20px;border:2px solid var(--border);overflow:hidden;transition:all 0.3s;display:flex;flex-direction:column;">
+                <div style="background:linear-gradient(135deg,var(--dark) 0%,#1a2744 100%);padding:32px;position:relative;">
+                    <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--accent);margin-bottom:12px;">Healthcare</div>
+                    <h3 style="font-size:22px;font-weight:800;color:#fff;line-height:1.3;margin-bottom:8px;">4-Location NJ Dental Practice</h3>
+                    <p style="font-size:14px;color:#9ca3af;line-height:1.5;">Automated reminders, recall, reviews, and waitlist</p>
+                </div>
+                <div style="padding:28px 32px;flex-grow:1;">
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px;">
+                        <div style="text-align:center;padding:16px;background:var(--gray-50);border-radius:12px;">
+                            <div style="font-size:28px;font-weight:900;color:var(--primary);letter-spacing:-1px;">62%</div>
+                            <div style="font-size:12px;color:var(--gray-500);font-weight:500;">Fewer No-Shows</div>
+                        </div>
+                        <div style="text-align:center;padding:16px;background:var(--gray-50);border-radius:12px;">
+                            <div style="font-size:28px;font-weight:900;color:var(--success);letter-spacing:-1px;">$97K</div>
+                            <div style="font-size:12px;color:var(--gray-500);font-weight:500;">Recovered Revenue</div>
+                        </div>
+                    </div>
+                    <p style="font-size:14px;color:var(--gray-500);line-height:1.6;margin-bottom:16px;font-style:italic;">"Our chairs stay full and we went from 12 to 120+ Google reviews."</p>
+                    <div style="font-size:14px;font-weight:700;color:var(--primary);display:flex;align-items:center;gap:6px;">
+                        Read Full Case Study
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </div>
+                </div>
+            </a>
         </div>
-        <div class="cs-results fade-in">
-            <div class="cs-stat">
-                <div class="num">60%</div>
-                <div class="label">Less Admin Time</div>
-            </div>
-            <div class="cs-stat">
-                <div class="num">3x</div>
-                <div class="label">Faster Intake</div>
-            </div>
-            <div class="cs-stat">
-                <div class="num">40%</div>
-                <div class="label">More Leads Converted</div>
-            </div>
-            <div class="cs-stat">
-                <div class="num">$180K</div>
-                <div class="label">Annual Savings</div>
-            </div>
-            <div class="cs-stat">
-                <div class="num">45</div>
-                <div class="label">Days to Full ROI</div>
-            </div>
-        </div>
-        <div class="cs-quote fade-in">
-            "We were skeptical about automation — we thought it meant replacing people. Instead, it freed our best people to do their best work. The ROI was obvious within the first month."
-            <div class="attribution">— Managing Partner, Regional NJ Law Firm</div>
-        </div>
-        <div class="cs-cta fade-in">
-            <a href="https://calendly.com/jack-getfluxdata" class="btn-primary">See What Automation Can Do For Your Business</a>
+        <div class="fade-in" style="text-align:center;margin-top:40px;">
+            <a href="https://calendly.com/jack-getfluxdata" class="btn-primary">See What Automation Can Do For Your Business
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
         </div>
     </div>
 </section>
