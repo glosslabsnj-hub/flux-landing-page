@@ -1,0 +1,160 @@
+<!--
+  FLUX DATA SOLUTIONS — CASE STUDY: ELECTRICAL CONTRACTOR
+  Drop this section into index.html or use as a standalone page.
+  Uses the same CSS variables and design language as the main landing page.
+-->
+
+<!-- CASE STUDY STYLES (same as law firm case study) -->
+<style>
+    .case-study { padding: 100px 0; background: var(--white); }
+    .case-study .section-header { text-align: center; margin-bottom: 56px; }
+    .case-study .section-subtitle { margin: 0 auto; }
+    .cs-card { background: var(--white); border-radius: 24px; border: 2px solid var(--border); overflow: hidden; box-shadow: 0 8px 40px rgba(0,0,0,0.04); }
+    .cs-banner { background: linear-gradient(135deg, var(--dark) 0%, #1a2744 100%); padding: 48px 56px; display: flex; justify-content: space-between; align-items: center; gap: 40px; position: relative; overflow: hidden; }
+    .cs-banner::before { content: ''; position: absolute; top: -50%; right: -10%; width: 400px; height: 400px; background: radial-gradient(circle, rgba(37,99,235,0.15) 0%, transparent 70%); border-radius: 50%; }
+    .cs-banner-text { position: relative; z-index: 2; }
+    .cs-banner-label { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); padding: 5px 14px; border-radius: 100px; font-size: 12px; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px; }
+    .cs-banner h3 { font-size: 28px; font-weight: 800; color: var(--white); line-height: 1.3; letter-spacing: -0.5px; margin-bottom: 8px; }
+    .cs-banner .cs-client-desc { font-size: 16px; color: var(--gray-400); line-height: 1.6; }
+    .cs-banner-stat { position: relative; z-index: 2; text-align: center; flex-shrink: 0; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 24px 36px; }
+    .cs-banner-stat .big-number { font-size: 52px; font-weight: 900; color: var(--success); letter-spacing: -2px; line-height: 1; }
+    .cs-banner-stat .big-label { font-size: 14px; color: var(--gray-400); font-weight: 500; margin-top: 4px; }
+    .cs-body { padding: 48px 56px; }
+    .cs-two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-bottom: 48px; }
+    .cs-col-label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 16px; }
+    .cs-col-label.challenge { color: #dc2626; }
+    .cs-col-label.solution { color: var(--success); }
+    .cs-col h4 { font-size: 20px; font-weight: 700; color: var(--dark); margin-bottom: 16px; line-height: 1.3; }
+    .cs-list { list-style: none; padding: 0; }
+    .cs-list li { position: relative; padding: 10px 0 10px 32px; font-size: 15px; color: var(--gray-700); line-height: 1.6; border-bottom: 1px solid var(--gray-100); }
+    .cs-list li:last-child { border-bottom: none; }
+    .cs-list li::before { content: ''; position: absolute; left: 0; top: 14px; width: 20px; height: 20px; background-size: contain; background-repeat: no-repeat; }
+    .cs-list.challenge-list li::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23dc2626'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15v-2h2v2h-2zm0-4V7h2v6h-2z'/%3E%3C/svg%3E"); }
+    .cs-list.solution-list li::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2310b981'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z'/%3E%3C/svg%3E"); }
+    .cs-divider { height: 1px; background: var(--border); margin-bottom: 48px; }
+    .cs-results-label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--primary); margin-bottom: 24px; }
+    .cs-results-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; margin-bottom: 40px; }
+    .cs-result-card { text-align: center; padding: 28px 16px; background: var(--gray-50); border-radius: 16px; border: 1px solid var(--border); transition: all 0.3s; }
+    .cs-result-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.06); border-color: var(--primary); }
+    .cs-result-card .result-number { font-size: 36px; font-weight: 900; letter-spacing: -1px; line-height: 1; margin-bottom: 8px; }
+    .cs-result-card .result-number.blue { color: var(--primary); }
+    .cs-result-card .result-number.green { color: var(--success); }
+    .cs-result-card .result-number.cyan { color: var(--accent); }
+    .cs-quote { background: linear-gradient(135deg, #f0f7ff 0%, #faf5ff 100%); border-radius: 16px; padding: 32px 40px; border-left: 4px solid var(--primary); position: relative; }
+    .cs-quote::before { content: '\201C'; position: absolute; top: 12px; left: 20px; font-size: 60px; color: var(--primary); opacity: 0.15; font-family: Georgia, serif; line-height: 1; }
+    .cs-quote p { font-size: 17px; color: var(--gray-700); line-height: 1.7; font-style: italic; margin-bottom: 12px; position: relative; z-index: 1; }
+    .cs-quote .cs-attribution { font-size: 14px; color: var(--gray-500); font-style: normal; font-weight: 600; }
+    .cs-cta { margin-top: 48px; text-align: center; padding: 40px; background: var(--gray-50); border-radius: 16px; border: 1px solid var(--border); }
+    .cs-cta h4 { font-size: 22px; font-weight: 800; color: var(--dark); margin-bottom: 8px; }
+    .cs-cta p { font-size: 15px; color: var(--gray-500); margin-bottom: 20px; }
+    .cs-timeline { display: inline-flex; align-items: center; gap: 8px; background: rgba(6,182,212,0.08); border: 1px solid rgba(6,182,212,0.2); padding: 8px 16px; border-radius: 8px; font-size: 13px; font-weight: 600; color: #0891b2; margin-bottom: 32px; }
+    .cs-timeline svg { width: 16px; height: 16px; }
+    @media (max-width: 1024px) { .cs-banner { flex-direction: column; text-align: center; padding: 36px 32px; } .cs-body { padding: 36px 32px; } .cs-results-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 768px) { .cs-two-col { grid-template-columns: 1fr; gap: 32px; } .cs-results-grid { grid-template-columns: 1fr 1fr; } .cs-banner h3 { font-size: 22px; } .cs-quote { padding: 24px; } }
+    @media (max-width: 480px) { .cs-results-grid { grid-template-columns: 1fr; } }
+</style>
+
+<section class="case-study" id="case-study-contractor">
+    <div class="container">
+        <div class="section-header fade-in">
+            <span class="section-label">Case Study</span>
+            <h2 class="section-title">How a NJ Electrical Contractor Recovered $142K in Lost Estimates</h2>
+            <p class="section-subtitle">A real-world example of how Flux Data Solutions transforms operations for home service contractors.</p>
+        </div>
+
+        <div class="cs-card fade-in">
+            <!-- Banner -->
+            <div class="cs-banner">
+                <div class="cs-banner-text">
+                    <div class="cs-banner-label">Client Spotlight</div>
+                    <h3>Established NJ Electrical Contractor &mdash; 20+ Years, 3 Crews</h3>
+                    <p class="cs-client-desc">Residential and commercial electrical contractor serving central New Jersey. Managing 800+ estimates per year with a team of 18 across three field crews and a two-person office.</p>
+                </div>
+                <div class="cs-banner-stat">
+                    <div class="big-number">38%</div>
+                    <div class="big-label">Higher Close Rate</div>
+                </div>
+            </div>
+
+            <!-- Body -->
+            <div class="cs-body">
+
+                <!-- Timeline badge -->
+                <div class="cs-timeline">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    ROI achieved in 35 days &mdash; Full implementation completed in 14 days
+                </div>
+
+                <!-- Challenge + Solution -->
+                <div class="cs-two-col">
+                    <div class="cs-col">
+                        <div class="cs-col-label challenge">The Challenge</div>
+                        <h4>Estimates Disappearing Into a Black Hole</h4>
+                        <ul class="cs-list challenge-list">
+                            <li><strong>25% close rate on estimates</strong> &mdash; The owner sent 800+ estimates per year but had no system to follow up; most quotes sat in email or a spreadsheet and were never touched again after the initial send</li>
+                            <li><strong>Leads lost in personal inboxes</strong> &mdash; Inquiries came in via phone, email, website, and Angi/HomeAdvisor, but there was no central system to capture them; the office manager tracked everything in a personal Gmail inbox</li>
+                            <li><strong>No-shows on scheduled jobs</strong> &mdash; Customers regularly forgot about scheduled service appointments, costing the company $1,500+ per week in wasted truck rolls and crew downtime</li>
+                            <li><strong>Zero online review strategy</strong> &mdash; Despite 20+ years and thousands of happy customers, the company had just 23 Google reviews and a 4.1 rating &mdash; competitors with half the experience ranked higher in local search</li>
+                            <li><strong>Manual scheduling chaos</strong> &mdash; The office manager spent 2+ hours daily coordinating crew schedules, customer calls, and material pickups across three separate calendars and a whiteboard</li>
+                        </ul>
+                    </div>
+                    <div class="cs-col">
+                        <div class="cs-col-label solution">The Solution</div>
+                        <h4>A Complete Lead-to-Revenue System in 2 Weeks</h4>
+                        <ul class="cs-list solution-list">
+                            <li><strong>Automated estimate follow-up</strong> &mdash; Every estimate now gets automatic follow-up at 2 days, 5 days, and 12 days after sending, with personalized messages that reference the specific job and amount &mdash; recovering quotes that would have gone cold</li>
+                            <li><strong>Unified lead capture</strong> &mdash; All inquiries from phone, email, website, Angi, and HomeAdvisor automatically funnel into one CRM with instant acknowledgment sent to the customer within 5 minutes</li>
+                            <li><strong>Smart appointment reminders</strong> &mdash; Customers receive SMS and email reminders at 48 hours and 2 hours before scheduled service, with one-tap confirmation and easy rescheduling links</li>
+                            <li><strong>Automated review generation</strong> &mdash; After every completed job, customers receive a text with a direct link to leave a Google review &mdash; timed for 2 hours post-completion when satisfaction is highest</li>
+                            <li><strong>Centralized scheduling dashboard</strong> &mdash; One calendar view showing all three crews, customer appointments, material pickups, and permit inspections with automatic conflict detection</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="cs-divider"></div>
+
+                <!-- Results -->
+                <div class="cs-results-label">The Results &mdash; Measured at 90 Days</div>
+                <div class="cs-results-grid">
+                    <div class="cs-result-card">
+                        <div class="result-number blue">38%</div>
+                        <div class="result-label">Estimate Close Rate (up from 25%)</div>
+                    </div>
+                    <div class="cs-result-card">
+                        <div class="result-number green">$142K</div>
+                        <div class="result-label">Recovered from Cold Estimates</div>
+                    </div>
+                    <div class="cs-result-card">
+                        <div class="result-number cyan">72%</div>
+                        <div class="result-label">Fewer No-Shows</div>
+                    </div>
+                    <div class="cs-result-card">
+                        <div class="result-number green">4.8</div>
+                        <div class="result-label">Google Rating (147 reviews)</div>
+                    </div>
+                    <div class="cs-result-card">
+                        <div class="result-number blue">10hrs</div>
+                        <div class="result-label">Saved Per Week</div>
+                    </div>
+                </div>
+
+                <!-- Quote -->
+                <div class="cs-quote">
+                    <p>I've been doing this 20 years and always figured lost estimates were just part of the business. Turns out we were leaving $140K on the table every year just because nobody followed up. Now every estimate gets touched automatically, our Google reviews went from 23 to almost 150, and my office manager actually has time to handle the phones instead of chasing paperwork. I wish I'd done this five years ago.</p>
+                    <span class="cs-attribution">&mdash; Owner, Established NJ Electrical Contractor</span>
+                </div>
+
+                <!-- CTA -->
+                <div class="cs-cta">
+                    <h4>Your Contracting Business Could Be Next</h4>
+                    <p>Book a free 15-minute strategy call and I'll show you exactly how much revenue you're leaving on the table with missed follow-ups.</p>
+                    <a href="https://calendly.com/jack-getfluxdata" class="btn-primary">
+                        Book Free Strategy Call
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
