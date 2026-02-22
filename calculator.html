@@ -108,6 +108,19 @@
         .recalc-link { text-align: center; margin-top: 20px; }
         .recalc-link a { color: var(--primary); font-size: 14px; text-decoration: none; font-weight: 600; cursor: pointer; }
 
+        /* Email Capture */
+        .email-capture { background: var(--primary-light); border-radius: 16px; padding: 28px 32px; margin-top: 28px; text-align: center; border: 2px solid var(--primary); }
+        .email-capture h3 { font-size: 18px; margin-bottom: 8px; color: var(--dark); }
+        .email-capture p { font-size: 14px; color: var(--gray-500); margin-bottom: 16px; }
+        .email-row { display: flex; gap: 10px; max-width: 480px; margin: 0 auto; }
+        .email-row input { flex: 1; padding: 12px 16px; border: 2px solid var(--border); border-radius: 10px; font-size: 15px; font-family: 'Inter', sans-serif; }
+        .email-row input:focus { outline: none; border-color: var(--primary); }
+        .email-row button { padding: 12px 20px; background: var(--primary); color: #fff; border: none; border-radius: 10px; font-size: 14px; font-weight: 700; cursor: pointer; white-space: nowrap; font-family: 'Inter', sans-serif; transition: background 0.2s; }
+        .email-row button:hover { background: var(--primary-dark); }
+        .email-sent { display: none; color: var(--success); font-weight: 600; font-size: 15px; padding: 12px 0; }
+        .email-sent.show { display: block; }
+        .email-row.hidden { display: none; }
+
         /* Footer */
         footer { background: var(--dark); padding: 32px 0; text-align: center; color: #9ca3af; font-size: 13px; margin-top: 40px; }
         footer a { color: var(--accent); text-decoration: none; }
@@ -224,6 +237,16 @@
             </div>
         </div>
 
+        <div class="email-capture" id="emailCapture">
+            <h3>Get Your Custom Report</h3>
+            <p>Enter your email and we will send you a detailed automation roadmap for your <span id="reportIndustry">business</span>.</p>
+            <div class="email-row" id="emailRow">
+                <input type="email" id="leadEmail" placeholder="you@company.com">
+                <button onclick="captureEmail()">Send Report</button>
+            </div>
+            <div class="email-sent" id="emailSent">Sent! Check your inbox shortly.</div>
+        </div>
+
         <div class="result-cta">
             <h3>Want the Full Breakdown?</h3>
             <p>Book a free 15-minute strategy call and I will build you a detailed automation roadmap showing exactly where to start, what to automate first, and your projected ROI timeline.</p>
@@ -303,6 +326,21 @@ function calculateROI() {
     document.getElementById('revenueGain').textContent = formatMoney(monthlyRevenueGain) + '/mo';
     document.getElementById('totalImpact').textContent = formatMoney(totalAnnualImpact);
 
+    // Set industry name in email capture
+    document.getElementById('reportIndustry').textContent = data.name.toLowerCase();
+
+    // Store calculation data for email capture
+    window._calcData = {
+        industry: data.name,
+        employees: employees,
+        manualHours: manualHours,
+        hourlyCost: hourlyCost,
+        annualSavings: Math.round(totalAnnualImpact),
+        hoursRecovered: hoursRecoveredPerYear,
+        roiMultiple: roiMultiple.toFixed(1),
+        paybackDays: paybackDays
+    };
+
     // Show results, hide form
     document.getElementById('calcForm').style.display = 'none';
     document.getElementById('results').classList.add('show');
@@ -318,18 +356,44 @@ function calculateROI() {
             annual_savings: Math.round(totalAnnualImpact)
         });
     }
+}
 
-    // Send lead data to webhook
+function captureEmail() {
+    var email = document.getElementById('leadEmail').value.trim();
+    if (!email || !email.includes('@')) {
+        document.getElementById('leadEmail').style.borderColor = '#ef4444';
+        return;
+    }
+
+    // Send to Google Sheets via Apps Script (or fallback to mailto)
+    var data = window._calcData || {};
+    data.email = email;
+    data.timestamp = new Date().toISOString();
+
+    // Send lead notification via FormSubmit.co (free, no server needed)
     try {
-        navigator.sendBeacon('/api/lead', JSON.stringify({
-            type: 'calculator',
-            industry: data.name,
-            employees: employees,
-            manualHours: manualHours,
-            annualSavings: Math.round(totalAnnualImpact),
-            timestamp: new Date().toISOString()
-        }));
+        var formData = new FormData();
+        formData.append('email', email);
+        formData.append('_subject', 'New Calculator Lead: ' + email + ' (' + (data.industry || 'Unknown') + ')');
+        formData.append('industry', data.industry || '');
+        formData.append('employees', data.employees || '');
+        formData.append('manual_hours_week', data.manualHours || '');
+        formData.append('annual_savings', '$' + (data.annualSavings || 0).toLocaleString());
+        formData.append('roi_multiple', (data.roiMultiple || '0') + 'x');
+        formData.append('payback_days', data.paybackDays || '');
+        formData.append('_captcha', 'false');
+        formData.append('_template', 'table');
+        navigator.sendBeacon('https://formsubmit.co/ajax/jack@getfluxdata.com', formData);
     } catch(e) {}
+
+    // Show success
+    document.getElementById('emailRow').classList.add('hidden');
+    document.getElementById('emailSent').classList.add('show');
+
+    // Track
+    if (typeof gtag === 'function') {
+        gtag('event', 'lead_captured', { email: email, source: 'calculator' });
+    }
 }
 
 function resetCalculator() {
