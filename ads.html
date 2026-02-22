@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop Wasting 20+ Hours a Week on Manual Tasks | Flux Data Solutions</title>
+    <meta name="description" content="Custom AI automation eliminates 60% of your repetitive business tasks. Free strategy call — we find $10K+ in savings or you pay nothing.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Google Ads Conversion Tracking (replace YOUR_AW_ID and YOUR_CONVERSION_LABEL) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'AW-XXXXXXXXXX');
+
+        // Fire conversion on CTA click
+        function trackConversion(url) {
+            gtag('event', 'conversion', {
+                'send_to': 'AW-XXXXXXXXXX/CONVERSION_LABEL',
+                'event_callback': function() {
+                    if (url) { window.open(url, '_blank'); }
+                }
+            });
+            // Fallback: open URL after 1s if gtag callback doesn't fire
+            setTimeout(function() {
+                if (url) { window.open(url, '_blank'); }
+            }, 1000);
+            return false;
+        }
+    </script>
+
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --primary-light: #dbeafe;
+            --accent: #06b6d4;
+            --dark: #0f172a;
+            --dark-2: #1e293b;
+            --gray-900: #111827;
+            --gray-700: #374151;
+            --gray-500: #6b7280;
+            --gray-400: #9ca3af;
+            --gray-300: #d1d5db;
+            --gray-100: #f3f4f6;
+            --gray-50: #f9fafb;
+            --white: #ffffff;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --border: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: var(--dark);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        .container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+        /* ANIMATIONS */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.4); }
+            50% { box-shadow: 0 0 0 16px rgba(37, 99, 235, 0); }
+        }
+        .fade-in { opacity: 0; transform: translateY(30px); transition: all 0.6s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        /* TOP BAR — minimal brand, no nav */
+        .top-bar {
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+            padding: 14px 0;
+            text-align: center;
+        }
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+        .logo span { color: var(--dark); }
+
+        /* HERO */
+        .hero {
+            padding: 80px 0 60px;
+            background: linear-gradient(160deg, #f0f7ff 0%, #e8f4fd 30%, #faf5ff 60%, #f0f7ff 100%);
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(37,99,235,0.06) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        .hero .container { position: relative; z-index: 2; max-width: 800px; }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--white);
+            border: 1px solid var(--border);
+            padding: 6px 16px;
+            border-radius: 100px;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--gray-700);
+            margin-bottom: 24px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+        }
+        .hero-badge .dot {
+            width: 8px;
+            height: 8px;
+            background: var(--success);
+            border-radius: 50%;
+            animation: pulse-glow 2s infinite;
+        }
+        .hero h1 {
+            font-size: 48px;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            color: var(--dark);
+            font-weight: 800;
+            letter-spacing: -1.5px;
+        }
+        .hero h1 .highlight {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero .subtitle {
+            font-size: 19px;
+            color: var(--gray-500);
+            margin-bottom: 36px;
+            line-height: 1.7;
+            max-width: 640px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--primary);
+            color: var(--white);
+            padding: 18px 40px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 18px;
+            transition: all 0.25s;
+            border: none;
+            cursor: pointer;
+            animation: pulse-glow 2.5s infinite;
+        }
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(37,99,235,0.35);
+        }
+        .btn-primary svg { flex-shrink: 0; }
+        .hero-trust {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            margin-top: 32px;
+        }
+        .hero-trust .item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: var(--gray-500);
+            font-weight: 500;
+        }
+        .hero-trust .item svg {
+            width: 18px;
+            height: 18px;
+            color: var(--success);
+            flex-shrink: 0;
+        }
+
+        /* BENEFITS */
+        .benefits {
+            padding: 80px 0;
+            background: var(--white);
+        }
+        .benefits .section-header { text-align: center; margin-bottom: 48px; }
+        .section-label {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+        .section-title {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+        }
+        .section-subtitle {
+            font-size: 17px;
+            color: var(--gray-500);
+            max-width: 560px;
+            line-height: 1.7;
+            margin: 0 auto;
+        }
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+        .benefit-card {
+            padding: 36px;
+            border-radius: 16px;
+            background: var(--gray-50);
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+            text-align: center;
+        }
+        .benefit-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.06);
+            border-color: var(--primary);
+        }
+        .benefit-card .icon {
+            width: 64px;
+            height: 64px;
+            background: var(--primary-light);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin: 0 auto 20px;
+        }
+        .benefit-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+        .benefit-card p {
+            font-size: 15px;
+            color: var(--gray-500);
+            line-height: 1.6;
+        }
+        .benefit-card .stat {
+            display: inline-block;
+            margin-top: 16px;
+            padding: 6px 14px;
+            background: #ecfdf5;
+            color: var(--success);
+            font-size: 14px;
+            font-weight: 700;
+            border-radius: 8px;
+        }
+
+        /* SOCIAL PROOF */
+        .social-proof {
+            padding: 60px 0;
+            background: linear-gradient(135deg, var(--dark) 0%, var(--dark-2) 100%);
+            color: var(--white);
+        }
+        .proof-stats {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 48px;
+            flex-wrap: wrap;
+        }
+        .proof-stat { text-align: center; }
+        .proof-stat .number {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--white);
+            line-height: 1;
+        }
+        .proof-stat .label {
+            font-size: 14px;
+            color: var(--gray-400);
+            margin-top: 6px;
+        }
+        .proof-divider {
+            width: 1px;
+            height: 48px;
+            background: rgba(255,255,255,0.15);
+        }
+        .testimonial {
+            max-width: 680px;
+            margin: 40px auto 0;
+            text-align: center;
+            font-size: 18px;
+            font-style: italic;
+            color: var(--gray-300);
+            line-height: 1.7;
+        }
+        .testimonial .attribution {
+            font-size: 14px;
+            font-style: normal;
+            color: var(--gray-500);
+            margin-top: 12px;
+        }
+
+        /* PRICING */
+        .pricing {
+            padding: 80px 0;
+            background: var(--gray-50);
+        }
+        .pricing .section-header { text-align: center; margin-bottom: 48px; }
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+        .price-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 36px;
+            border: 2px solid var(--border);
+            transition: all 0.3s;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+        .price-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+        }
+        .price-card.featured {
+            border-color: var(--primary);
+            background: linear-gradient(180deg, #f0f6ff 0%, var(--white) 40%);
+        }
+        .price-card.featured::before {
+            content: 'MOST POPULAR';
+            position: absolute;
+            top: -13px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, var(--primary), #4f46e5);
+            color: white;
+            padding: 5px 18px;
+            border-radius: 100px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            white-space: nowrap;
+        }
+        .price-card .tier {
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--gray-400);
+            margin-bottom: 4px;
+        }
+        .price-card h3 { font-size: 22px; font-weight: 700; margin-bottom: 12px; color: var(--dark); }
+        .price-card .price {
+            font-size: 44px;
+            font-weight: 800;
+            color: var(--dark);
+            margin: 4px 0 4px;
+            letter-spacing: -1px;
+        }
+        .price-card .price span {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--gray-400);
+            letter-spacing: 0;
+        }
+        .price-card .desc {
+            font-size: 14px;
+            color: var(--gray-500);
+            margin-bottom: 24px;
+            line-height: 1.6;
+        }
+        .price-card ul {
+            list-style: none;
+            margin-bottom: 28px;
+            flex-grow: 1;
+        }
+        .price-card ul li {
+            font-size: 14px;
+            padding: 9px 0;
+            border-bottom: 1px solid var(--gray-100);
+            position: relative;
+            padding-left: 28px;
+            color: var(--gray-700);
+        }
+        .price-card ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 13px;
+            width: 18px;
+            height: 18px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2310b981'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z'/%3E%3C/svg%3E") no-repeat center;
+            background-size: contain;
+        }
+        .price-card ul li:last-child { border-bottom: none; }
+        .price-btn {
+            display: block;
+            text-align: center;
+            padding: 14px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 15px;
+            transition: all 0.25s;
+        }
+        .price-btn.primary {
+            background: var(--primary);
+            color: var(--white);
+        }
+        .price-btn.primary:hover { background: var(--primary-dark); box-shadow: 0 4px 15px rgba(37,99,235,0.3); }
+        .price-btn.outline {
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            background: transparent;
+        }
+        .price-btn.outline:hover { background: var(--primary); color: var(--white); }
+        .pricing-note {
+            text-align: center;
+            margin-top: 32px;
+            font-size: 15px;
+            color: var(--gray-500);
+        }
+        .pricing-note a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .pricing-note a:hover { text-decoration: underline; }
+
+        /* FAQ */
+        .faq {
+            padding: 80px 0;
+            background: var(--white);
+        }
+        .faq .section-header { text-align: center; margin-bottom: 40px; }
+        .faq-grid {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .faq-item {
+            background: var(--gray-50);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            margin-bottom: 12px;
+            overflow: hidden;
+        }
+        .faq-q {
+            padding: 20px 24px;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--dark);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: color 0.2s;
+        }
+        .faq-q:hover { color: var(--primary); }
+        .faq-q .arrow {
+            font-size: 20px;
+            transition: transform 0.3s;
+            color: var(--gray-400);
+            flex-shrink: 0;
+            margin-left: 16px;
+        }
+        .faq-a {
+            padding: 0 24px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .faq-a p {
+            padding-bottom: 20px;
+            font-size: 15px;
+            color: var(--gray-500);
+            line-height: 1.7;
+        }
+        .faq-item.open .faq-a { max-height: 300px; }
+        .faq-item.open .faq-q .arrow { transform: rotate(180deg); }
+
+        /* FINAL CTA */
+        .final-cta {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--dark) 0%, var(--dark-2) 100%);
+            color: var(--white);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .final-cta::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(37,99,235,0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        .final-cta .container { position: relative; z-index: 2; max-width: 700px; }
+        .final-cta h2 {
+            font-size: 38px;
+            font-weight: 800;
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+        }
+        .final-cta p {
+            font-size: 18px;
+            color: var(--gray-400);
+            margin-bottom: 36px;
+            line-height: 1.7;
+        }
+        .final-cta .btn-primary {
+            font-size: 20px;
+            padding: 20px 48px;
+        }
+        .final-cta .trust-line {
+            margin-top: 24px;
+            font-size: 14px;
+            color: var(--gray-500);
+        }
+
+        /* MINIMAL FOOTER */
+        .mini-footer {
+            background: #070d1a;
+            color: var(--gray-500);
+            padding: 24px 0;
+            text-align: center;
+            font-size: 13px;
+        }
+        .mini-footer a {
+            color: var(--gray-400);
+            text-decoration: none;
+        }
+        .mini-footer a:hover { color: var(--accent); }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero { padding: 60px 0 48px; }
+            .hero h1 { font-size: 32px; }
+            .hero .subtitle { font-size: 16px; }
+            .btn-primary { font-size: 16px; padding: 16px 32px; }
+            .hero-trust { flex-direction: column; gap: 10px; }
+            .benefits-grid { grid-template-columns: 1fr; }
+            .proof-stats { gap: 24px; }
+            .proof-divider { display: none; }
+            .pricing-grid { grid-template-columns: 1fr; }
+            .section-title { font-size: 28px; }
+            .final-cta h2 { font-size: 28px; }
+            .final-cta .btn-primary { font-size: 16px; padding: 16px 32px; }
+            .faq-q { font-size: 15px; }
+        }
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 28px; }
+            .proof-stats { gap: 16px; }
+            .proof-stat .number { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- TOP BAR — brand only, no navigation -->
+<div class="top-bar">
+    <span class="logo">Flux<span>Data</span></span>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-badge">
+            <span class="dot"></span>
+            Now accepting new clients
+        </div>
+        <h1>Stop Wasting 20+ Hours a Week on <span class="highlight">Manual Tasks</span></h1>
+        <p class="subtitle">I build custom AI automation systems that eliminate the repetitive work draining your time and revenue. Get a free strategy call and I'll show you exactly where you're leaving money on the table.</p>
+        <a href="https://calendly.com/jack-getfluxdata" class="btn-primary" onclick="trackConversion('https://calendly.com/jack-getfluxdata'); return false;">
+            Book Your Free Strategy Call
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <div class="hero-trust">
+            <div class="item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                Free 15-min call
+            </div>
+            <div class="item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                No contracts
+            </div>
+            <div class="item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                $10K+ savings guaranteed
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 3 BENEFITS -->
+<section class="benefits">
+    <div class="container">
+        <div class="section-header fade-in">
+            <span class="section-label">Why Automate</span>
+            <h2 class="section-title">What Automation Does for Your Business</h2>
+            <p class="section-subtitle">Most small businesses waste 15-25 hours per week on tasks that should be automated. Here's what changes:</p>
+        </div>
+        <div class="benefits-grid">
+            <div class="benefit-card fade-in">
+                <div class="icon">&#9200;</div>
+                <h3>Reclaim Your Time</h3>
+                <p>Eliminate manual data entry, scheduling, and follow-ups that eat up your day. Your team focuses on revenue-generating work instead.</p>
+                <span class="stat">Save 15-25 hrs/week</span>
+            </div>
+            <div class="benefit-card fade-in">
+                <div class="icon">&#128176;</div>
+                <h3>Stop Losing Revenue</h3>
+                <p>Automated follow-ups, faster invoicing, and zero missed leads mean more money actually hitting your bank account.</p>
+                <span class="stat">Recover $10K+/month</span>
+            </div>
+            <div class="benefit-card fade-in">
+                <div class="icon">&#128200;</div>
+                <h3>Scale Without Hiring</h3>
+                <p>Handle 3x the workload without adding headcount. AI-powered systems run 24/7, perfectly, every time.</p>
+                <span class="stat">3-5x ROI in 90 days</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SOCIAL PROOF -->
+<section class="social-proof">
+    <div class="container">
+        <div class="proof-stats">
+            <div class="proof-stat">
+                <div class="number">60%</div>
+                <div class="label">Less Manual Work</div>
+            </div>
+            <div class="proof-divider"></div>
+            <div class="proof-stat">
+                <div class="number">30</div>
+                <div class="label">Days to Go Live</div>
+            </div>
+            <div class="proof-divider"></div>
+            <div class="proof-stat">
+                <div class="number">3-5x</div>
+                <div class="label">ROI Within 90 Days</div>
+            </div>
+            <div class="proof-divider"></div>
+            <div class="proof-stat">
+                <div class="number">$180K</div>
+                <div class="label">Saved for One Law Firm</div>
+            </div>
+        </div>
+        <div class="testimonial fade-in">
+            "We were skeptical about automation — we thought it meant replacing people. Instead, it freed our best people to do their best work. The ROI was obvious within the first month."
+            <div class="attribution">-- Managing Partner, Regional NJ Law Firm</div>
+        </div>
+    </div>
+</section>
+
+<!-- MID-PAGE CTA -->
+<section style="padding: 48px 0; background: var(--white); text-align: center;">
+    <div class="container">
+        <a href="https://calendly.com/jack-getfluxdata" class="btn-primary" onclick="trackConversion('https://calendly.com/jack-getfluxdata'); return false;" style="animation: pulse-glow 2.5s infinite;">
+            Book Your Free Strategy Call
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <p style="margin-top: 12px; font-size: 14px; color: var(--gray-500);">15 minutes. No obligation. I'll find your biggest automation opportunities.</p>
+    </div>
+</section>
+
+<!-- PRICING (secondary option) -->
+<section class="pricing">
+    <div class="container">
+        <div class="section-header fade-in">
+            <span class="section-label">Pricing</span>
+            <h2 class="section-title">Ready to Get Started Now?</h2>
+            <p class="section-subtitle">Simple, results-driven pricing. Every plan pays for itself.</p>
+        </div>
+        <div class="pricing-grid">
+            <div class="price-card featured fade-in">
+                <span class="tier">Best Value</span>
+                <h3>Revenue X-Ray</h3>
+                <div class="price">$497</div>
+                <p class="desc">AI-powered deep analysis with specific revenue opportunities and ROI projections.</p>
+                <ul>
+                    <li>Full digital presence audit</li>
+                    <li>Competitor landscape analysis</li>
+                    <li>Top 10 automation opportunities</li>
+                    <li>Dollar-impact ROI projections</li>
+                    <li>Custom implementation roadmap</li>
+                    <li>Money-back guarantee</li>
+                </ul>
+                <a href="https://buy.stripe.com/7sY28r8x21uH3Tpezn2wU09" class="price-btn primary" onclick="trackConversion()">Get Your X-Ray</a>
+            </div>
+            <div class="price-card fade-in">
+                <span class="tier">Done For You</span>
+                <h3>Full Implementation</h3>
+                <div class="price">$1,997</div>
+                <p class="desc">Complete automation system designed, built, and deployed end-to-end.</p>
+                <ul>
+                    <li>Everything in Revenue X-Ray</li>
+                    <li>Custom automation build</li>
+                    <li>Integrations &amp; data migration</li>
+                    <li>Staff training &amp; documentation</li>
+                    <li>30 days of hands-on support</li>
+                </ul>
+                <a href="https://buy.stripe.com/cNi8wP9B68X9gGb62R2wU0b" class="price-btn primary" onclick="trackConversion()">Get Started</a>
+            </div>
+            <div class="price-card fade-in">
+                <span class="tier">Ongoing</span>
+                <h3>Management</h3>
+                <div class="price">$297<span>/mo</span></div>
+                <p class="desc">Continuous monitoring, optimization, and expansion of your automations.</p>
+                <ul>
+                    <li>24/7 system monitoring</li>
+                    <li>Monthly optimization reports</li>
+                    <li>Priority support &amp; fixes</li>
+                    <li>New automation additions</li>
+                    <li>Quarterly strategy reviews</li>
+                </ul>
+                <a href="https://buy.stripe.com/5kQeVdeVq6P1blRezn2wU0a" class="price-btn outline" onclick="trackConversion()">Subscribe</a>
+            </div>
+        </div>
+        <p class="pricing-note">Not sure which plan is right? <a href="https://calendly.com/jack-getfluxdata" onclick="trackConversion('https://calendly.com/jack-getfluxdata'); return false;">Book a free strategy call</a> and I'll recommend the best fit.</p>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+    <div class="container">
+        <div class="section-header fade-in">
+            <span class="section-label">FAQ</span>
+            <h2 class="section-title">Common Questions</h2>
+        </div>
+        <div class="faq-grid fade-in">
+            <div class="faq-item">
+                <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+                    What kind of tasks can you automate?
+                    <span class="arrow">&#9660;</span>
+                </div>
+                <div class="faq-a">
+                    <p>Data entry, lead follow-ups, invoice generation, appointment scheduling, email sequences, report generation, CRM updates, social media posting, inventory tracking, and much more. If it's repetitive and rule-based, it can likely be automated.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+                    How long does implementation take?
+                    <span class="arrow">&#9660;</span>
+                </div>
+                <div class="faq-a">
+                    <p>Most implementations are complete within 30 days. Simple automations can be live in under a week. You'll see progress and quick wins within the first week.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+                    Do I need technical knowledge?
+                    <span class="arrow">&#9660;</span>
+                </div>
+                <div class="faq-a">
+                    <p>Absolutely not. Every system comes with staff training and documentation. The automations work in the background -- you and your team keep doing what you do, just faster and with fewer errors.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+                    What if I'm not happy with the results?
+                    <span class="arrow">&#9660;</span>
+                </div>
+                <div class="faq-a">
+                    <p>The Revenue X-Ray comes with a money-back guarantee -- if I can't find at least $10,000/month in savings or missed revenue, you pay nothing. For implementations, you get 30 days of support to ensure everything works perfectly.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+                    What makes you different from other consultants?
+                    <span class="arrow">&#9660;</span>
+                </div>
+                <div class="faq-a">
+                    <p>You work directly with me -- no salespeople, no project managers, no middlemen. I use cutting-edge AI tools for faster implementation and better results at a fraction of the cost of traditional consultancies.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+    <div class="container">
+        <h2>Ready to Reclaim 20+ Hours a Week?</h2>
+        <p>Book a free 15-minute strategy call. I'll map your biggest time drains and show you exactly how automation pays for itself.</p>
+        <a href="https://calendly.com/jack-getfluxdata" class="btn-primary" onclick="trackConversion('https://calendly.com/jack-getfluxdata'); return false;">
+            Book Your Free Strategy Call
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <p class="trust-line">Free. No obligation. No pressure. Just actionable insights for your business.</p>
+    </div>
+</section>
+
+<!-- MINIMAL FOOTER -->
+<div class="mini-footer">
+    &copy; 2026 Flux Data Solutions (Gloss Labs LLC) &middot; <a href="mailto:jack@getfluxdata.com">jack@getfluxdata.com</a>
+</div>
+
+<!-- MINIMAL JS — FAQ toggle + scroll animations -->
+<script>
+// Scroll fade-in animations
+var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.fade-in').forEach(function(el) { observer.observe(el); });
+</script>
+
+</body>
+</html>
