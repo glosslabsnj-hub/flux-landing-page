@@ -728,7 +728,8 @@
             border-color: var(--primary);
         }
         .ind-card .icon { font-size: 36px; margin-bottom: 12px; }
-        .ind-card h3 { font-size: 15px; font-weight: 600; color: var(--dark); }
+        .ind-card h3 { font-size: 15px; font-weight: 600; color: var(--dark); margin-bottom: 6px; }
+        .ind-card .example { font-size: 13px; color: var(--gray-500); line-height: 1.5; }
 
         /* GUARANTEE */
         .guarantee {
@@ -1097,8 +1098,8 @@
         </div>
         <div class="proof-divider"></div>
         <div class="proof-item">
-            <div class="number">8+</div>
-            <div class="text">Industries Served</div>
+            <div class="number">$10K</div>
+            <div class="text">Revenue Guarantee</div>
         </div>
     </div>
 </section>
@@ -1286,34 +1287,42 @@
             <div class="ind-card">
                 <div class="icon">&#9878;&#65039;</div>
                 <h3>Law Firms</h3>
+                <p class="example">Auto-generate documents, track deadlines, route intake forms</p>
             </div>
             <div class="ind-card">
                 <div class="icon">&#127973;</div>
                 <h3>Medical Practices</h3>
+                <p class="example">Appointment reminders, intake automation, insurance follow-ups</p>
             </div>
             <div class="ind-card">
                 <div class="icon">&#128200;</div>
                 <h3>Accounting / CPA</h3>
+                <p class="example">Auto-categorize expenses, client portal updates, tax prep workflows</p>
             </div>
             <div class="ind-card">
                 <div class="icon">&#127968;</div>
                 <h3>Real Estate</h3>
+                <p class="example">Lead routing, listing alerts, auto-drip campaigns, showing schedules</p>
             </div>
             <div class="ind-card">
                 <div class="icon">&#127860;</div>
                 <h3>Restaurants</h3>
+                <p class="example">Online ordering flow, review responses, inventory alerts, scheduling</p>
             </div>
             <div class="ind-card">
                 <div class="icon">&#128663;</div>
                 <h3>Auto Services</h3>
+                <p class="example">Service reminders, estimate follow-ups, parts inventory tracking</p>
             </div>
             <div class="ind-card">
                 <div class="icon">&#127959;&#65039;</div>
                 <h3>Construction</h3>
+                <p class="example">Bid tracking, project updates, subcontractor coordination</p>
             </div>
             <div class="ind-card">
                 <div class="icon">&#128135;</div>
                 <h3>Salons &amp; Spas</h3>
+                <p class="example">Booking confirmations, no-show follow-ups, loyalty campaigns</p>
             </div>
         </div>
     </div>
@@ -1535,6 +1544,21 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+
+// Also send form data to Lenard webhook for CRM tracking
+const form = document.getElementById('contactForm');
+if (form) {
+    form.addEventListener('submit', function() {
+        try {
+            const data = Object.fromEntries(new FormData(form));
+            // Fire-and-forget to webhook — don't block the FormSubmit submission
+            navigator.sendBeacon && navigator.sendBeacon(
+                'https://getfluxdata.com/api/lead',
+                new Blob([JSON.stringify(data)], {type: 'application/json'})
+            );
+        } catch(e) { /* silent fail — FormSubmit is the primary handler */ }
+    });
+}
 </script>
 
 </body>
