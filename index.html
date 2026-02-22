@@ -793,6 +793,121 @@
             line-height: 1.7;
         }
 
+        /* CASE STUDY */
+        .case-study {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: var(--white);
+        }
+        .case-study .section-label {
+            color: var(--accent);
+        }
+        .case-study .section-title {
+            color: var(--white);
+        }
+        .case-study .section-subtitle {
+            color: var(--gray-400);
+        }
+        .cs-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            margin-top: 48px;
+        }
+        .cs-challenge, .cs-solution {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 32px;
+        }
+        .cs-challenge h3, .cs-solution h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .cs-challenge h3 { color: #f87171; }
+        .cs-solution h3 { color: #34d399; }
+        .cs-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+        .cs-list li {
+            font-size: 15px;
+            color: var(--gray-300);
+            line-height: 1.6;
+            padding-left: 24px;
+            position: relative;
+        }
+        .cs-challenge .cs-list li::before {
+            content: '\2717';
+            position: absolute;
+            left: 0;
+            color: #f87171;
+            font-weight: 700;
+        }
+        .cs-solution .cs-list li::before {
+            content: '\2713';
+            position: absolute;
+            left: 0;
+            color: #34d399;
+            font-weight: 700;
+        }
+        .cs-results {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 16px;
+            margin-top: 40px;
+        }
+        .cs-stat {
+            text-align: center;
+            background: rgba(37,99,235,0.1);
+            border: 1px solid rgba(37,99,235,0.2);
+            border-radius: 12px;
+            padding: 24px 12px;
+        }
+        .cs-stat .num {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--accent);
+            line-height: 1;
+        }
+        .cs-stat .label {
+            font-size: 13px;
+            color: var(--gray-400);
+            margin-top: 8px;
+            line-height: 1.3;
+        }
+        .cs-quote {
+            max-width: 700px;
+            margin: 40px auto 0;
+            text-align: center;
+            font-size: 18px;
+            font-style: italic;
+            color: var(--gray-300);
+            line-height: 1.7;
+            border-left: none;
+            padding: 24px 0;
+        }
+        .cs-quote .attribution {
+            font-size: 14px;
+            font-style: normal;
+            color: var(--gray-500);
+            margin-top: 12px;
+        }
+        .cs-cta {
+            text-align: center;
+            margin-top: 40px;
+        }
+        @media (max-width: 768px) {
+            .cs-content { grid-template-columns: 1fr; }
+            .cs-results { grid-template-columns: repeat(2, 1fr); }
+        }
+
         /* FAQ */
         .faq {
             padding: 100px 0;
@@ -1373,6 +1488,68 @@
                 <h3>Salons &amp; Spas</h3>
                 <p class="example">Booking confirmations, no-show follow-ups, loyalty campaigns</p>
             </div>
+        </div>
+    </div>
+</section>
+
+<!-- CASE STUDY -->
+<section class="case-study">
+    <div class="container">
+        <div class="section-header fade-in" style="text-align:center;">
+            <span class="section-label">Case Study</span>
+            <h2 class="section-title">How a 50-Attorney NJ Law Firm Saved $180K/Year</h2>
+            <p class="section-subtitle">A regional firm cut admin time by 60% and converted 40% more leads with custom automation.</p>
+        </div>
+        <div class="cs-content fade-in">
+            <div class="cs-challenge">
+                <h3>&#10060; The Challenge</h3>
+                <ul class="cs-list">
+                    <li>Paralegals spent 45 min per client on manual paper intake forms</li>
+                    <li>35% of potential clients lost due to zero follow-up after initial inquiry</li>
+                    <li>Document drafting took 3+ hours per engagement letter</li>
+                    <li>Separate email, CRM, and billing systems with no data sync</li>
+                    <li>Partners had no visibility into case pipeline or revenue forecasts</li>
+                </ul>
+            </div>
+            <div class="cs-solution">
+                <h3>&#9989; Our Solution</h3>
+                <ul class="cs-list">
+                    <li>Digital intake forms that auto-populate the CRM in under 5 minutes</li>
+                    <li>Automated follow-up sequences re-engage every lead within 24 hours</li>
+                    <li>AI-powered document drafting cuts engagement letters to 20 minutes</li>
+                    <li>Unified dashboard connects email, CRM, and billing in one view</li>
+                    <li>Real-time pipeline analytics with revenue forecasting for partners</li>
+                </ul>
+            </div>
+        </div>
+        <div class="cs-results fade-in">
+            <div class="cs-stat">
+                <div class="num">60%</div>
+                <div class="label">Less Admin Time</div>
+            </div>
+            <div class="cs-stat">
+                <div class="num">3x</div>
+                <div class="label">Faster Intake</div>
+            </div>
+            <div class="cs-stat">
+                <div class="num">40%</div>
+                <div class="label">More Leads Converted</div>
+            </div>
+            <div class="cs-stat">
+                <div class="num">$180K</div>
+                <div class="label">Annual Savings</div>
+            </div>
+            <div class="cs-stat">
+                <div class="num">45</div>
+                <div class="label">Days to Full ROI</div>
+            </div>
+        </div>
+        <div class="cs-quote fade-in">
+            "We were skeptical about automation — we thought it meant replacing people. Instead, it freed our best people to do their best work. The ROI was obvious within the first month."
+            <div class="attribution">— Managing Partner, Regional NJ Law Firm</div>
+        </div>
+        <div class="cs-cta fade-in">
+            <a href="https://calendly.com/jack-getfluxdata" class="btn-primary">See What Automation Can Do For Your Business</a>
         </div>
     </div>
 </section>
