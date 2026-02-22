@@ -1,0 +1,421 @@
+<!--
+  FLUX DATA SOLUTIONS — CASE STUDY SECTION
+  Drop this section into index.html (e.g., between the Industries and Guarantee sections)
+  or use it as a standalone page.
+
+  Uses the same CSS variables and design language as the main landing page.
+  If embedding into index.html, only the <section> and the <style> block below are needed.
+-->
+
+<!-- CASE STUDY STYLES (add to existing <style> block if embedding) -->
+<style>
+    /* ── CASE STUDY SECTION ── */
+    .case-study {
+        padding: 100px 0;
+        background: var(--white);
+    }
+    .case-study .section-header {
+        text-align: center;
+        margin-bottom: 56px;
+    }
+    .case-study .section-subtitle {
+        margin: 0 auto;
+    }
+
+    .cs-card {
+        background: var(--white);
+        border-radius: 24px;
+        border: 2px solid var(--border);
+        overflow: hidden;
+        box-shadow: 0 8px 40px rgba(0,0,0,0.04);
+    }
+
+    /* Top banner */
+    .cs-banner {
+        background: linear-gradient(135deg, var(--dark) 0%, #1a2744 100%);
+        padding: 48px 56px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 40px;
+        position: relative;
+        overflow: hidden;
+    }
+    .cs-banner::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        right: -10%;
+        width: 400px;
+        height: 400px;
+        background: radial-gradient(circle, rgba(37,99,235,0.15) 0%, transparent 70%);
+        border-radius: 50%;
+    }
+    .cs-banner-text {
+        position: relative;
+        z-index: 2;
+    }
+    .cs-banner-label {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(255,255,255,0.08);
+        border: 1px solid rgba(255,255,255,0.12);
+        padding: 5px 14px;
+        border-radius: 100px;
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--accent);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 16px;
+    }
+    .cs-banner h3 {
+        font-size: 28px;
+        font-weight: 800;
+        color: var(--white);
+        line-height: 1.3;
+        letter-spacing: -0.5px;
+        margin-bottom: 8px;
+    }
+    .cs-banner .cs-client-desc {
+        font-size: 16px;
+        color: var(--gray-400);
+        line-height: 1.6;
+    }
+    .cs-banner-stat {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        flex-shrink: 0;
+        background: rgba(255,255,255,0.06);
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 16px;
+        padding: 24px 36px;
+    }
+    .cs-banner-stat .big-number {
+        font-size: 52px;
+        font-weight: 900;
+        color: var(--success);
+        letter-spacing: -2px;
+        line-height: 1;
+    }
+    .cs-banner-stat .big-label {
+        font-size: 14px;
+        color: var(--gray-400);
+        font-weight: 500;
+        margin-top: 4px;
+    }
+
+    /* Body content */
+    .cs-body {
+        padding: 48px 56px;
+    }
+
+    /* Challenge + Solution grid */
+    .cs-two-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 48px;
+        margin-bottom: 48px;
+    }
+    .cs-col-label {
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        margin-bottom: 16px;
+    }
+    .cs-col-label.challenge { color: #dc2626; }
+    .cs-col-label.solution { color: var(--success); }
+
+    .cs-col h4 {
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--dark);
+        margin-bottom: 16px;
+        line-height: 1.3;
+    }
+
+    .cs-list {
+        list-style: none;
+        padding: 0;
+    }
+    .cs-list li {
+        position: relative;
+        padding: 10px 0 10px 32px;
+        font-size: 15px;
+        color: var(--gray-700);
+        line-height: 1.6;
+        border-bottom: 1px solid var(--gray-100);
+    }
+    .cs-list li:last-child { border-bottom: none; }
+    .cs-list li::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 14px;
+        width: 20px;
+        height: 20px;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    .cs-list.challenge-list li::before {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23dc2626'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15v-2h2v2h-2zm0-4V7h2v6h-2z'/%3E%3C/svg%3E");
+    }
+    .cs-list.solution-list li::before {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2310b981'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z'/%3E%3C/svg%3E");
+    }
+
+    /* Divider */
+    .cs-divider {
+        height: 1px;
+        background: var(--border);
+        margin-bottom: 48px;
+    }
+
+    /* Results grid */
+    .cs-results-label {
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        color: var(--primary);
+        margin-bottom: 24px;
+    }
+    .cs-results-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 20px;
+        margin-bottom: 40px;
+    }
+    .cs-result-card {
+        text-align: center;
+        padding: 28px 16px;
+        background: var(--gray-50);
+        border-radius: 16px;
+        border: 1px solid var(--border);
+        transition: all 0.3s;
+    }
+    .cs-result-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+        border-color: var(--primary);
+    }
+    .cs-result-card .result-number {
+        font-size: 36px;
+        font-weight: 900;
+        letter-spacing: -1px;
+        line-height: 1;
+        margin-bottom: 8px;
+    }
+    .cs-result-card .result-number.blue { color: var(--primary); }
+    .cs-result-card .result-number.green { color: var(--success); }
+    .cs-result-card .result-number.cyan { color: var(--accent); }
+    .cs-result-card .result-label {
+        font-size: 13px;
+        color: var(--gray-500);
+        font-weight: 500;
+        line-height: 1.4;
+    }
+
+    /* Quote */
+    .cs-quote {
+        background: linear-gradient(135deg, #f0f7ff 0%, #faf5ff 100%);
+        border-radius: 16px;
+        padding: 32px 40px;
+        border-left: 4px solid var(--primary);
+        position: relative;
+    }
+    .cs-quote::before {
+        content: '\201C';
+        position: absolute;
+        top: 12px;
+        left: 20px;
+        font-size: 60px;
+        color: var(--primary);
+        opacity: 0.15;
+        font-family: Georgia, serif;
+        line-height: 1;
+    }
+    .cs-quote p {
+        font-size: 17px;
+        color: var(--gray-700);
+        line-height: 1.7;
+        font-style: italic;
+        margin-bottom: 12px;
+        position: relative;
+        z-index: 1;
+    }
+    .cs-quote .cs-attribution {
+        font-size: 14px;
+        color: var(--gray-500);
+        font-style: normal;
+        font-weight: 600;
+    }
+
+    /* CTA bar */
+    .cs-cta {
+        margin-top: 48px;
+        text-align: center;
+        padding: 40px;
+        background: var(--gray-50);
+        border-radius: 16px;
+        border: 1px solid var(--border);
+    }
+    .cs-cta h4 {
+        font-size: 22px;
+        font-weight: 800;
+        color: var(--dark);
+        margin-bottom: 8px;
+    }
+    .cs-cta p {
+        font-size: 15px;
+        color: var(--gray-500);
+        margin-bottom: 20px;
+    }
+
+    /* Timeline badge */
+    .cs-timeline {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(6,182,212,0.08);
+        border: 1px solid rgba(6,182,212,0.2);
+        padding: 8px 16px;
+        border-radius: 8px;
+        font-size: 13px;
+        font-weight: 600;
+        color: #0891b2;
+        margin-bottom: 32px;
+    }
+    .cs-timeline svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+        .cs-banner { flex-direction: column; text-align: center; padding: 36px 32px; }
+        .cs-body { padding: 36px 32px; }
+        .cs-results-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 768px) {
+        .cs-two-col { grid-template-columns: 1fr; gap: 32px; }
+        .cs-results-grid { grid-template-columns: 1fr 1fr; }
+        .cs-banner h3 { font-size: 22px; }
+        .cs-quote { padding: 24px; }
+    }
+    @media (max-width: 480px) {
+        .cs-results-grid { grid-template-columns: 1fr; }
+    }
+</style>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- CASE STUDY SECTION — paste into index.html where desired      -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+
+<section class="case-study" id="case-study">
+    <div class="container">
+        <div class="section-header fade-in">
+            <span class="section-label">Case Study</span>
+            <h2 class="section-title">How a 50-Attorney NJ Law Firm Saved $180K/Year</h2>
+            <p class="section-subtitle">A real-world example of how Flux Data Solutions transforms operations for professional services firms.</p>
+        </div>
+
+        <div class="cs-card fade-in">
+            <!-- Banner -->
+            <div class="cs-banner">
+                <div class="cs-banner-text">
+                    <div class="cs-banner-label">Client Spotlight</div>
+                    <h3>Regional NJ Law Firm &mdash; 50 Attorneys, 120+ Staff</h3>
+                    <p class="cs-client-desc">Full-service firm specializing in personal injury, family law, and corporate litigation across northern New Jersey. Managing 2,000+ active cases at any given time.</p>
+                </div>
+                <div class="cs-banner-stat">
+                    <div class="big-number">$180K</div>
+                    <div class="big-label">Annual Savings</div>
+                </div>
+            </div>
+
+            <!-- Body -->
+            <div class="cs-body">
+
+                <!-- Timeline badge -->
+                <div class="cs-timeline">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    ROI achieved in 45 days &mdash; Full implementation completed in 28 days
+                </div>
+
+                <!-- Challenge + Solution -->
+                <div class="cs-two-col">
+                    <div class="cs-col">
+                        <div class="cs-col-label challenge">The Challenge</div>
+                        <h4>Drowning in Manual Processes That Cost Thousands Every Week</h4>
+                        <ul class="cs-list challenge-list">
+                            <li><strong>Paper-based client intake</strong> &mdash; New clients filled out physical forms that paralegals manually re-typed into the case management system, averaging 45 minutes per intake</li>
+                            <li><strong>No automated follow-up</strong> &mdash; Potential clients who inquired but didn't retain the firm were never contacted again; an estimated 35% of qualified leads fell through the cracks</li>
+                            <li><strong>Manual document preparation</strong> &mdash; Attorneys and paralegals spent 12+ hours per week drafting repetitive documents (demand letters, motions, correspondence) from scratch</li>
+                            <li><strong>Disjointed systems</strong> &mdash; Separate platforms for email, case management, billing, and calendaring with no integration; staff re-entered the same data 3-4 times across systems</li>
+                            <li><strong>Missed deadlines</strong> &mdash; Calendar and deadline tracking relied on individual attorneys' personal methods, creating compliance risk</li>
+                        </ul>
+                    </div>
+                    <div class="cs-col">
+                        <div class="cs-col-label solution">The Solution</div>
+                        <h4>A Custom Automation System Built in Under 30 Days</h4>
+                        <ul class="cs-list solution-list">
+                            <li><strong>Digital intake pipeline</strong> &mdash; Custom web forms auto-populate the CRM, create case files, assign attorneys, and trigger welcome email sequences &mdash; intake dropped from 45 minutes to under 5</li>
+                            <li><strong>Automated lead nurture</strong> &mdash; AI-powered follow-up sequences engage prospects at days 1, 3, 7, and 14 with personalized emails, then alert the assigned attorney when a lead re-engages</li>
+                            <li><strong>AI document drafting</strong> &mdash; Template-based system pre-fills case data into demand letters, motions, and correspondence; attorneys review and edit instead of writing from scratch</li>
+                            <li><strong>Unified dashboard</strong> &mdash; Single-pane view connecting case status, billing, calendar deadlines, and client communications across the entire firm</li>
+                            <li><strong>Automated deadline tracking</strong> &mdash; Statute of limitations, filing deadlines, and court dates auto-calculate and push reminders to attorneys 30, 14, and 3 days out</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="cs-divider"></div>
+
+                <!-- Results -->
+                <div class="cs-results-label">The Results &mdash; Measured at 90 Days</div>
+                <div class="cs-results-grid">
+                    <div class="cs-result-card">
+                        <div class="result-number blue">60%</div>
+                        <div class="result-label">Reduction in Admin Time</div>
+                    </div>
+                    <div class="cs-result-card">
+                        <div class="result-number green">3x</div>
+                        <div class="result-label">Faster Client Intake</div>
+                    </div>
+                    <div class="cs-result-card">
+                        <div class="result-number cyan">40%</div>
+                        <div class="result-label">Increase in Lead Conversion</div>
+                    </div>
+                    <div class="cs-result-card">
+                        <div class="result-number green">$180K</div>
+                        <div class="result-label">Annual Staff Cost Savings</div>
+                    </div>
+                    <div class="cs-result-card">
+                        <div class="result-number blue">45</div>
+                        <div class="result-label">Days to Positive ROI</div>
+                    </div>
+                </div>
+
+                <!-- Quote -->
+                <div class="cs-quote">
+                    <p>We were skeptical that an outside consultant could understand the complexity of a law practice. Within the first week, the intake automation alone freed up two full-time paralegals. By day 45, the system had already paid for itself. The follow-up automation recovered leads we had been losing for years &mdash; that alone added six figures to our pipeline.</p>
+                    <span class="cs-attribution">&mdash; Managing Partner, Regional NJ Law Firm</span>
+                </div>
+
+                <!-- CTA -->
+                <div class="cs-cta">
+                    <h4>Your Firm Could Be Next</h4>
+                    <p>Book a free 15-minute strategy call and I'll show you exactly where your firm is losing time and money.</p>
+                    <a href="https://calendly.com/jack-getfluxdata" class="btn-primary">
+                        Book Free Strategy Call
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
