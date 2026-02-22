@@ -1997,7 +1997,8 @@
                     <input type="hidden" name="_subject" value="New Lead from getfluxdata.com">
                     <input type="hidden" name="_captcha" value="false">
                     <input type="hidden" name="_next" value="https://getfluxdata.com#thankyou">
-                    <input type="hidden" name="_webhook" value="https://rapid-investors-ips-pichunter.trycloudflare.com/webhooks/form">
+                    <!-- Webhook for CRM auto-import — uncomment when Cloudflare Tunnel is set up -->
+                    <!-- <input type="hidden" name="_webhook" value="https://api.getfluxdata.com/webhooks/form"> -->
                     <input type="text" name="_honey" style="display:none">
                     <div class="form-row">
                         <label>Your Name *</label>
@@ -2123,21 +2124,19 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Also send form data to Lenard webhook for CRM tracking
-const form = document.getElementById('contactForm');
-if (form) {
-    form.addEventListener('submit', function() {
-        try {
-            const data = Object.fromEntries(new FormData(form));
-            // Fire-and-forget to webhook — don't block the FormSubmit submission
-            // Note: tunnel URL changes on restart — update _webhook field and this URL when it does
-            navigator.sendBeacon && navigator.sendBeacon(
-                'https://rapid-investors-ips-pichunter.trycloudflare.com/api/lead',
-                new Blob([JSON.stringify(data)], {type: 'application/json'})
-            );
-        } catch(e) { /* silent fail — FormSubmit is the primary handler */ }
-    });
-}
+// CRM webhook integration — uncomment when Cloudflare Tunnel is set up
+// const form = document.getElementById('contactForm');
+// if (form) {
+//     form.addEventListener('submit', function() {
+//         try {
+//             const data = Object.fromEntries(new FormData(form));
+//             navigator.sendBeacon && navigator.sendBeacon(
+//                 'https://api.getfluxdata.com/api/lead',
+//                 new Blob([JSON.stringify(data)], {type: 'application/json'})
+//             );
+//         } catch(e) {}
+//     });
+// }
 </script>
 
 </body>
