@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Automation | 3-5x More Google Reviews | Flux Data Solutions</title>
+    <meta name="description" content="Automated review generation, guest retention, and reservation management for NJ restaurants. 3-5x more Google reviews in 90 days. Cut no-shows by 60%. Free strategy call.">
+    <meta property="og:title" content="Restaurant Automation | 3-5x More Google Reviews | Flux Data Solutions">
+    <meta property="og:description" content="Automated review generation, guest retention, and reservation management for NJ restaurants. 3-5x more Google reviews in 90 days.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://getfluxdata.com/restaurants.html">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://getfluxdata.com/restaurants.html">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9A%A1%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --primary-light: #dbeafe;
+            --accent: #06b6d4;
+            --dark: #0f172a;
+            --dark-2: #1e293b;
+            --gray-900: #111827;
+            --gray-700: #374151;
+            --gray-500: #6b7280;
+            --gray-400: #9ca3af;
+            --gray-300: #d1d5db;
+            --gray-100: #f3f4f6;
+            --gray-50: #f9fafb;
+            --white: #ffffff;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --border: #e5e7eb;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: var(--dark);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+        .btn-primary {
+            display: inline-flex; align-items: center; gap: 10px;
+            background: var(--primary); color: white; padding: 16px 32px;
+            border-radius: 12px; font-weight: 700; font-size: 16px;
+            text-decoration: none; transition: all 0.3s;
+            box-shadow: 0 4px 16px rgba(37,99,235,0.3);
+        }
+        .btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37,99,235,0.4); }
+        .btn-secondary {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: var(--white); color: var(--gray-700);
+            padding: 16px 32px; border-radius: 12px; text-decoration: none;
+            font-weight: 600; font-size: 16px; transition: all 0.25s;
+            border: 1px solid var(--border);
+        }
+        .btn-secondary:hover { border-color: var(--primary); color: var(--primary); transform: translateY(-2px); }
+
+        .cs-nav { background: var(--dark); padding: 16px 0; }
+        .cs-nav .container { display: flex; align-items: center; justify-content: space-between; }
+        .cs-nav a { color: white; text-decoration: none; font-weight: 700; font-size: 18px; display: flex; align-items: center; gap: 8px; }
+        .cs-nav a:hover { color: var(--accent); }
+        .cs-nav .btn-primary { padding: 10px 24px; font-size: 14px; }
+
+        .hero {
+            padding: 80px 0 60px;
+            background: linear-gradient(160deg, #f0f7ff 0%, #e8f4fd 30%, #faf5ff 60%, #f0f7ff 100%);
+            text-align: center;
+        }
+        .hero-label {
+            display: inline-block; padding: 6px 16px; background: var(--primary-light);
+            color: var(--primary); border-radius: 100px; font-size: 13px;
+            font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 24px;
+        }
+        .hero h1 {
+            font-size: 48px; font-weight: 900; line-height: 1.1;
+            letter-spacing: -1.5px; margin-bottom: 20px; max-width: 800px; margin-left: auto; margin-right: auto;
+        }
+        .hero h1 .highlight {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .hero .subtitle {
+            font-size: 19px; color: var(--gray-500); margin-bottom: 36px;
+            line-height: 1.7; max-width: 640px; margin-left: auto; margin-right: auto;
+        }
+        .hero-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+        .pain { padding: 80px 0; background: var(--white); }
+        .pain h2 { font-size: 36px; font-weight: 900; text-align: center; margin-bottom: 16px; letter-spacing: -1px; }
+        .pain .subtitle { text-align: center; font-size: 18px; color: var(--gray-500); margin-bottom: 48px; max-width: 640px; margin-left: auto; margin-right: auto; }
+        .pain-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .pain-card { background: var(--gray-50); border-radius: 16px; padding: 32px; border: 1px solid var(--border); }
+        .pain-card .icon { width: 48px; height: 48px; background: #fef2f2; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 16px; }
+        .pain-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+        .pain-card p { font-size: 15px; color: var(--gray-500); line-height: 1.6; }
+
+        .solutions { padding: 80px 0; background: var(--gray-50); }
+        .solutions h2 { font-size: 36px; font-weight: 900; text-align: center; margin-bottom: 48px; letter-spacing: -1px; }
+        .solution-list { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 900px; margin: 0 auto; }
+        .solution-item { background: var(--white); border-radius: 16px; padding: 28px; border: 1px solid var(--border); display: flex; gap: 16px; }
+        .solution-item .check { width: 32px; height: 32px; background: #ecfdf5; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--success); font-weight: 700; }
+        .solution-item h3 { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+        .solution-item p { font-size: 14px; color: var(--gray-500); line-height: 1.5; }
+
+        .results { padding: 80px 0; background: var(--dark); color: var(--white); text-align: center; }
+        .results h2 { font-size: 36px; font-weight: 900; margin-bottom: 48px; letter-spacing: -1px; }
+        .results-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; margin-bottom: 48px; }
+        .result-stat .number { font-size: 48px; font-weight: 900; color: var(--accent); letter-spacing: -2px; }
+        .result-stat .label { font-size: 14px; color: var(--gray-400); margin-top: 8px; }
+        .results .quote { font-size: 20px; font-style: italic; color: var(--gray-300); max-width: 600px; margin: 0 auto 16px; line-height: 1.6; }
+        .results .attribution { font-size: 14px; color: var(--gray-400); }
+
+        .cta-section { padding: 80px 0; background: linear-gradient(160deg, #f0f7ff 0%, #e8f4fd 50%, #faf5ff 100%); text-align: center; }
+        .cta-section h2 { font-size: 36px; font-weight: 900; margin-bottom: 16px; letter-spacing: -1px; }
+        .cta-section p { font-size: 18px; color: var(--gray-500); margin-bottom: 32px; max-width: 520px; margin-left: auto; margin-right: auto; line-height: 1.7; }
+        .cta-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+        .cs-footer { background: var(--dark); padding: 40px 0; text-align: center; color: var(--gray-400); font-size: 14px; }
+        .cs-footer a { color: var(--accent); text-decoration: none; }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 32px; }
+            .pain-grid { grid-template-columns: 1fr; }
+            .solution-list { grid-template-columns: 1fr; }
+            .results-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+            .result-stat .number { font-size: 36px; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="cs-nav">
+        <div class="container">
+            <a href="https://getfluxdata.com">⚡ Flux Data Solutions</a>
+            <a href="https://calendly.com/jack-getfluxdata" class="btn-primary">Book Free Strategy Call</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-label">Restaurant Automation</div>
+            <h1>Your Restaurant Is <span class="highlight">Losing Customers</span> You Already Served</h1>
+            <p class="subtitle">Most NJ restaurants lose 70% of first-time guests forever. Automated review requests, guest retention campaigns, and no-show reduction systems change that — without adding work for your staff.</p>
+            <div class="hero-actions">
+                <a href="https://calendly.com/jack-getfluxdata" class="btn-primary">
+                    Get Your Free Strategy Call
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+                <a href="https://buy.stripe.com/7sY28r8x21uH3Tpezn2wU09" class="btn-secondary">Revenue X-Ray — $497</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="pain">
+        <div class="container">
+            <h2>Sound Familiar?</h2>
+            <p class="subtitle">These are the invisible revenue leaks draining NJ restaurants every single week.</p>
+            <div class="pain-grid">
+                <div class="pain-card">
+                    <div class="icon">&#11088;</div>
+                    <h3>Competitors Have 3x More Reviews</h3>
+                    <p>They are not better — they just ask automatically. 90% of happy customers will leave a review if asked at the right time. Most restaurants never ask.</p>
+                </div>
+                <div class="pain-card">
+                    <div class="icon">&#128123;</div>
+                    <h3>15-20% No-Show Rate</h3>
+                    <p>Empty tables on Friday night that could have been filled. Without automated confirmation texts and waitlist management, you lose $2,000-5,000 per month.</p>
+                </div>
+                <div class="pain-card">
+                    <div class="icon">&#128200;</div>
+                    <h3>First-Timers Never Return</h3>
+                    <p>70% of diners who have a great experience never come back — not because they did not enjoy it, but because nobody reminded them. No follow-up means no loyalty.</p>
+                </div>
+                <div class="pain-card">
+                    <div class="icon">&#128241;</div>
+                    <h3>Catering Leads Go Cold</h3>
+                    <p>Catering inquiries sit in voicemail or email for days. By the time someone responds, the customer booked elsewhere. Fast follow-up wins catering revenue.</p>
+                </div>
+                <div class="pain-card">
+                    <div class="icon">&#9200;</div>
+                    <h3>Hours Spent on Manual Outreach</h3>
+                    <p>Posting on social media, sending promotions, emailing regulars about events — it all takes time your team does not have during a rush.</p>
+                </div>
+                <div class="pain-card">
+                    <div class="icon">&#128176;</div>
+                    <h3>Marketing Dollars Wasted</h3>
+                    <p>You spend money on Instagram ads and delivery app commissions to attract NEW customers when reactivating EXISTING ones costs 5x less and converts 10x better.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="solutions">
+        <div class="container">
+            <h2>What We Automate for Restaurants</h2>
+            <div class="solution-list">
+                <div class="solution-item">
+                    <div class="check">&#10003;</div>
+                    <div>
+                        <h3>Automated Review Requests</h3>
+                        <p>After every dine-in or takeout order, guests automatically receive a review request via text or email. Restaurants using this 3-5x their Google reviews in 90 days.</p>
+                    </div>
+                </div>
+                <div class="solution-item">
+                    <div class="check">&#10003;</div>
+                    <div>
+                        <h3>Guest Retention Campaigns</h3>
+                        <p>Automated "we miss you" messages to guests who have not visited in 30+ days. Includes personalized offers and seasonal promotions.</p>
+                    </div>
+                </div>
+                <div class="solution-item">
+                    <div class="check">&#10003;</div>
+                    <div>
+                        <h3>No-Show Reduction</h3>
+                        <p>Automated confirmation texts 24 hours and 2 hours before reservation. Waitlist auto-fills when cancellations happen. Cut no-shows by 60%+.</p>
+                    </div>
+                </div>
+                <div class="solution-item">
+                    <div class="check">&#10003;</div>
+                    <div>
+                        <h3>Catering Lead Follow-Up</h3>
+                        <p>Instant auto-response to catering inquiries with menu, pricing, and booking link. Automated follow-up sequence for quotes that have not converted.</p>
+                    </div>
+                </div>
+                <div class="solution-item">
+                    <div class="check">&#10003;</div>
+                    <div>
+                        <h3>Birthday and Event Promos</h3>
+                        <p>Automated birthday offers, anniversary specials, and holiday event promotions sent at the perfect time. More private events, more celebrations booked.</p>
+                    </div>
+                </div>
+                <div class="solution-item">
+                    <div class="check">&#10003;</div>
+                    <div>
+                        <h3>Online Reputation Management</h3>
+                        <p>Get instant alerts for new reviews. Auto-respond to positive reviews. Flag negative reviews for quick personal response before they damage your rating.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="results">
+        <div class="container">
+            <h2>Results NJ Restaurants Are Seeing</h2>
+            <div class="results-grid">
+                <div class="result-stat">
+                    <div class="number">3-5x</div>
+                    <div class="label">More Google Reviews in 90 Days</div>
+                </div>
+                <div class="result-stat">
+                    <div class="number">60%</div>
+                    <div class="label">Fewer No-Shows</div>
+                </div>
+                <div class="result-stat">
+                    <div class="number">35%</div>
+                    <div class="label">More Repeat Customers</div>
+                </div>
+                <div class="result-stat">
+                    <div class="number">$8K+</div>
+                    <div class="label">Monthly Revenue Recovered</div>
+                </div>
+            </div>
+            <p class="quote">"We went from 47 Google reviews to 180+ in three months. Now we rank #1 in our area for Italian restaurant."</p>
+            <p class="attribution">— NJ Restaurant Owner, Bergen County</p>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Fill More Seats?</h2>
+            <p>Book a free 15-minute strategy call. I will show you exactly which automations would have the biggest impact on your restaurant revenue — no obligation, no sales pitch.</p>
+            <div class="cta-actions">
+                <a href="https://calendly.com/jack-getfluxdata" class="btn-primary">
+                    Book Free Strategy Call
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+                <a href="https://buy.stripe.com/7sY28r8x21uH3Tpezn2wU09" class="btn-secondary">Get a Revenue X-Ray — $497</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="cs-footer">
+        <div class="container">
+            <p>&copy; 2026 Flux Data Solutions (Gloss Labs LLC) &middot; <a href="https://getfluxdata.com">Home</a> &middot; <a href="mailto:jack@getfluxdata.com">jack@getfluxdata.com</a> &middot; <a href="tel:+16097318641">(609) 731-8641</a></p>
+        </div>
+    </footer>
+</body>
+</html>
