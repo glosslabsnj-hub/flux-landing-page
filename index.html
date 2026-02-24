@@ -196,26 +196,28 @@
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #2563eb;
-            --primary-dark: #1d4ed8;
-            --primary-light: #dbeafe;
-            --accent: #06b6d4;
-            --dark: #0f172a;
-            --dark-2: #1e293b;
-            --gray-900: #111827;
-            --gray-700: #374151;
-            --gray-500: #6b7280;
-            --gray-400: #9ca3af;
-            --gray-300: #d1d5db;
-            --gray-100: #f3f4f6;
-            --gray-50: #f9fafb;
+            --primary: #0EA5E9;
+            --primary-dark: #0284C7;
+            --primary-light: #E0F2FE;
+            --accent: #38BDF8;
+            --cta: #F97316;
+            --cta-dark: #EA580C;
+            --dark: #0C4A6E;
+            --dark-2: #164E63;
+            --gray-900: #0C4A6E;
+            --gray-700: #1E5A7E;
+            --gray-500: #64748B;
+            --gray-400: #94A3B8;
+            --gray-300: #CBD5E1;
+            --gray-100: #F0F9FF;
+            --gray-50: #F8FAFC;
             --white: #ffffff;
             --success: #10b981;
             --warning: #f59e0b;
-            --border: #e5e7eb;
+            --border: #E0F2FE;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -223,11 +225,46 @@
         html { scroll-behavior: smooth; }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             color: var(--dark);
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
             overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6, .logo, .stat-row .value, .proof-item .number, .number, .fc-value {
+            font-family: 'Outfit', 'Work Sans', sans-serif;
+        }
+
+        /* SKIP LINK */
+        .skip-link {
+            position: absolute;
+            top: -100%;
+            left: 16px;
+            background: var(--primary);
+            color: var(--white);
+            padding: 12px 24px;
+            border-radius: 0 0 8px 8px;
+            z-index: 10000;
+            font-weight: 600;
+            text-decoration: none;
+            transition: top 0.2s;
+        }
+        .skip-link:focus { top: 0; }
+
+        /* FOCUS STYLES */
+        *:focus-visible {
+            outline: 3px solid var(--primary);
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
         }
 
         .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
@@ -242,11 +279,14 @@
             50% { transform: translateY(-10px); }
         }
         @keyframes pulse-glow {
-            0%, 100% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.3); }
-            50% { box-shadow: 0 0 0 12px rgba(37, 99, 235, 0); }
+            0%, 100% { box-shadow: 0 0 0 0 rgba(14, 165, 233, 0.3); }
+            50% { box-shadow: 0 0 0 12px rgba(14, 165, 233, 0); }
         }
         .fade-in { opacity: 0; transform: translateY(30px); transition: all 0.6s ease; }
         .fade-in.visible { opacity: 1; transform: translateY(0); }
+        .fade-in-delay-1 { transition-delay: 0.1s; }
+        .fade-in-delay-2 { transition-delay: 0.2s; }
+        .fade-in-delay-3 { transition-delay: 0.3s; }
 
         /* NAV */
         nav {
@@ -285,7 +325,7 @@
         }
         .nav-links a:hover { color: var(--primary); }
         .nav-cta {
-            background: var(--primary);
+            background: var(--cta);
             color: var(--white) !important;
             padding: 10px 24px;
             border-radius: 8px;
@@ -293,8 +333,9 @@
             font-size: 14px !important;
             transition: all 0.2s;
             display: inline-block;
+            cursor: pointer;
         }
-        .nav-cta:hover { background: var(--primary-dark); transform: translateY(-1px); box-shadow: 0 4px 12px rgba(37,99,235,0.3); }
+        .nav-cta:hover { background: var(--cta-dark); transform: translateY(-1px); box-shadow: 0 4px 12px rgba(249,115,22,0.3); }
         .nav-phone {
             font-size: 14px;
             font-weight: 600;
@@ -369,7 +410,7 @@
         /* HERO */
         .hero {
             padding: 100px 0 80px;
-            background: linear-gradient(160deg, #f0f7ff 0%, #e8f4fd 30%, #faf5ff 60%, #f0f7ff 100%);
+            background: linear-gradient(160deg, #F0F9FF 0%, #E0F2FE 30%, #F0F9FF 60%, #E0F2FE 100%);
             position: relative;
             overflow: hidden;
         }
@@ -380,7 +421,7 @@
             right: -20%;
             width: 600px;
             height: 600px;
-            background: radial-gradient(circle, rgba(37,99,235,0.06) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(14,165,233,0.08) 0%, transparent 70%);
             border-radius: 50%;
         }
         .hero::after {
@@ -390,7 +431,7 @@
             left: -10%;
             width: 400px;
             height: 400px;
-            background: radial-gradient(circle, rgba(6,182,212,0.05) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(56,189,248,0.06) 0%, transparent 70%);
             border-radius: 50%;
         }
         .hero .container { position: relative; z-index: 2; }
@@ -452,7 +493,7 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: var(--primary);
+            background: var(--cta);
             color: var(--white);
             padding: 16px 32px;
             border-radius: 12px;
@@ -464,16 +505,16 @@
             cursor: pointer;
         }
         .btn-primary:hover {
-            background: var(--primary-dark);
+            background: var(--cta-dark);
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(37,99,235,0.35);
+            box-shadow: 0 8px 25px rgba(249,115,22,0.35);
         }
         .btn-secondary {
             display: inline-flex;
             align-items: center;
             gap: 8px;
             background: var(--white);
-            color: var(--gray-700);
+            color: var(--dark);
             padding: 16px 32px;
             border-radius: 12px;
             text-decoration: none;
@@ -481,6 +522,7 @@
             font-size: 16px;
             transition: all 0.25s;
             border: 1px solid var(--border);
+            cursor: pointer;
         }
         .btn-secondary:hover {
             border-color: var(--primary);
@@ -663,8 +705,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 24px;
             margin-bottom: 20px;
+            color: var(--primary);
         }
         .problem-card h3 {
             font-size: 18px;
@@ -703,7 +745,7 @@
             right: 0;
             width: 50%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(37,99,235,0.1) 0%, transparent 60%);
+            background: linear-gradient(135deg, rgba(14,165,233,0.1) 0%, transparent 60%);
         }
         .founder .container { position: relative; z-index: 2; }
         .founder-grid {
@@ -897,16 +939,19 @@
             transition: all 0.25s;
         }
         .price-btn.primary {
-            background: var(--primary);
+            background: var(--cta);
             color: var(--white);
+            cursor: pointer;
         }
-        .price-btn.primary:hover { background: var(--primary-dark); box-shadow: 0 4px 15px rgba(37,99,235,0.3); }
+        .price-btn.primary:hover { background: var(--cta-dark); box-shadow: 0 4px 15px rgba(249,115,22,0.3); }
         .price-btn.outline {
             border: 2px solid var(--primary);
             color: var(--primary);
             background: transparent;
+            cursor: pointer;
         }
         .price-btn.outline:hover { background: var(--primary); color: var(--white); }
+        .ind-card { cursor: pointer; }
 
         /* PROCESS */
         .process {
@@ -978,7 +1023,7 @@
             box-shadow: 0 8px 24px rgba(0,0,0,0.06);
             border-color: var(--primary);
         }
-        .ind-card .icon { font-size: 36px; margin-bottom: 12px; }
+        .ind-card .icon { margin-bottom: 12px; color: var(--primary); }
         .ind-card h3 { font-size: 15px; font-weight: 600; color: var(--dark); margin-bottom: 6px; }
         .ind-card .example { font-size: 13px; color: var(--gray-500); line-height: 1.5; }
 
@@ -992,13 +1037,13 @@
             margin: 0 auto;
             text-align: center;
             padding: 60px;
-            background: linear-gradient(135deg, #f0f7ff 0%, #faf5ff 100%);
+            background: linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 100%);
             border-radius: 24px;
             border: 2px solid var(--primary-light);
         }
         .guarantee-box .shield {
-            font-size: 56px;
             margin-bottom: 20px;
+            color: var(--cta);
         }
         .guarantee-box h2 {
             font-size: 30px;
@@ -1086,8 +1131,8 @@
         }
         .cs-stat {
             text-align: center;
-            background: rgba(37,99,235,0.1);
-            border: 1px solid rgba(37,99,235,0.2);
+            background: rgba(14,165,233,0.1);
+            border: 1px solid rgba(14,165,233,0.2);
             border-radius: 12px;
             padding: 24px 12px;
         }
@@ -1147,6 +1192,7 @@
             overflow: hidden;
         }
         .faq-q {
+            width: 100%;
             padding: 20px 24px;
             font-size: 16px;
             font-weight: 600;
@@ -1156,6 +1202,11 @@
             justify-content: space-between;
             align-items: center;
             transition: color 0.2s;
+            background: none;
+            border: none;
+            text-align: left;
+            font-family: inherit;
+            line-height: 1.4;
         }
         .faq-q:hover { color: var(--primary); }
         .faq-q .arrow {
@@ -1193,7 +1244,7 @@
             left: -20%;
             width: 500px;
             height: 500px;
-            background: radial-gradient(circle, rgba(37,99,235,0.15) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(14,165,233,0.15) 0%, transparent 70%);
             border-radius: 50%;
         }
         .contact .container { position: relative; z-index: 2; }
@@ -1229,7 +1280,7 @@
         .contact-detail .icon-box {
             width: 48px;
             height: 48px;
-            background: rgba(37,99,235,0.15);
+            background: rgba(14,165,233,0.15);
             border-radius: 12px;
             display: flex;
             align-items: center;
@@ -1278,7 +1329,7 @@
         .submit-btn {
             width: 100%;
             padding: 16px;
-            background: var(--primary);
+            background: var(--cta);
             color: var(--white);
             border: none;
             border-radius: 12px;
@@ -1288,7 +1339,7 @@
             transition: all 0.25s;
             font-family: inherit;
         }
-        .submit-btn:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(37,99,235,0.3); }
+        .submit-btn:hover { background: var(--cta-dark); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(249,115,22,0.3); }
         .form-note { text-align: center; font-size: 12px; color: var(--gray-500); margin-top: 12px; }
 
         /* SUCCESS MESSAGE */
@@ -1366,9 +1417,10 @@
             border: 2px solid var(--primary);
         }
         .sticky-cta .sticky-book {
-            background: var(--primary);
+            background: var(--cta);
             color: var(--white);
         }
+        .sticky-cta a { cursor: pointer; }
 
         /* RESPONSIVE */
         @media (max-width: 1024px) {
@@ -1419,6 +1471,7 @@
     </script>
 </head>
 <body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
 
 <!-- NAV -->
 <nav aria-label="Main navigation">
@@ -1452,7 +1505,7 @@
 </div>
 
 <!-- HERO -->
-<main>
+<main id="main-content">
 <section class="hero">
     <div class="container">
         <div class="hero-grid">
@@ -1507,11 +1560,11 @@
                 </div>
                 <div class="floating-card top-right">
                     <div class="fc-label">Avg. time saved</div>
-                    <div class="fc-value">87 hrs/mo</div>
+                    <div class="fc-value" data-counter>87 hrs/mo</div>
                 </div>
                 <div class="floating-card bottom-left">
                     <div class="fc-label">Revenue recovered</div>
-                    <div class="fc-value">$10K+</div>
+                    <div class="fc-value" data-counter>$10K+</div>
                 </div>
             </div>
         </div>
@@ -1522,22 +1575,22 @@
 <section class="proof-bar">
     <div class="container">
         <div class="proof-item">
-            <div class="number">60%</div>
+            <div class="number" data-counter>60%</div>
             <div class="text">Less Manual Work</div>
         </div>
         <div class="proof-divider"></div>
         <div class="proof-item">
-            <div class="number">30</div>
+            <div class="number" data-counter>30</div>
             <div class="text">Days to Go Live</div>
         </div>
         <div class="proof-divider"></div>
         <div class="proof-item">
-            <div class="number">3-5x</div>
+            <div class="number" data-counter>3-5x</div>
             <div class="text">ROI Within 90 Days</div>
         </div>
         <div class="proof-divider"></div>
         <div class="proof-item">
-            <div class="number">$10K+</div>
+            <div class="number" data-counter>$10K+</div>
             <div class="text">Guaranteed Savings Found</div>
         </div>
     </div>
@@ -1553,19 +1606,19 @@
         </div>
         <div class="problem-grid">
             <div class="problem-card fade-in">
-                <div class="icon">&#9200;</div>
+                <div class="icon" role="img" aria-label="Clock"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
                 <h3>Manual Data Entry</h3>
                 <p>Hours wasted copying information between systems, spreadsheets, and tools that don't talk to each other.</p>
                 <span class="cost">~$2,400/mo in wasted labor</span>
             </div>
             <div class="problem-card fade-in">
-                <div class="icon">&#128200;</div>
+                <div class="icon" role="img" aria-label="Chart"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></div>
                 <h3>Scattered Information</h3>
                 <p>Client data, financials, and operations spread across 5+ systems with no single source of truth.</p>
                 <span class="cost">~$1,800/mo in inefficiency</span>
             </div>
             <div class="problem-card fade-in">
-                <div class="icon">&#128176;</div>
+                <div class="icon" role="img" aria-label="Dollar sign"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
                 <h3>Lost Revenue</h3>
                 <p>Missed follow-ups, slow invoicing, and inefficient scheduling cost you thousands every month.</p>
                 <span class="cost">~$5,000+/mo in missed revenue</span>
@@ -1812,42 +1865,42 @@
         </div>
         <div class="ind-grid fade-in">
             <a href="law-firms.html" class="ind-card" style="text-decoration:none;color:inherit;">
-                <div class="icon">&#9878;&#65039;</div>
+                <div class="icon" role="img" aria-label="Law"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 21 1.9-5.7a8.5 8.5 0 1 1 3.8 3.8z"/><path d="m8 12 4-4 4 4"/><path d="M12 8v8"/></svg></div>
                 <h3>Law Firms</h3>
                 <p class="example">Auto-generate documents, track deadlines, route intake forms</p>
             </a>
             <a href="dental.html" class="ind-card" style="text-decoration:none;color:inherit;">
-                <div class="icon">&#127973;</div>
+                <div class="icon" role="img" aria-label="Medical"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M12 10v4"/><path d="M10 12h4"/></svg></div>
                 <h3>Medical / Dental</h3>
                 <p class="example">Appointment reminders, intake automation, insurance follow-ups</p>
             </a>
             <div class="ind-card">
-                <div class="icon">&#128200;</div>
+                <div class="icon" role="img" aria-label="Accounting"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg></div>
                 <h3>Accounting / CPA</h3>
                 <p class="example">Auto-categorize expenses, client portal updates, tax prep workflows</p>
             </div>
             <div class="ind-card">
-                <div class="icon">&#127968;</div>
+                <div class="icon" role="img" aria-label="Real Estate"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
                 <h3>Real Estate</h3>
                 <p class="example">Lead routing, listing alerts, auto-drip campaigns, showing schedules</p>
             </div>
             <a href="restaurants.html" class="ind-card" style="text-decoration:none;color:inherit;">
-                <div class="icon">&#127860;</div>
+                <div class="icon" role="img" aria-label="Restaurant"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg></div>
                 <h3>Restaurants</h3>
                 <p class="example">Online ordering flow, review responses, inventory alerts, scheduling</p>
             </a>
             <div class="ind-card">
-                <div class="icon">&#128663;</div>
+                <div class="icon" role="img" aria-label="Auto"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg></div>
                 <h3>Auto Services</h3>
                 <p class="example">Service reminders, estimate follow-ups, parts inventory tracking</p>
             </div>
             <a href="contractors.html" class="ind-card" style="text-decoration:none;color:inherit;">
-                <div class="icon">&#127959;&#65039;</div>
+                <div class="icon" role="img" aria-label="Construction"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="8" rx="1"/><path d="M17 14v7"/><path d="M7 14v7"/><path d="M17 3v3"/><path d="M7 3v3"/><path d="M10 14 2.3 6.3"/><path d="m14 6 7.7 7.7"/><path d="m8 6 8 8"/></svg></div>
                 <h3>Construction</h3>
                 <p class="example">Bid tracking, project updates, subcontractor coordination</p>
             </a>
             <div class="ind-card">
-                <div class="icon">&#128135;</div>
+                <div class="icon" role="img" aria-label="Salon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v7c0 3.3 2.7 6 6 6s6-2.7 6-6V3"/><path d="M4 21c0-2.2 3.6-4 8-4s8 1.8 8 4"/></svg></div>
                 <h3>Salons &amp; Spas</h3>
                 <p class="example">Booking confirmations, no-show follow-ups, loyalty campaigns</p>
             </div>
@@ -2027,7 +2080,7 @@
 <section class="guarantee">
     <div class="container">
         <div class="guarantee-box fade-in">
-            <div class="shield">&#128737;&#65039;</div>
+            <div class="shield" role="img" aria-label="Guarantee shield"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div>
             <h2>Our $10,000 Revenue Guarantee</h2>
             <p>If I can't identify at least $10,000 per month in missed revenue or cost savings in your Revenue X-Ray audit, you pay nothing. Zero risk, maximum upside.</p>
         </div>
@@ -2043,63 +2096,63 @@
         </div>
         <div class="faq-grid fade-in">
             <div class="faq-item">
-                <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+                <button type="button" class="faq-q" aria-expanded="false" onclick="this.setAttribute('aria-expanded',this.parentElement.classList.toggle('open'))">
                     What kind of tasks can you automate?
-                    <span class="arrow">&#9660;</span>
+                    <span class="arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
                 </div>
                 <div class="faq-a">
                     <p>Data entry, lead follow-ups, invoice generation, appointment scheduling, email sequences, report generation, CRM updates, social media posting, inventory tracking, and much more. If it's repetitive and rule-based, it can likely be automated.</p>
                 </div>
             </div>
             <div class="faq-item">
-                <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+                <button type="button" class="faq-q" aria-expanded="false" onclick="this.setAttribute('aria-expanded',this.parentElement.classList.toggle('open'))">
                     How long does implementation take?
-                    <span class="arrow">&#9660;</span>
+                    <span class="arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
                 </div>
                 <div class="faq-a">
                     <p>Most implementations are complete within 30 days. Simple automations can be live in under a week. Complex multi-system integrations may take 4-6 weeks. You'll see progress and quick wins within the first week.</p>
                 </div>
             </div>
             <div class="faq-item">
-                <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+                <button type="button" class="faq-q" aria-expanded="false" onclick="this.setAttribute('aria-expanded',this.parentElement.classList.toggle('open'))">
                     Do I need technical knowledge to use the systems you build?
-                    <span class="arrow">&#9660;</span>
+                    <span class="arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
                 </div>
                 <div class="faq-a">
                     <p>Absolutely not. Every system comes with staff training and documentation. Our automations are designed to work in the background. You and your team keep doing what you do, just faster and with fewer errors.</p>
                 </div>
             </div>
             <div class="faq-item">
-                <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+                <button type="button" class="faq-q" aria-expanded="false" onclick="this.setAttribute('aria-expanded',this.parentElement.classList.toggle('open'))">
                     What if I'm not happy with the results?
-                    <span class="arrow">&#9660;</span>
+                    <span class="arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
                 </div>
                 <div class="faq-a">
                     <p>The Revenue X-Ray comes with a money-back guarantee. If I can't find at least $10,000/month in savings or missed revenue, you pay nothing. For implementations, you get 30 days of support to ensure everything works perfectly.</p>
                 </div>
             </div>
             <div class="faq-item">
-                <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+                <button type="button" class="faq-q" aria-expanded="false" onclick="this.setAttribute('aria-expanded',this.parentElement.classList.toggle('open'))">
                     What makes you different from other automation consultants?
-                    <span class="arrow">&#9660;</span>
+                    <span class="arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
                 </div>
                 <div class="faq-a">
                     <p>You work directly with me. No salespeople, no project managers, no middlemen. I use cutting-edge AI tools that most consultancies haven't adopted yet, which means faster implementation and better results at a fraction of the cost.</p>
                 </div>
             </div>
             <div class="faq-item">
-                <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+                <button type="button" class="faq-q" aria-expanded="false" onclick="this.setAttribute('aria-expanded',this.parentElement.classList.toggle('open'))">
                     What industries do you work with?
-                    <span class="arrow">&#9660;</span>
+                    <span class="arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
                 </div>
                 <div class="faq-a">
                     <p>We work with law firms, dental and medical practices, insurance agencies, contractors (electrical, plumbing, HVAC, construction), real estate brokerages, restaurants, salons, marketing agencies, and other service-based businesses across New Jersey. If your business has repetitive processes, we can help.</p>
                 </div>
             </div>
             <div class="faq-item">
-                <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+                <button type="button" class="faq-q" aria-expanded="false" onclick="this.setAttribute('aria-expanded',this.parentElement.classList.toggle('open'))">
                     How much does business automation cost?
-                    <span class="arrow">&#9660;</span>
+                    <span class="arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
                 </div>
                 <div class="faq-a">
                     <p>Our Revenue X-Ray audit starts at $497 and identifies $10,000+ in savings, or you pay nothing. Full automation implementations start at $1,997 as a one-time investment. Ongoing management is $297/month. Most clients see positive ROI within 30-45 days.</p>
@@ -2254,6 +2307,50 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// Stat counter animation (count up numbers on scroll)
+function animateCounter(el) {
+    const text = el.textContent.trim();
+    const match = text.match(/^([\$]?)([\d,]+(?:\.\d+)?)([\w%+\/xK]*)/);
+    if (!match) return;
+    const prefix = match[1];
+    const numStr = match[2].replace(/,/g, '');
+    const suffix = match[3];
+    const target = parseFloat(numStr);
+    const hasDecimal = numStr.includes('.');
+    const duration = 1200;
+    const start = performance.now();
+    el.style.opacity = '1';
+
+    function update(now) {
+        const elapsed = now - start;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const current = target * eased;
+        let display;
+        if (hasDecimal) {
+            display = current.toFixed(1);
+        } else if (target >= 1000) {
+            display = Math.round(current).toLocaleString();
+        } else {
+            display = Math.round(current).toString();
+        }
+        el.textContent = prefix + display + suffix;
+        if (progress < 1) requestAnimationFrame(update);
+    }
+    requestAnimationFrame(update);
+}
+
+const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting && !entry.target.dataset.counted) {
+            entry.target.dataset.counted = 'true';
+            animateCounter(entry.target);
+        }
+    });
+}, { threshold: 0.3 });
+
+document.querySelectorAll('[data-counter]').forEach(el => counterObserver.observe(el));
 
 // Thank you page detection (after FormSubmit redirect)
 if (window.location.hash === '#thankyou') {
