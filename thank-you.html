@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call Booked! | Flux Data Solutions</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FS9HB4ZQKB"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-FS9HB4ZQKB');
+    </script>
+
+    <!-- Google Ads Conversion Tag (will be updated with real AW ID) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'AW-XXXXXXXXXX');
+        // Fire conversion event on page load (user just booked a call)
+        gtag('event', 'conversion', {
+            'send_to': 'AW-XXXXXXXXXX/CONVERSION_LABEL',
+            'value': 100.0,
+            'currency': 'USD'
+        });
+    </script>
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(160deg, #f0f7ff 0%, #e8f4fd 30%, #faf5ff 60%, #f0f7ff 100%);
+            color: #0f172a;
+            padding: 24px;
+        }
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 48px 40px;
+            max-width: 560px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+        }
+        .check {
+            width: 72px;
+            height: 72px;
+            background: #ecfdf5;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+        }
+        .check svg { width: 36px; height: 36px; color: #10b981; }
+        h1 {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+        .subtitle {
+            font-size: 16px;
+            color: #6b7280;
+            margin-bottom: 32px;
+            line-height: 1.6;
+        }
+        .next-steps {
+            text-align: left;
+            background: #f9fafb;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+        .next-steps h3 {
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #2563eb;
+            margin-bottom: 16px;
+        }
+        .step {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
+        .step:last-child { margin-bottom: 0; }
+        .step-num {
+            width: 24px;
+            height: 24px;
+            background: #2563eb;
+            color: white;
+            border-radius: 50%;
+            font-size: 12px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .step p { font-size: 14px; color: #374151; line-height: 1.5; }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: #2563eb;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .back-link:hover { text-decoration: underline; }
+        .logo {
+            font-size: 18px;
+            font-weight: 800;
+            color: #2563eb;
+            margin-top: 24px;
+        }
+        .logo span { color: #0f172a; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="check">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 6L9 17l-5-5"/>
+            </svg>
+        </div>
+        <h1>Your Call Is Booked!</h1>
+        <p class="subtitle">Check your email for the calendar invite and meeting link. I'm looking forward to finding automation opportunities for your business.</p>
+
+        <div class="next-steps">
+            <h3>What happens next</h3>
+            <div class="step">
+                <div class="step-num">1</div>
+                <p>You'll receive a calendar invite with a video call link within a few minutes.</p>
+            </div>
+            <div class="step">
+                <div class="step-num">2</div>
+                <p>I'll do a quick review of your business and website before our call so we can hit the ground running.</p>
+            </div>
+            <div class="step">
+                <div class="step-num">3</div>
+                <p>On the call, we'll identify your top 3 automation opportunities and map out a plan to save you 15-25 hours per week.</p>
+            </div>
+        </div>
+
+        <a href="https://getfluxdata.com" class="back-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+            Back to Flux Data Solutions
+        </a>
+        <div class="logo">Flux<span>Data</span></div>
+    </div>
+</body>
+</html>
