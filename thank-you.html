@@ -135,6 +135,35 @@
     </style>
 </head>
 <body>
+    <!-- Instant booking notification to Lenard webhook server -->
+    <script>
+    (function() {
+        // Extract Calendly event details from URL params (passed by Calendly redirect)
+        var params = new URLSearchParams(window.location.search);
+        var name = params.get('invitee_full_name') || params.get('invitee_name') || '';
+        var email = params.get('invitee_email') || '';
+        var eventType = params.get('event_type_name') || 'Discovery Call';
+        var eventTime = params.get('event_start_time') || '';
+
+        // Fire webhook to Lenard for instant P0 booking detection
+        // This bypasses the 15-30 min email scan delay
+        if (name || email) {
+            fetch('https://getfluxdata.com/webhooks/calendly', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    event: 'invitee.created',
+                    payload: {
+                        event_type: 'invitee.created',
+                        invitee: { name: name, email: email },
+                        event: { start_time: eventTime, name: eventType }
+                    },
+                    source: 'thank_you_page'
+                })
+            }).catch(function() {});
+        }
+    })();
+    </script>
     <div class="card">
         <div class="check">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
