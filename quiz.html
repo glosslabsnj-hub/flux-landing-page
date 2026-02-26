@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Automation Score | Flux Data Solutions</title>
+    <meta name="description" content="Take a 2-minute quiz to discover your Business Automation Score. Find out how much revenue you're leaving on the table with manual processes.">
+    <meta property="og:title" content="What's Your Business Automation Score?">
+    <meta property="og:description" content="2-minute quiz reveals how much revenue your business is losing to manual processes. Get your personalized score and action plan.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://getfluxdata.com/quiz.html">
+    <meta property="og:image" content="https://getfluxdata.com/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="What's Your Business Automation Score?">
+    <meta name="twitter:description" content="2-minute quiz: how much revenue are you losing to manual processes?">
+    <link rel="canonical" href="https://getfluxdata.com/quiz.html">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Business Automation Score Quiz",
+      "description": "Discover your Business Automation Score with this 2-minute assessment.",
+      "url": "https://getfluxdata.com/quiz.html",
+      "isPartOf": { "@id": "https://getfluxdata.com/#website" },
+      "publisher": { "@id": "https://getfluxdata.com/#organization" }
+    }
+    </script>
+    <!-- Google Ads conversion tracking -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17970313271"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','AW-17970313271');</script>
+    <style>
+        :root {
+            --primary: #0EA5E9;
+            --primary-dark: #0284C7;
+            --primary-light: #E0F2FE;
+            --accent: #38BDF8;
+            --cta: #F97316;
+            --cta-dark: #EA580C;
+            --dark: #0C4A6E;
+            --gray-500: #64748B;
+            --gray-300: #CBD5E1;
+            --gray-100: #F0F9FF;
+            --white: #ffffff;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Work Sans', system-ui, sans-serif;
+            background: linear-gradient(135deg, #0C4A6E 0%, #0284C7 50%, #0EA5E9 100%);
+            min-height: 100vh;
+            color: var(--dark);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        h1, h2, h3 { font-family: 'Outfit', system-ui, sans-serif; }
+
+        /* Header */
+        .quiz-header {
+            text-align: center;
+            padding: 30px 20px 10px;
+            max-width: 600px;
+        }
+        .quiz-header .logo {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: rgba(255,255,255,0.9);
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
+        }
+        .quiz-header h1 {
+            font-size: clamp(1.6rem, 4vw, 2.2rem);
+            font-weight: 800;
+            color: var(--white);
+            line-height: 1.2;
+            margin-bottom: 10px;
+        }
+        .quiz-header p {
+            color: rgba(255,255,255,0.85);
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        /* Card container */
+        .quiz-card {
+            background: var(--white);
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            max-width: 600px;
+            width: 100%;
+            margin-top: 20px;
+            overflow: hidden;
+        }
+
+        /* Progress bar */
+        .progress-wrap {
+            background: var(--gray-100);
+            padding: 16px 24px 12px;
+        }
+        .progress-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: var(--gray-500);
+            margin-bottom: 6px;
+            font-weight: 500;
+        }
+        .progress-bar {
+            height: 6px;
+            background: var(--gray-300);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            border-radius: 3px;
+            transition: width 0.4s ease;
+            width: 0%;
+        }
+
+        /* Question area */
+        .question-area {
+            padding: 28px 24px 24px;
+        }
+        .question-number {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+        .question-text {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--dark);
+            line-height: 1.35;
+            margin-bottom: 20px;
+        }
+
+        /* Answer options */
+        .options { display: flex; flex-direction: column; gap: 10px; }
+        .option {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 16px;
+            border: 2px solid var(--gray-300);
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 0.95rem;
+            line-height: 1.4;
+            color: var(--dark);
+        }
+        .option:hover {
+            border-color: var(--primary);
+            background: var(--primary-light);
+        }
+        .option.selected {
+            border-color: var(--primary);
+            background: var(--primary-light);
+        }
+        .option-letter {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 30px;
+            height: 30px;
+            min-width: 30px;
+            border-radius: 8px;
+            background: var(--gray-100);
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--gray-500);
+            transition: all 0.2s ease;
+        }
+        .option.selected .option-letter {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        /* Navigation */
+        .nav-area {
+            padding: 0 24px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+        }
+        .btn {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 12px 28px;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .btn-back {
+            background: transparent;
+            color: var(--gray-500);
+            padding: 12px 16px;
+        }
+        .btn-back:hover { color: var(--dark); }
+        .btn-next {
+            background: var(--cta);
+            color: var(--white);
+            margin-left: auto;
+        }
+        .btn-next:hover { background: var(--cta-dark); transform: translateY(-1px); }
+        .btn-next:disabled {
+            background: var(--gray-300);
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Email capture screen */
+        .email-screen, .result-screen { display: none; }
+        .email-screen.active, .result-screen.active { display: block; }
+        .question-screen { display: block; }
+        .question-screen.hidden { display: none; }
+
+        .email-area {
+            padding: 32px 24px;
+            text-align: center;
+        }
+        .email-area .icon-lock {
+            font-size: 2.5rem;
+            margin-bottom: 12px;
+        }
+        .email-area h2 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 8px;
+        }
+        .email-area p {
+            color: var(--gray-500);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+        .email-form { display: flex; flex-direction: column; gap: 10px; }
+        .email-form input {
+            padding: 14px 16px;
+            border: 2px solid var(--gray-300);
+            border-radius: 10px;
+            font-size: 1rem;
+            font-family: 'Work Sans', sans-serif;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        .email-form input:focus { border-color: var(--primary); }
+        .email-form .btn-reveal {
+            background: var(--cta);
+            color: var(--white);
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 1.05rem;
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .email-form .btn-reveal:hover { background: var(--cta-dark); transform: translateY(-1px); }
+        .email-form .btn-reveal:disabled { background: var(--gray-300); cursor: not-allowed; transform: none; }
+        .skip-link {
+            display: inline-block;
+            margin-top: 12px;
+            color: var(--gray-500);
+            font-size: 0.8rem;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        .skip-link:hover { color: var(--dark); }
+        .privacy-note {
+            font-size: 0.75rem;
+            color: var(--gray-500);
+            margin-top: 8px;
+        }
+
+        /* Results screen */
+        .result-area { padding: 32px 24px; text-align: center; }
+        .score-ring {
+            position: relative;
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 20px;
+        }
+        .score-ring svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+        .score-ring circle {
+            fill: none;
+            stroke-width: 10;
+            stroke-linecap: round;
+        }
+        .score-ring .bg { stroke: var(--gray-300); }
+        .score-ring .fill { stroke: var(--primary); transition: stroke-dashoffset 1.5s ease; }
+        .score-number {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--dark);
+        }
+        .score-label {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .score-sublabel {
+            color: var(--gray-500);
+            font-size: 0.9rem;
+            margin-bottom: 24px;
+        }
+
+        /* Breakdown */
+        .breakdown {
+            text-align: left;
+            background: var(--gray-100);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 24px;
+        }
+        .breakdown h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 14px;
+        }
+        .breakdown-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid var(--gray-300);
+            font-size: 0.88rem;
+        }
+        .breakdown-item:last-child { border-bottom: none; }
+        .breakdown-item .category { color: var(--dark); }
+        .breakdown-item .score-badge {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            font-size: 0.8rem;
+            padding: 3px 10px;
+            border-radius: 20px;
+        }
+        .badge-low { background: #fef2f2; color: var(--danger); }
+        .badge-mid { background: #fffbeb; color: #b45309; }
+        .badge-high { background: #ecfdf5; color: #059669; }
+
+        /* Recommendation */
+        .recommendation {
+            text-align: left;
+            background: var(--primary-light);
+            border-left: 4px solid var(--primary);
+            border-radius: 0 12px 12px 0;
+            padding: 16px 20px;
+            margin-bottom: 24px;
+        }
+        .recommendation h3 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 6px;
+        }
+        .recommendation p {
+            font-size: 0.88rem;
+            color: var(--dark);
+            line-height: 1.5;
+        }
+
+        /* CTA */
+        .cta-section { margin-top: 8px; }
+        .btn-cta {
+            display: inline-block;
+            background: var(--cta);
+            color: var(--white);
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            padding: 16px 36px;
+            border-radius: 12px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-decoration: none;
+        }
+        .btn-cta:hover { background: var(--cta-dark); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(249,115,22,0.3); }
+        .cta-subtext {
+            font-size: 0.8rem;
+            color: var(--gray-500);
+            margin-top: 8px;
+        }
+
+        /* Footer */
+        .quiz-footer {
+            text-align: center;
+            padding: 24px 20px;
+            color: rgba(255,255,255,0.6);
+            font-size: 0.8rem;
+        }
+        .quiz-footer a { color: rgba(255,255,255,0.8); text-decoration: none; }
+        .quiz-footer a:hover { color: var(--white); }
+
+        @media (max-width: 480px) {
+            body { padding: 12px; }
+            .quiz-header { padding: 20px 12px 8px; }
+            .question-area, .email-area, .result-area { padding: 20px 16px; }
+            .nav-area { padding: 0 16px 20px; }
+            .option { padding: 12px 14px; font-size: 0.9rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-header">
+        <div class="logo">FLUX DATA SOLUTIONS</div>
+        <h1>What's Your Business Automation Score?</h1>
+        <p>Answer 5 quick questions to see how much revenue your manual processes are costing you.</p>
+    </div>
+
+    <div class="quiz-card">
+        <!-- Progress -->
+        <div class="progress-wrap">
+            <div class="progress-label">
+                <span id="progress-text">Question 1 of 5</span>
+                <span id="progress-pct">0%</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+        </div>
+
+        <!-- Questions -->
+        <div class="question-screen" id="question-screen">
+            <div class="question-area">
+                <div class="question-number" id="q-number">Question 1</div>
+                <div class="question-text" id="q-text"></div>
+                <div class="options" id="options-container"></div>
+            </div>
+            <div class="nav-area">
+                <button class="btn btn-back" id="btn-back" style="visibility:hidden">Back</button>
+                <button class="btn btn-next" id="btn-next" disabled>Next</button>
+            </div>
+        </div>
+
+        <!-- Email capture -->
+        <div class="email-screen" id="email-screen">
+            <div class="email-area">
+                <div class="icon-lock">&#128274;</div>
+                <h2>Your score is ready!</h2>
+                <p>Enter your email to see your personalized Business Automation Score and get a free action plan.</p>
+                <div class="email-form">
+                    <input type="text" id="input-name" placeholder="Your name" autocomplete="given-name">
+                    <input type="email" id="input-email" placeholder="you@company.com" autocomplete="email">
+                    <button class="btn-reveal" id="btn-reveal" disabled>See My Score</button>
+                </div>
+                <div class="privacy-note">We respect your privacy. No spam, ever. Unsubscribe anytime.</div>
+                <div class="skip-link" id="skip-link">Skip and see score</div>
+            </div>
+        </div>
+
+        <!-- Results -->
+        <div class="result-screen" id="result-screen">
+            <div class="result-area">
+                <div class="score-ring">
+                    <svg viewBox="0 0 200 200">
+                        <circle class="bg" cx="100" cy="100" r="85"/>
+                        <circle class="fill" id="score-circle" cx="100" cy="100" r="85"
+                                stroke-dasharray="534" stroke-dashoffset="534"/>
+                    </svg>
+                    <div class="score-number" id="score-number">0</div>
+                </div>
+                <div class="score-label" id="score-label"></div>
+                <div class="score-sublabel" id="score-sublabel"></div>
+
+                <div class="breakdown" id="breakdown"></div>
+                <div class="recommendation" id="recommendation"></div>
+
+                <div class="cta-section">
+                    <a href="https://calendly.com/jack-getfluxdata" class="btn-cta" id="btn-cta">Book Your Free Strategy Call</a>
+                    <div class="cta-subtext">30 minutes. No obligation. We'll review your score together.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="quiz-footer">
+        <a href="https://getfluxdata.com">getfluxdata.com</a> &middot; (609) 731-8641 &middot; jack@getfluxdata.com
+    </div>
+
+    <script>
+    (function() {
+        // ---- Quiz Data ----
+        var questions = [
+            {
+                id: 'leads',
+                text: 'How do you currently track leads and new inquiries?',
+                category: 'Lead Management',
+                options: [
+                    { label: 'Sticky notes, memory, or not at all', score: 5 },
+                    { label: 'Spreadsheets or email folders', score: 10 },
+                    { label: 'A basic CRM (HubSpot Free, Google Contacts, etc.)', score: 15 },
+                    { label: 'A CRM with automated lead capture and scoring', score: 20 }
+                ]
+            },
+            {
+                id: 'followup',
+                text: 'How do you follow up with prospects who don\'t respond?',
+                category: 'Follow-up Process',
+                options: [
+                    { label: 'I usually forget or follow up manually when I remember', score: 5 },
+                    { label: 'I have a mental checklist or calendar reminders', score: 10 },
+                    { label: 'I use email templates and send them one at a time', score: 15 },
+                    { label: 'Automated sequences that follow up until they reply or opt out', score: 20 }
+                ]
+            },
+            {
+                id: 'onboard',
+                text: 'What does your client onboarding process look like?',
+                category: 'Client Onboarding',
+                options: [
+                    { label: 'Ad hoc: every client gets a different experience', score: 5 },
+                    { label: 'A checklist I work through manually', score: 10 },
+                    { label: 'Templated emails and documents sent semi-automatically', score: 15 },
+                    { label: 'Fully automated: contracts, payments, welcome emails, and scheduling', score: 20 }
+                ]
+            },
+            {
+                id: 'invoicing',
+                text: 'How do you handle invoicing and payments?',
+                category: 'Invoicing & Payments',
+                options: [
+                    { label: 'I create invoices manually and chase payments by email or phone', score: 5 },
+                    { label: 'I use a tool (QuickBooks, FreshBooks) but trigger invoices manually', score: 10 },
+                    { label: 'Invoices auto-generate but I still review and send each one', score: 15 },
+                    { label: 'Fully automated: invoices, reminders, and payment collection on autopilot', score: 20 }
+                ]
+            },
+            {
+                id: 'roi',
+                text: 'How do you measure what\'s working in your business?',
+                category: 'Analytics & ROI',
+                options: [
+                    { label: 'Gut feeling and bank balance', score: 5 },
+                    { label: 'I check reports occasionally but nothing is connected', score: 10 },
+                    { label: 'I have a dashboard but it requires manual data entry', score: 15 },
+                    { label: 'Automated dashboards that pull live data from all my tools', score: 20 }
+                ]
+            }
+        ];
+
+        // ---- State ----
+        var currentQ = 0;
+        var answers = {};
+
+        // ---- DOM ----
+        var questionScreen = document.getElementById('question-screen');
+        var emailScreen = document.getElementById('email-screen');
+        var resultScreen = document.getElementById('result-screen');
+        var qNumber = document.getElementById('q-number');
+        var qText = document.getElementById('q-text');
+        var optionsContainer = document.getElementById('options-container');
+        var btnBack = document.getElementById('btn-back');
+        var btnNext = document.getElementById('btn-next');
+        var progressFill = document.getElementById('progress-fill');
+        var progressText = document.getElementById('progress-text');
+        var progressPct = document.getElementById('progress-pct');
+        var inputName = document.getElementById('input-name');
+        var inputEmail = document.getElementById('input-email');
+        var btnReveal = document.getElementById('btn-reveal');
+        var skipLink = document.getElementById('skip-link');
+
+        // ---- Render Question ----
+        function renderQuestion() {
+            var q = questions[currentQ];
+            qNumber.textContent = 'Question ' + (currentQ + 1);
+            qText.textContent = q.text;
+            optionsContainer.innerHTML = '';
+
+            var letters = ['A', 'B', 'C', 'D'];
+            q.options.forEach(function(opt, i) {
+                var div = document.createElement('div');
+                div.className = 'option' + (answers[q.id] === i ? ' selected' : '');
+                div.innerHTML = '<span class="option-letter">' + letters[i] + '</span><span>' + opt.label + '</span>';
+                div.addEventListener('click', function() { selectOption(i); });
+                optionsContainer.appendChild(div);
+            });
+
+            btnBack.style.visibility = currentQ === 0 ? 'hidden' : 'visible';
+            btnNext.disabled = answers[q.id] === undefined;
+            btnNext.textContent = currentQ === questions.length - 1 ? 'See My Score' : 'Next';
+
+            var pct = Math.round((currentQ / questions.length) * 100);
+            progressFill.style.width = pct + '%';
+            progressText.textContent = 'Question ' + (currentQ + 1) + ' of ' + questions.length;
+            progressPct.textContent = pct + '%';
+        }
+
+        function selectOption(index) {
+            answers[questions[currentQ].id] = index;
+            var opts = optionsContainer.querySelectorAll('.option');
+            opts.forEach(function(o, i) {
+                o.className = 'option' + (i === index ? ' selected' : '');
+                o.querySelector('.option-letter').className = 'option-letter';
+            });
+            btnNext.disabled = false;
+        }
+
+        // ---- Navigation ----
+        btnNext.addEventListener('click', function() {
+            if (answers[questions[currentQ].id] === undefined) return;
+            if (currentQ < questions.length - 1) {
+                currentQ++;
+                renderQuestion();
+            } else {
+                showEmailCapture();
+            }
+        });
+
+        btnBack.addEventListener('click', function() {
+            if (currentQ > 0) {
+                currentQ--;
+                renderQuestion();
+            }
+        });
+
+        // ---- Email Capture ----
+        function showEmailCapture() {
+            questionScreen.className = 'question-screen hidden';
+            emailScreen.className = 'email-screen active';
+            progressFill.style.width = '100%';
+            progressText.textContent = 'Almost there!';
+            progressPct.textContent = '100%';
+        }
+
+        function validateEmail(e) { return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(e); }
+
+        function checkEmailForm() {
+            btnReveal.disabled = !validateEmail(inputEmail.value.trim());
+        }
+        inputEmail.addEventListener('input', checkEmailForm);
+        inputName.addEventListener('input', checkEmailForm);
+
+        btnReveal.addEventListener('click', function() {
+            var name = inputName.value.trim();
+            var email = inputEmail.value.trim();
+            if (!validateEmail(email)) return;
+
+            // Fire conversion event for Google Ads
+            if (typeof gtag === 'function') {
+                gtag('event', 'conversion', { send_to: 'AW-17970313271/quiz_lead' });
+            }
+
+            // Send lead data to webhook (fire and forget)
+            try {
+                var payload = { name: name, email: email, source: 'quiz', answers: answers, score: calcScore() };
+                navigator.sendBeacon && navigator.sendBeacon(
+                    'https://api.getfluxdata.com/n8n/webhook/quiz-lead',
+                    new Blob([JSON.stringify(payload)], { type: 'application/json' })
+                );
+            } catch(e) { /* silent */ }
+
+            showResults(name);
+        });
+
+        skipLink.addEventListener('click', function() {
+            showResults('');
+        });
+
+        // ---- Score Calculation ----
+        function calcScore() {
+            var total = 0;
+            questions.forEach(function(q) {
+                var idx = answers[q.id];
+                if (idx !== undefined) total += q.options[idx].score;
+            });
+            return total; // 25-100
+        }
+
+        function getCategoryScore(qId) {
+            var q = questions.find(function(x) { return x.id === qId; });
+            var idx = answers[qId];
+            return idx !== undefined ? q.options[idx].score : 0;
+        }
+
+        // ---- Results ----
+        function showResults(name) {
+            emailScreen.className = 'email-screen';
+            resultScreen.className = 'result-screen active';
+
+            var score = calcScore();
+            var circumference = 2 * Math.PI * 85;
+            var offset = circumference - (score / 100) * circumference;
+
+            // Animate score ring
+            setTimeout(function() {
+                document.getElementById('score-circle').style.strokeDashoffset = offset;
+            }, 100);
+
+            // Animate number
+            var scoreNum = document.getElementById('score-number');
+            var current = 0;
+            var step = Math.max(1, Math.floor(score / 40));
+            var interval = setInterval(function() {
+                current += step;
+                if (current >= score) { current = score; clearInterval(interval); }
+                scoreNum.textContent = current;
+            }, 30);
+
+            // Score color
+            var circle = document.getElementById('score-circle');
+            if (score <= 40) {
+                circle.style.stroke = '#ef4444';
+            } else if (score <= 70) {
+                circle.style.stroke = '#f59e0b';
+            } else {
+                circle.style.stroke = '#10b981';
+            }
+
+            // Labels
+            var label = document.getElementById('score-label');
+            var sublabel = document.getElementById('score-sublabel');
+            if (score <= 35) {
+                label.textContent = 'Manual Mode';
+                label.style.color = '#ef4444';
+                sublabel.textContent = 'Your business is running almost entirely on manual effort. There\'s significant revenue being left on the table.';
+            } else if (score <= 55) {
+                label.textContent = 'Partially Automated';
+                label.style.color = '#b45309';
+                sublabel.textContent = 'You\'ve started automating, but major gaps remain. Every gap is a revenue leak.';
+            } else if (score <= 75) {
+                label.textContent = 'Getting There';
+                label.style.color = '#d97706';
+                sublabel.textContent = 'Solid foundation. A few strategic automations could unlock your next level of growth.';
+            } else {
+                label.textContent = 'Well Automated';
+                label.style.color = '#059669';
+                sublabel.textContent = 'Strong systems in place. Let\'s find the 20% of optimization that drives 80% more results.';
+            }
+
+            // Breakdown
+            var breakdown = document.getElementById('breakdown');
+            var html = '<h3>Your Breakdown</h3>';
+            questions.forEach(function(q) {
+                var s = getCategoryScore(q.id);
+                var badgeClass = s <= 10 ? 'badge-low' : (s <= 15 ? 'badge-mid' : 'badge-high');
+                var badgeText = s <= 10 ? 'Needs Work' : (s <= 15 ? 'Improving' : 'Strong');
+                html += '<div class="breakdown-item"><span class="category">' + q.category + '</span><span class="score-badge ' + badgeClass + '">' + badgeText + '</span></div>';
+            });
+            breakdown.innerHTML = html;
+
+            // Recommendation
+            var rec = document.getElementById('recommendation');
+            var weakest = null;
+            var weakestScore = 999;
+            questions.forEach(function(q) {
+                var s = getCategoryScore(q.id);
+                if (s < weakestScore) { weakestScore = s; weakest = q; }
+            });
+
+            var recText = '';
+            if (weakest) {
+                var recs = {
+                    leads: 'Your biggest opportunity is in lead management. A properly configured CRM with automated lead capture could recover 20-40% of the prospects you\'re currently losing.',
+                    followup: 'Follow-up is your biggest gap. Studies show 80% of sales require 5+ touches, but most businesses give up after 1-2. Automated sequences can handle this 24/7.',
+                    onboard: 'Client onboarding is where you\'re losing the most time. A streamlined, automated onboarding flow can save 5-10 hours per new client and improve first impressions.',
+                    invoicing: 'Invoicing delays directly impact cash flow. Automating your billing can reduce days-to-payment by 40% and eliminate the awkward "did you get my invoice?" follow-ups.',
+                    roi: 'You\'re flying blind without data. The businesses that grow fastest are the ones that can see exactly where their revenue comes from and double down on what works.'
+                };
+                recText = recs[weakest.id] || '';
+            }
+
+            rec.innerHTML = '<h3>Your #1 Opportunity</h3><p>' + recText + '</p>';
+
+            // CTA personalization
+            var greeting = name ? (', ' + name) : '';
+            if (score <= 50) {
+                document.getElementById('btn-cta').textContent = 'Get Your Free Automation Roadmap';
+            }
+        }
+
+        // ---- Keyboard support ----
+        document.addEventListener('keydown', function(e) {
+            if (resultScreen.classList.contains('active') || emailScreen.classList.contains('active')) return;
+            var key = e.key;
+            if (key >= '1' && key <= '4') {
+                selectOption(parseInt(key) - 1);
+            } else if (key === 'a' || key === 'A') { selectOption(0); }
+            else if (key === 'b' || key === 'B') { selectOption(1); }
+            else if (key === 'c' || key === 'C') { selectOption(2); }
+            else if (key === 'd' || key === 'D') { selectOption(3); }
+            else if (key === 'Enter' && !btnNext.disabled) { btnNext.click(); }
+        });
+
+        // ---- Init ----
+        renderQuestion();
+    })();
+    </script>
+</body>
+</html>
