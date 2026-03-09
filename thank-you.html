@@ -26,9 +26,9 @@
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'AW-17970313271');
-        // Fire conversion event on page load (user just booked a call)
-        gtag('event', 'conversion', {
-            'send_to': 'AW-17970313271/tRXaCOK_5v4bELfw9PhC',
+        // Track call booking as engagement event (real conversions fire on signup only)
+        gtag('event', 'call_booked', {
+            'send_to': 'AW-17970313271',
             'value': 100.0,
             'currency': 'USD'
         });

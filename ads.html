@@ -30,10 +30,10 @@
         gtag('js', new Date());
         gtag('config', 'AW-17970313271');
 
-        // Fire conversion on CTA click
+        // Track CTA click as engagement (not a conversion - real conversions fire on signup only)
         function trackConversion(url) {
-            gtag('event', 'conversion', {
-                'send_to': 'AW-17970313271/tRXaCOK_5v4bELfw9PhC',
+            gtag('event', 'cta_click', {
+                'send_to': 'AW-17970313271',
                 'event_callback': function() {
                     if (url) { window.open(url, '_blank'); }
                 }
