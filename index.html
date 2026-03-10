@@ -83,7 +83,7 @@
     {
       "@context": "https://schema.org", "@type": "FAQPage",
       "mainEntity": [
-        { "@type": "Question", "name": "Does it sound like a robot?", "acceptedAnswer": { "@type": "Answer", "text": "No. Our AI uses natural, conversational speech. Most callers don't realize they're talking to an AI." } },
+        { "@type": "Question", "name": "Does it sound like a robot?", "acceptedAnswer": { "@type": "Answer", "text": "No. Our AI uses natural, conversational speech. Most callers don't realize they're talking to an AI. Call (855) 329-7357 right now to hear it yourself." } },
         { "@type": "Question", "name": "What happens during an emergency?", "acceptedAnswer": { "@type": "Answer", "text": "You define what counts as an emergency. The AI detects those situations and calls or texts you immediately." } },
         { "@type": "Question", "name": "Can it book appointments?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. It connects to your calendar and books jobs in real time while the customer is on the phone." } },
         { "@type": "Question", "name": "What if I already have a business number?", "acceptedAnswer": { "@type": "Answer", "text": "Forward your existing number to your Flux Receptionist line. You keep your number." } },
@@ -248,6 +248,29 @@
             content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
             background: linear-gradient(90deg, transparent, var(--blue), transparent);
         }
+        .demo-lines {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 12px; margin-top: 24px; text-align: left;
+        }
+        .demo-line-card {
+            padding: 16px; border-radius: 10px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--border);
+            transition: border-color 0.2s;
+        }
+        .demo-line-card:hover { border-color: var(--border-hover); }
+        .demo-line-card .demo-line-type {
+            font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 0.08em; color: var(--blue-bright); margin-bottom: 4px;
+        }
+        .demo-line-card .demo-line-name {
+            font-size: 0.9rem; font-weight: 600; color: var(--white); margin-bottom: 6px;
+        }
+        .demo-line-card a {
+            font-size: 0.85rem; font-weight: 600; color: var(--green);
+            text-decoration: none;
+        }
+        .demo-line-card a:hover { text-decoration: underline; }
         .demo-label {
             text-transform: uppercase; letter-spacing: 0.1em;
             font-size: 0.75rem; font-weight: 700; color: var(--blue-bright);
@@ -588,7 +611,24 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
                 (855) 329-7357
             </a>
-            <p class="demo-hint">It's set up as Comfort Zone HVAC. Ask anything a customer would ask.</p>
+            <p class="demo-hint">Try all three. Ask about pricing, book appointments, report emergencies.</p>
+            <div class="demo-lines">
+                <div class="demo-line-card">
+                    <div class="demo-line-type">HVAC</div>
+                    <div class="demo-line-name">Comfort Zone HVAC</div>
+                    <a href="tel:+18553297357">(855) 329-7357</a>
+                </div>
+                <div class="demo-line-card">
+                    <div class="demo-line-type">Plumbing</div>
+                    <div class="demo-line-name">Mobile Pro Plumbing</div>
+                    <a href="tel:+15632786674">(563) 278-6674</a>
+                </div>
+                <div class="demo-line-card">
+                    <div class="demo-line-type">Towing</div>
+                    <div class="demo-line-name">Rapid Tow NJ</div>
+                    <a href="tel:+19204813421">(920) 481-3421</a>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -707,7 +747,7 @@
         <h2 class="section-title">One plan. Everything included.</h2>
         <div class="pricing-card">
             <div class="pricing-amount">$249<span>/mo</span></div>
-            <p class="pricing-desc">200 minutes included. $1.50/min after that.</p>
+            <p class="pricing-desc">200 minutes included. $0.55/min overage.</p>
             <ul class="pricing-features">
                 <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> 24/7 AI call answering</li>
                 <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Appointment booking</li>
