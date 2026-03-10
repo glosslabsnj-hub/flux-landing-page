@@ -58,827 +58,746 @@
       "@type": "SoftwareApplication",
       "@id": "https://getfluxdata.com/#software",
       "name": "Flux Receptionist",
-      "applicationCategory": "BusinessApplication",
-      "description": "AI phone receptionist that answers calls 24/7, books appointments automatically, handles emergencies, and sends SMS confirmations. Built for home service businesses.",
+      "description": "AI phone receptionist for home service businesses. Answers calls 24/7, books appointments, routes emergencies.",
       "url": "https://getfluxdata.com",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
       "offers": {
         "@type": "Offer",
-        "price": "249",
+        "price": "249.00",
         "priceCurrency": "USD",
-        "priceSpecification": { "@type": "RecurringChargeSpecification", "billingDuration": 1, "billingIncrement": "P1M", "price": "249", "priceCurrency": "USD" },
-        "availability": "https://schema.org/InStock",
-        "url": "https://app.getfluxdata.com/signup"
+        "priceValidUntil": "2027-12-31"
       },
-      "publisher": {
-        "@type": "Organization", "name": "Flux Data Solutions", "email": "jack@getfluxdata.com", "url": "https://getfluxdata.com", "telephone": "+1-609-731-8641",
-        "sameAs": ["https://x.com/FluxDataHQ", "https://www.linkedin.com/in/jack-angelini-83b7243b2"]
-      },
-      "featureList": ["24/7 AI call answering", "Automatic appointment booking", "Emergency routing", "SMS confirmations", "Call transcripts and recordings", "Live dashboard"]
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "47"
+      }
     }
-    </script>
-    <script type="application/ld+json">
-    { "@context": "https://schema.org", "@type": "WebSite", "@id": "https://getfluxdata.com/#website", "name": "Flux Receptionist", "url": "https://getfluxdata.com", "inLanguage": "en-US" }
     </script>
     <script type="application/ld+json">
     {
-      "@context": "https://schema.org", "@type": "FAQPage",
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
       "mainEntity": [
-        { "@type": "Question", "name": "Does it sound like a robot?", "acceptedAnswer": { "@type": "Answer", "text": "No. Our AI uses natural, conversational speech. Most callers don't realize they're talking to an AI. Call (855) 329-7357 right now to hear it yourself." } },
-        { "@type": "Question", "name": "What happens during an emergency?", "acceptedAnswer": { "@type": "Answer", "text": "You define what counts as an emergency. The AI detects those situations and calls or texts you immediately." } },
-        { "@type": "Question", "name": "Can it book appointments?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. It connects to your calendar and books jobs in real time while the customer is on the phone." } },
-        { "@type": "Question", "name": "What if I already have a business number?", "acceptedAnswer": { "@type": "Answer", "text": "Forward your existing number to your Flux Receptionist line. You keep your number." } },
-        { "@type": "Question", "name": "How fast can I get started?", "acceptedAnswer": { "@type": "Answer", "text": "Most businesses are live within 24 hours. Setup takes about 10 minutes." } },
-        { "@type": "Question", "name": "What industries does it work for?", "acceptedAnswer": { "@type": "Answer", "text": "Any service business that gets phone calls. HVAC, plumbing, electrical, towing, contracting, landscaping, and more." } }
+        {
+          "@type": "Question",
+          "name": "Does it sound like a robot?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. Flux uses advanced AI voice technology that sounds natural and conversational. The best way to judge? Call our demo line at (855) 329-7357 and see for yourself." }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens during emergencies?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Flux detects emergency keywords (burst pipe, no heat, gas smell) and immediately routes the call to your on-call technician or emergency line. No delays." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can it book appointments?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Flux connects to your calendar, checks availability, and books appointments in real-time. Customers get SMS confirmations automatically." }
+        },
+        {
+          "@type": "Question",
+          "name": "I already have a business phone number. Do I need a new one?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. You keep your existing number. Just forward your calls to Flux when you want AI answering (after hours, on job sites, or 24/7). You stay in control." }
+        },
+        {
+          "@type": "Question",
+          "name": "How fast can I start?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Most businesses are live within 24 hours. Sign up, answer a few questions about your business, set up call forwarding, and you are done." }
+        },
+        {
+          "@type": "Question",
+          "name": "What industries does Flux support?",
+          "acceptedAnswer": { "@type": "Answer", "text": "HVAC, plumbing, electrical, general contracting, roofing, towing, auto repair, and more. Any home service or field service business that misses calls." }
+        }
       ]
     }
     </script>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Flux Receptionist",
+      "url": "https://getfluxdata.com"
+    }
+    </script>
 
     <style>
-        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
+      *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-        :root {
-            --bg: #09090B;
-            --bg-elevated: #111114;
-            --bg-card: rgba(255,255,255,0.04);
-            --border: rgba(255,255,255,0.08);
-            --border-hover: rgba(59,130,246,0.5);
-            --blue: #3B82F6;
-            --blue-bright: #60A5FA;
-            --blue-glow: rgba(59,130,246,0.15);
-            --green: #22C55E;
-            --green-dim: rgba(34,197,94,0.12);
-            --white: #FFFFFF;
-            --gray-50: #FAFAFA;
-            --gray-100: #F4F4F5;
-            --gray-300: #D4D4D8;
-            --gray-400: #A1A1AA;
-            --gray-500: #71717A;
-            --red: #EF4444;
-            --red-dim: rgba(239,68,68,0.12);
-        }
+      :root {
+        --bg: #09090b;
+        --bg-subtle: #111113;
+        --bg-card: #18181b;
+        --bg-card-hover: #1f1f23;
+        --border: #27272a;
+        --border-subtle: #1e1e21;
+        --text: #fafafa;
+        --text-muted: #a1a1aa;
+        --text-dim: #71717a;
+        --blue: #3B82F6;
+        --blue-hover: #2563EB;
+        --blue-glow: rgba(59, 130, 246, 0.15);
+        --green: #22c55e;
+        --green-glow: rgba(34, 197, 94, 0.15);
+        --radius: 12px;
+        --radius-lg: 16px;
+      }
 
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: var(--bg);
-            color: var(--gray-300);
-            line-height: 1.6;
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-        }
+      html { scroll-behavior: smooth; }
 
-        .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+      body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        overflow-x: hidden;
+      }
 
-        /* ===== NAV ===== */
-        nav {
-            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-            padding: 16px 24px;
-            background: rgba(9,9,11,0.8);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--border);
-        }
-        .nav-inner {
-            max-width: 1120px; margin: 0 auto;
-            display: flex; align-items: center; justify-content: space-between;
-        }
-        .nav-logo {
-            font-size: 1.125rem; font-weight: 700; color: var(--white);
-            text-decoration: none; display: flex; align-items: center; gap: 8px;
-        }
-        .nav-logo svg { width: 24px; height: 24px; }
-        .nav-cta {
-            display: inline-flex; align-items: center; padding: 10px 20px;
-            background: var(--blue); color: var(--white);
-            font-size: 0.875rem; font-weight: 600; border-radius: 8px;
-            text-decoration: none; cursor: pointer;
-            transition: background 0.2s, transform 0.2s;
-        }
-        .nav-cta:hover { background: #2563EB; transform: translateY(-1px); }
+      /* Typography */
+      h1 { font-size: clamp(2.25rem, 5vw, 3.75rem); font-weight: 700; line-height: 1.1; letter-spacing: -0.025em; }
+      h2 { font-size: clamp(1.75rem, 3.5vw, 2.5rem); font-weight: 700; line-height: 1.15; letter-spacing: -0.02em; }
+      h3 { font-size: 1.25rem; font-weight: 600; line-height: 1.3; }
+      p { color: var(--text-muted); }
 
-        /* ===== HERO ===== */
-        .hero {
-            padding: 140px 0 100px;
-            text-align: center;
-            position: relative;
-        }
-        .hero::before {
-            content: ''; position: absolute; top: 80px; left: 50%; transform: translateX(-50%);
-            width: 600px; height: 600px;
-            background: radial-gradient(circle, rgba(59,130,246,0.08) 0%, transparent 70%);
-            pointer-events: none;
-        }
-        .hero-badge {
-            display: inline-flex; align-items: center; gap: 8px;
-            padding: 6px 14px; border-radius: 100px;
-            background: var(--green-dim); border: 1px solid rgba(34,197,94,0.2);
-            font-size: 0.8rem; font-weight: 600; color: var(--green);
-            margin-bottom: 24px;
-        }
-        .hero-badge svg { width: 14px; height: 14px; }
-        .hero h1 {
-            font-size: clamp(2.25rem, 5vw, 3.75rem);
-            font-weight: 800; color: var(--white);
-            line-height: 1.1; letter-spacing: -0.03em;
-            margin-bottom: 20px; max-width: 720px; margin-left: auto; margin-right: auto;
-        }
-        .hero h1 .highlight {
-            background: linear-gradient(135deg, var(--blue) 0%, var(--blue-bright) 100%);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        .hero-sub {
-            font-size: clamp(1rem, 2vw, 1.2rem);
-            color: var(--gray-400); max-width: 560px;
-            margin: 0 auto 40px; line-height: 1.7;
-        }
-        .hero-ctas {
-            display: flex; gap: 12px; justify-content: center;
-            flex-wrap: wrap; margin-bottom: 40px;
-        }
-        .btn-primary {
-            display: inline-flex; align-items: center; gap: 8px;
-            padding: 14px 28px; background: var(--blue); color: var(--white);
-            font-size: 1rem; font-weight: 600; border-radius: 10px;
-            text-decoration: none; cursor: pointer; border: none;
-            transition: all 0.2s;
-            box-shadow: 0 0 20px rgba(59,130,246,0.25), 0 4px 12px rgba(0,0,0,0.3);
-        }
-        .btn-primary:hover { background: #2563EB; transform: translateY(-2px); box-shadow: 0 0 30px rgba(59,130,246,0.35), 0 8px 20px rgba(0,0,0,0.3); }
-        .btn-secondary {
-            display: inline-flex; align-items: center; gap: 8px;
-            padding: 14px 28px; background: transparent; color: var(--white);
-            font-size: 1rem; font-weight: 600; border-radius: 10px;
-            text-decoration: none; cursor: pointer;
-            border: 1px solid var(--border);
-            transition: all 0.2s;
-        }
-        .btn-secondary:hover { border-color: var(--border-hover); background: rgba(59,130,246,0.05); }
-        .btn-secondary svg { width: 18px; height: 18px; }
+      a { color: inherit; text-decoration: none; }
 
-        .trust-row {
-            display: flex; gap: 28px; justify-content: center;
-            flex-wrap: wrap; position: relative; z-index: 2;
-        }
-        .trust-item {
-            display: flex; align-items: center; gap: 6px;
-            font-size: 0.85rem; color: var(--gray-500); font-weight: 500;
-        }
-        .trust-item svg { width: 16px; height: 16px; color: var(--green); flex-shrink: 0; }
+      /* Container */
+      .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
 
-        /* ===== DEMO SECTION ===== */
-        .demo-section {
-            padding: 80px 0;
-            position: relative;
-        }
-        .demo-card {
-            max-width: 640px; margin: 0 auto;
-            background: var(--bg-elevated);
-            border: 1px solid var(--border);
-            border-radius: 16px; padding: 48px 40px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        .demo-card::before {
-            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
-            background: linear-gradient(90deg, transparent, var(--blue), transparent);
-        }
-        .demo-lines {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 12px; margin-top: 24px; text-align: left;
-        }
-        .demo-line-card {
-            padding: 16px; border-radius: 10px;
-            background: rgba(255,255,255,0.03);
-            border: 1px solid var(--border);
-            transition: border-color 0.2s;
-        }
-        .demo-line-card:hover { border-color: var(--border-hover); }
-        .demo-line-card .demo-line-type {
-            font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
-            letter-spacing: 0.08em; color: var(--blue-bright); margin-bottom: 4px;
-        }
-        .demo-line-card .demo-line-name {
-            font-size: 0.9rem; font-weight: 600; color: var(--white); margin-bottom: 6px;
-        }
-        .demo-line-card a {
-            font-size: 0.85rem; font-weight: 600; color: var(--green);
-            text-decoration: none;
-        }
-        .demo-line-card a:hover { text-decoration: underline; }
-        .demo-label {
-            text-transform: uppercase; letter-spacing: 0.1em;
-            font-size: 0.75rem; font-weight: 700; color: var(--blue-bright);
-            margin-bottom: 16px;
-        }
-        .demo-card h2 {
-            font-size: 1.5rem; font-weight: 700; color: var(--white);
-            margin-bottom: 12px;
-        }
-        .demo-card p {
-            color: var(--gray-400); margin-bottom: 32px;
-            font-size: 0.95rem; max-width: 420px; margin-left: auto; margin-right: auto;
-        }
-        .demo-phone {
-            display: inline-flex; align-items: center; gap: 12px;
-            font-size: clamp(1.5rem, 3.5vw, 2rem); font-weight: 800;
-            color: var(--white); text-decoration: none;
-            padding: 16px 32px; border-radius: 12px;
-            background: linear-gradient(135deg, rgba(59,130,246,0.15) 0%, rgba(59,130,246,0.05) 100%);
-            border: 1px solid rgba(59,130,246,0.3);
-            transition: all 0.2s; cursor: pointer;
-        }
-        .demo-phone:hover { background: linear-gradient(135deg, rgba(59,130,246,0.25) 0%, rgba(59,130,246,0.1) 100%); border-color: var(--blue); transform: translateY(-2px); }
-        .demo-phone svg { width: 28px; height: 28px; color: var(--green); }
-        .demo-hint {
-            margin-top: 16px; font-size: 0.8rem; color: var(--gray-500);
-        }
+      /* Buttons */
+      .btn {
+        display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+        padding: 14px 28px; border-radius: 10px; font-size: 1rem; font-weight: 600;
+        cursor: pointer; border: none; transition: all 0.2s ease;
+        text-decoration: none; line-height: 1;
+      }
+      .btn-primary {
+        background: var(--blue); color: white;
+        box-shadow: 0 0 20px var(--blue-glow), inset 0 1px 0 rgba(255,255,255,0.1);
+      }
+      .btn-primary:hover { background: var(--blue-hover); transform: translateY(-1px); box-shadow: 0 0 30px var(--blue-glow); }
+      .btn-secondary {
+        background: transparent; color: var(--text); border: 1px solid var(--border);
+      }
+      .btn-secondary:hover { background: var(--bg-card); border-color: var(--text-dim); }
+      .btn-green {
+        background: var(--green); color: white;
+        box-shadow: 0 0 20px var(--green-glow);
+      }
+      .btn-green:hover { background: #16a34a; transform: translateY(-1px); }
+      .btn-large { padding: 18px 36px; font-size: 1.125rem; border-radius: 12px; }
 
-        /* ===== PAIN POINTS ===== */
-        .pain-section { padding: 80px 0; }
-        .section-label {
-            text-transform: uppercase; letter-spacing: 0.1em;
-            font-size: 0.75rem; font-weight: 700; color: var(--blue-bright);
-            text-align: center; margin-bottom: 12px;
-        }
-        .section-title {
-            font-size: clamp(1.5rem, 3vw, 2.25rem);
-            font-weight: 800; color: var(--white);
-            text-align: center; margin-bottom: 48px;
-            letter-spacing: -0.02em;
-        }
-        .pain-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-        .pain-card {
-            background: var(--bg-card); border: 1px solid var(--border);
-            border-radius: 12px; padding: 28px;
-            transition: border-color 0.2s;
-        }
-        .pain-card:hover { border-color: var(--border-hover); }
-        .pain-stat {
-            font-size: 2.25rem; font-weight: 800; color: var(--red);
-            line-height: 1; margin-bottom: 12px;
-        }
-        .pain-card h3 {
-            font-size: 1rem; font-weight: 600; color: var(--white);
-            margin-bottom: 8px;
-        }
-        .pain-card p { font-size: 0.875rem; color: var(--gray-500); line-height: 1.6; }
+      /* Section badge */
+      .badge {
+        display: inline-flex; align-items: center; gap: 6px;
+        padding: 6px 14px; border-radius: 100px;
+        background: var(--blue-glow); color: var(--blue);
+        font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.02em;
+        border: 1px solid rgba(59, 130, 246, 0.2);
+      }
 
-        /* ===== HOW IT WORKS ===== */
-        .how-section {
-            padding: 80px 0;
-            border-top: 1px solid var(--border);
-        }
-        .steps-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 32px;
-        }
-        .step {
-            text-align: center; padding: 32px 24px;
-        }
-        .step-num {
-            display: inline-flex; align-items: center; justify-content: center;
-            width: 48px; height: 48px; border-radius: 12px;
-            background: var(--blue-glow); border: 1px solid rgba(59,130,246,0.2);
-            font-size: 1.125rem; font-weight: 700; color: var(--blue-bright);
-            margin-bottom: 20px;
-        }
-        .step h3 {
-            font-size: 1.1rem; font-weight: 700; color: var(--white);
-            margin-bottom: 8px;
-        }
-        .step p { font-size: 0.9rem; color: var(--gray-400); max-width: 300px; margin: 0 auto; }
+      /* ═══ NAV ═══ */
+      nav {
+        position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+        background: rgba(9, 9, 11, 0.8); backdrop-filter: blur(16px) saturate(180%);
+        border-bottom: 1px solid var(--border-subtle);
+      }
+      .nav-inner {
+        display: flex; align-items: center; justify-content: space-between;
+        height: 64px; max-width: 1120px; margin: 0 auto; padding: 0 24px;
+      }
+      .nav-logo {
+        display: flex; align-items: center; gap: 10px;
+        font-size: 1.125rem; font-weight: 700; color: var(--text);
+      }
+      .nav-logo svg { width: 28px; height: 28px; }
+      .nav-links { display: flex; align-items: center; gap: 32px; }
+      .nav-link { color: var(--text-muted); font-size: 0.875rem; font-weight: 500; transition: color 0.15s; }
+      .nav-link:hover { color: var(--text); }
+      .nav-cta { padding: 10px 20px; font-size: 0.875rem; }
 
-        /* ===== FEATURES ===== */
-        .features-section {
-            padding: 80px 0;
-            border-top: 1px solid var(--border);
-        }
-        .features-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-        .feature-card {
-            background: var(--bg-card); border: 1px solid var(--border);
-            border-radius: 12px; padding: 28px;
-            transition: border-color 0.2s;
-        }
-        .feature-card:hover { border-color: var(--border-hover); }
-        .feature-icon {
-            width: 40px; height: 40px; border-radius: 10px;
-            display: flex; align-items: center; justify-content: center;
-            margin-bottom: 16px;
-        }
-        .feature-icon svg { width: 20px; height: 20px; }
-        .feature-icon.blue { background: var(--blue-glow); color: var(--blue-bright); }
-        .feature-icon.green { background: var(--green-dim); color: var(--green); }
-        .feature-icon.red { background: var(--red-dim); color: var(--red); }
-        .feature-card h3 {
-            font-size: 1rem; font-weight: 600; color: var(--white);
-            margin-bottom: 6px;
-        }
-        .feature-card p { font-size: 0.875rem; color: var(--gray-500); line-height: 1.6; }
+      @media (max-width: 768px) {
+        .nav-links { gap: 16px; }
+        .nav-link { display: none; }
+      }
 
-        /* ===== PRICING ===== */
-        .pricing-section {
-            padding: 80px 0;
-            border-top: 1px solid var(--border);
-        }
-        .pricing-card {
-            max-width: 480px; margin: 0 auto;
-            background: var(--bg-elevated);
-            border: 1px solid rgba(59,130,246,0.3);
-            border-radius: 16px; padding: 40px;
-            text-align: center; position: relative;
-        }
-        .pricing-card::before {
-            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
-            background: linear-gradient(90deg, transparent, var(--blue), transparent);
-        }
-        .pricing-amount {
-            font-size: 3.5rem; font-weight: 800; color: var(--white);
-            line-height: 1;
-        }
-        .pricing-amount span { font-size: 1.125rem; font-weight: 500; color: var(--gray-500); }
-        .pricing-desc {
-            color: var(--gray-400); margin: 8px 0 28px;
-            font-size: 0.95rem;
-        }
-        .pricing-features {
-            list-style: none; text-align: left;
-            margin-bottom: 32px;
-        }
-        .pricing-features li {
-            display: flex; align-items: flex-start; gap: 10px;
-            padding: 8px 0; font-size: 0.9rem; color: var(--gray-300);
-            border-bottom: 1px solid var(--border);
-        }
-        .pricing-features li:last-child { border-bottom: none; }
-        .pricing-features li svg { width: 18px; height: 18px; color: var(--green); flex-shrink: 0; margin-top: 2px; }
-        .pricing-cta {
-            display: block; width: 100%; padding: 16px;
-            background: var(--blue); color: var(--white);
-            font-size: 1rem; font-weight: 600; border-radius: 10px;
-            text-decoration: none; cursor: pointer; border: none;
-            transition: all 0.2s; text-align: center;
-            box-shadow: 0 0 20px rgba(59,130,246,0.2);
-        }
-        .pricing-cta:hover { background: #2563EB; transform: translateY(-1px); }
-        .pricing-note {
-            margin-top: 12px; font-size: 0.8rem; color: var(--gray-500);
-        }
+      /* ═══ HERO ═══ */
+      .hero {
+        padding: 140px 0 100px; text-align: center;
+        background: radial-gradient(ellipse 80% 50% at 50% -20%, var(--blue-glow), transparent);
+      }
+      .hero h1 { max-width: 800px; margin: 0 auto 20px; }
+      .hero h1 span { color: var(--blue); }
+      .hero .subtitle {
+        font-size: clamp(1.0625rem, 2vw, 1.25rem); color: var(--text-muted);
+        max-width: 600px; margin: 0 auto 40px; line-height: 1.6;
+      }
+      .hero-ctas { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 48px; }
+      .trust-badges {
+        display: flex; gap: 32px; justify-content: center; flex-wrap: wrap;
+        color: var(--text-dim); font-size: 0.875rem;
+      }
+      .trust-badge {
+        display: flex; align-items: center; gap: 8px;
+      }
+      .trust-badge svg { width: 16px; height: 16px; color: var(--green); flex-shrink: 0; }
 
-        /* ===== FAQ ===== */
-        .faq-section {
-            padding: 80px 0;
-            border-top: 1px solid var(--border);
-        }
-        .faq-list {
-            max-width: 680px; margin: 0 auto;
-        }
-        .faq-item {
-            border-bottom: 1px solid var(--border);
-        }
-        .faq-q {
-            width: 100%; padding: 20px 0;
-            display: flex; align-items: center; justify-content: space-between;
-            background: none; border: none; cursor: pointer;
-            font-size: 1rem; font-weight: 600; color: var(--white);
-            text-align: left; font-family: inherit;
-            transition: color 0.2s;
-        }
-        .faq-q:hover { color: var(--blue-bright); }
-        .faq-q svg {
-            width: 20px; height: 20px; color: var(--gray-500);
-            transition: transform 0.3s; flex-shrink: 0; margin-left: 16px;
-        }
-        .faq-q[aria-expanded="true"] svg { transform: rotate(45deg); }
-        .faq-a {
-            max-height: 0; overflow: hidden;
-            transition: max-height 0.3s ease;
-        }
-        .faq-a-inner {
-            padding: 0 0 20px;
-            font-size: 0.9rem; color: var(--gray-400); line-height: 1.7;
-        }
+      /* ═══ DEMO SECTION ═══ */
+      .demo-section { padding: 80px 0; }
+      .demo-card {
+        background: linear-gradient(135deg, rgba(59, 130, 246, 0.08), rgba(34, 197, 94, 0.05));
+        border: 1px solid rgba(59, 130, 246, 0.2);
+        border-radius: var(--radius-lg); padding: 60px 40px; text-align: center;
+        position: relative; overflow: hidden;
+      }
+      .demo-card::before {
+        content: ''; position: absolute; inset: 0;
+        background: radial-gradient(circle at 50% 0, rgba(59, 130, 246, 0.1), transparent 60%);
+      }
+      .demo-card > * { position: relative; }
+      .demo-phone {
+        display: inline-flex; align-items: center; gap: 12px;
+        font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 700; color: var(--text);
+        margin: 24px 0; letter-spacing: -0.02em;
+      }
+      .demo-phone a { color: var(--blue); text-decoration: none; }
+      .demo-phone a:hover { text-decoration: underline; }
+      .demo-subtitle { font-size: 1.125rem; color: var(--text-muted); max-width: 500px; margin: 0 auto 32px; }
+      .demo-lines {
+        display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 16px; max-width: 720px; margin: 32px auto 0;
+      }
+      .demo-line {
+        background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius);
+        padding: 20px; text-align: center;
+      }
+      .demo-line-label { font-size: 0.75rem; font-weight: 600; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px; }
+      .demo-line-number { font-size: 1.125rem; font-weight: 600; }
+      .demo-line-number a { color: var(--blue); }
+      .demo-line-number a:hover { text-decoration: underline; }
 
-        /* ===== FINAL CTA ===== */
-        .final-cta {
-            padding: 100px 0 80px;
-            text-align: center;
-            position: relative;
-        }
-        .final-cta::before {
-            content: ''; position: absolute; bottom: 100px; left: 50%; transform: translateX(-50%);
-            width: 500px; height: 500px;
-            background: radial-gradient(circle, rgba(59,130,246,0.06) 0%, transparent 70%);
-            pointer-events: none;
-        }
-        .final-cta h2 {
-            font-size: clamp(1.75rem, 4vw, 2.5rem);
-            font-weight: 800; color: var(--white);
-            margin-bottom: 12px; letter-spacing: -0.02em;
-        }
-        .final-cta p {
-            color: var(--gray-400); margin-bottom: 36px;
-            font-size: 1.05rem;
-        }
-        .final-cta .hero-ctas { margin-bottom: 0; }
+      /* ═══ PAIN POINTS ═══ */
+      .pain-section { padding: 80px 0; }
+      .section-header { text-align: center; margin-bottom: 56px; }
+      .section-header h2 { margin-bottom: 16px; }
+      .section-header p { max-width: 560px; margin: 0 auto; font-size: 1.0625rem; }
+      .pain-grid {
+        display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;
+      }
+      .pain-card {
+        background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius);
+        padding: 32px; transition: border-color 0.2s, background 0.2s;
+      }
+      .pain-card:hover { border-color: var(--text-dim); background: var(--bg-card-hover); }
+      .pain-stat {
+        font-size: 2.5rem; font-weight: 700; color: var(--blue);
+        line-height: 1; margin-bottom: 12px;
+      }
+      .pain-card h3 { margin-bottom: 8px; }
+      .pain-card p { font-size: 0.9375rem; }
 
-        /* ===== FOOTER ===== */
-        footer {
-            padding: 40px 0;
-            border-top: 1px solid var(--border);
-            text-align: center;
-        }
-        .footer-links {
-            display: flex; gap: 24px; justify-content: center;
-            flex-wrap: wrap; margin-bottom: 16px;
-        }
-        .footer-links a {
-            font-size: 0.85rem; color: var(--gray-500);
-            text-decoration: none; transition: color 0.2s;
-        }
-        .footer-links a:hover { color: var(--white); }
-        .footer-copy { font-size: 0.8rem; color: var(--gray-500); }
+      /* ═══ HOW IT WORKS ═══ */
+      .how-section { padding: 80px 0; }
+      .steps {
+        display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px;
+        margin-top: 56px;
+      }
+      .step { text-align: center; }
+      .step-number {
+        display: inline-flex; align-items: center; justify-content: center;
+        width: 48px; height: 48px; border-radius: 50%;
+        background: var(--blue-glow); color: var(--blue);
+        font-size: 1.25rem; font-weight: 700; margin-bottom: 20px;
+        border: 1px solid rgba(59, 130, 246, 0.2);
+      }
+      .step h3 { margin-bottom: 8px; }
+      .step p { font-size: 0.9375rem; max-width: 320px; margin: 0 auto; }
 
-        /* ===== MOBILE ===== */
-        .mobile-sticky {
-            display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 99;
-            padding: 12px 16px;
-            background: rgba(9,9,11,0.95);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-top: 1px solid var(--border);
-        }
-        .mobile-sticky a {
-            display: block; width: 100%; padding: 14px;
-            background: var(--blue); color: var(--white);
-            font-size: 0.95rem; font-weight: 600; border-radius: 10px;
-            text-decoration: none; text-align: center;
-        }
+      /* ═══ FEATURES ═══ */
+      .features-section { padding: 80px 0; }
+      .features-grid {
+        display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px;
+      }
+      .feature-card {
+        background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius);
+        padding: 32px; transition: border-color 0.2s, background 0.2s;
+      }
+      .feature-card:hover { border-color: var(--text-dim); background: var(--bg-card-hover); }
+      .feature-icon {
+        display: inline-flex; align-items: center; justify-content: center;
+        width: 44px; height: 44px; border-radius: 10px;
+        background: var(--blue-glow); color: var(--blue);
+        margin-bottom: 16px;
+        border: 1px solid rgba(59, 130, 246, 0.15);
+      }
+      .feature-icon svg { width: 22px; height: 22px; }
+      .feature-card h3 { margin-bottom: 8px; }
+      .feature-card p { font-size: 0.9375rem; }
 
-        @media (max-width: 768px) {
-            .hero { padding: 120px 0 60px; }
-            .demo-card { padding: 32px 24px; }
-            .mobile-sticky { display: block; }
-            footer { padding-bottom: 80px; }
-            .pain-grid, .features-grid { grid-template-columns: 1fr; }
-            .steps-grid { grid-template-columns: 1fr; gap: 16px; }
-            .step { padding: 20px 16px; }
-        }
+      /* ═══ PRICING ═══ */
+      .pricing-section { padding: 80px 0; }
+      .pricing-card {
+        max-width: 480px; margin: 0 auto;
+        background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg);
+        padding: 48px 40px; text-align: center;
+        position: relative; overflow: hidden;
+      }
+      .pricing-card::before {
+        content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+        background: linear-gradient(90deg, var(--blue), var(--green));
+      }
+      .pricing-price {
+        font-size: 3.5rem; font-weight: 700; color: var(--text); line-height: 1;
+        margin: 24px 0 8px;
+      }
+      .pricing-price span { font-size: 1.25rem; font-weight: 500; color: var(--text-muted); }
+      .pricing-minutes { font-size: 1rem; color: var(--text-muted); margin-bottom: 32px; }
+      .pricing-features {
+        list-style: none; text-align: left; margin-bottom: 32px;
+      }
+      .pricing-features li {
+        display: flex; align-items: flex-start; gap: 12px;
+        padding: 10px 0; font-size: 0.9375rem; color: var(--text-muted);
+        border-bottom: 1px solid var(--border-subtle);
+      }
+      .pricing-features li:last-child { border-bottom: none; }
+      .pricing-features li svg { width: 18px; height: 18px; color: var(--green); flex-shrink: 0; margin-top: 2px; }
+      .pricing-cta { width: 100%; }
 
-        /* ===== REDUCED MOTION ===== */
-        @media (prefers-reduced-motion: reduce) {
-            *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
-            html { scroll-behavior: auto; }
-        }
+      /* ═══ FAQ ═══ */
+      .faq-section { padding: 80px 0; }
+      .faq-list { max-width: 720px; margin: 56px auto 0; }
+      .faq-item {
+        border-bottom: 1px solid var(--border);
+      }
+      .faq-question {
+        display: flex; align-items: center; justify-content: space-between; gap: 16px;
+        width: 100%; padding: 24px 0; background: none; border: none; color: var(--text);
+        font-size: 1.0625rem; font-weight: 600; text-align: left; cursor: pointer;
+        transition: color 0.15s;
+      }
+      .faq-question:hover { color: var(--blue); }
+      .faq-question svg { width: 20px; height: 20px; color: var(--text-dim); flex-shrink: 0; transition: transform 0.2s; }
+      .faq-item.open .faq-question svg { transform: rotate(45deg); }
+      .faq-answer {
+        max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease;
+      }
+      .faq-item.open .faq-answer { max-height: 300px; padding-bottom: 24px; }
+      .faq-answer p { font-size: 0.9375rem; line-height: 1.7; }
 
-        /* ===== SCROLL ANIMATIONS ===== */
-        .fade-in {
-            opacity: 0; transform: translateY(20px);
-            transition: opacity 0.5s ease, transform 0.5s ease;
-        }
-        .fade-in.visible { opacity: 1; transform: translateY(0); }
+      /* ═══ FINAL CTA ═══ */
+      .final-cta {
+        padding: 100px 0; text-align: center;
+        background: radial-gradient(ellipse 80% 50% at 50% 100%, var(--blue-glow), transparent);
+      }
+      .final-cta h2 { margin-bottom: 16px; }
+      .final-cta p { max-width: 480px; margin: 0 auto 40px; font-size: 1.0625rem; }
+      .final-cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+      /* ═══ FOOTER ═══ */
+      footer {
+        padding: 48px 0; border-top: 1px solid var(--border-subtle);
+      }
+      .footer-inner {
+        display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 24px;
+      }
+      .footer-brand { color: var(--text-dim); font-size: 0.875rem; }
+      .footer-links { display: flex; gap: 24px; }
+      .footer-links a { color: var(--text-dim); font-size: 0.875rem; transition: color 0.15s; }
+      .footer-links a:hover { color: var(--text); }
+
+      /* ═══ SCROLL ANIMATIONS ═══ */
+      .reveal {
+        opacity: 0; transform: translateY(24px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+      }
+      .reveal.visible { opacity: 1; transform: translateY(0); }
+
+      /* ═══ RESPONSIVE ═══ */
+      @media (max-width: 640px) {
+        .hero { padding: 120px 0 64px; }
+        .hero-ctas { flex-direction: column; align-items: center; }
+        .hero-ctas .btn { width: 100%; max-width: 320px; }
+        .trust-badges { gap: 20px; }
+        .demo-card { padding: 40px 24px; }
+        .pain-grid, .features-grid { grid-template-columns: 1fr; }
+        .pricing-card { padding: 36px 24px; }
+        .final-cta-buttons { flex-direction: column; align-items: center; }
+        .final-cta-buttons .btn { width: 100%; max-width: 320px; }
+        .footer-inner { flex-direction: column; text-align: center; }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .reveal { transition: none; opacity: 1; transform: none; }
+        html { scroll-behavior: auto; }
+      }
     </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<!-- NAV -->
+<!-- ═══ NAV ═══ -->
 <nav>
-    <div class="nav-inner">
-        <a href="/" class="nav-logo" aria-label="Flux Receptionist home">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-            Flux Receptionist
-        </a>
-        <a href="https://app.getfluxdata.com/signup" class="nav-cta" onclick="return trackConversion('https://app.getfluxdata.com/signup')">Start Free Trial</a>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="28" height="28" rx="6" fill="#3B82F6"/>
+        <path d="M8 9h12M8 14h8M8 19h10" stroke="white" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      Flux Receptionist
+    </a>
+    <div class="nav-links">
+      <a href="#how-it-works" class="nav-link">How It Works</a>
+      <a href="#pricing" class="nav-link">Pricing</a>
+      <a href="#faq" class="nav-link">FAQ</a>
+      <a href="https://app.getfluxdata.com/signup" class="btn btn-primary nav-cta" onclick="return trackConversion('https://app.getfluxdata.com/signup')">Start Free Trial</a>
     </div>
+  </div>
 </nav>
 
-<!-- HERO -->
+<!-- ═══ HERO ═══ -->
 <section class="hero">
-    <div class="container">
-        <div class="hero-badge">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-5"/></svg>
-            Live in 24 hours
-        </div>
-        <h1>Every missed call is a <span class="highlight">lost customer</span></h1>
-        <p class="hero-sub">AI picks up your phone 24/7. Books appointments. Handles emergencies. Sends confirmations. You never miss another job.</p>
-        <div class="hero-ctas">
-            <a href="https://app.getfluxdata.com/signup" class="btn-primary" onclick="return trackConversion('https://app.getfluxdata.com/signup')">Start Free Trial</a>
-            <a href="tel:+18553297357" class="btn-secondary">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-                Call Our AI: (855) 329-7357
-            </a>
-        </div>
-        <div class="trust-row">
-            <div class="trust-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-                $249/mo
-            </div>
-            <div class="trust-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-                No contracts
-            </div>
-            <div class="trust-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-                Cancel anytime
-            </div>
-            <div class="trust-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-                Setup in 10 min
-            </div>
-        </div>
+  <div class="container">
+    <div class="badge">AI-Powered Phone Answering</div>
+    <h1 style="margin-top: 24px">
+      Your Phone Rang.<br><span>Nobody Answered.</span><br>That Job Went to Your Competitor.
+    </h1>
+    <p class="subtitle">
+      62% of customers who hit voicemail call the next contractor on Google.
+      Flux answers every call, books the job, and routes emergencies. 24/7.
+    </p>
+    <div class="hero-ctas">
+      <a href="https://app.getfluxdata.com/signup" class="btn btn-primary btn-large" onclick="return trackConversion('https://app.getfluxdata.com/signup')">Start Free Trial</a>
+      <a href="tel:+18553297357" class="btn btn-secondary btn-large">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+        Call Our AI: (855) 329-7357
+      </a>
     </div>
+    <div class="trust-badges">
+      <div class="trust-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        $249/mo
+      </div>
+      <div class="trust-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+        Live in 24 hours
+      </div>
+      <div class="trust-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12l2 2 4-4"/></svg>
+        Cancel anytime
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- HEAR IT YOURSELF -->
-<section class="demo-section fade-in">
-    <div class="container">
-        <div class="demo-card">
-            <div class="demo-label">Try it right now</div>
-            <h2>Hear it yourself</h2>
-            <p>Call our demo line. Ask it to book an appointment, handle an emergency, or answer a tough question. Judge for yourself.</p>
-            <a href="tel:+18553297357" class="demo-phone">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-                (855) 329-7357
-            </a>
-            <p class="demo-hint">Try all three. Ask about pricing, book appointments, report emergencies.</p>
-            <div class="demo-lines">
-                <div class="demo-line-card">
-                    <div class="demo-line-type">HVAC</div>
-                    <div class="demo-line-name">Comfort Zone HVAC</div>
-                    <a href="tel:+18553297357">(855) 329-7357</a>
-                </div>
-                <div class="demo-line-card">
-                    <div class="demo-line-type">Plumbing</div>
-                    <div class="demo-line-name">Mobile Pro Plumbing</div>
-                    <a href="tel:+15632786674">(563) 278-6674</a>
-                </div>
-                <div class="demo-line-card">
-                    <div class="demo-line-type">Towing</div>
-                    <div class="demo-line-name">Rapid Tow NJ</div>
-                    <a href="tel:+19204813421">(920) 481-3421</a>
-                </div>
-            </div>
+<!-- ═══ HEAR IT YOURSELF ═══ -->
+<section class="demo-section">
+  <div class="container">
+    <div class="demo-card reveal">
+      <div class="badge" style="background: var(--green-glow); color: var(--green); border-color: rgba(34,197,94,0.2);">Live Demo</div>
+      <h2 style="margin-top: 20px;">Hear It Yourself</h2>
+      <div class="demo-phone">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+        <a href="tel:+18553297357">(855) 329-7357</a>
+      </div>
+      <p class="demo-subtitle">Call right now. Ask it anything. See how it handles your toughest customer.</p>
+      <a href="tel:+18553297357" class="btn btn-green btn-large">Call the Demo Line Now</a>
+
+      <div class="demo-lines">
+        <div class="demo-line">
+          <div class="demo-line-label">HVAC</div>
+          <div class="demo-line-number"><a href="tel:+18553297357">(855) 329-7357</a></div>
         </div>
+        <div class="demo-line">
+          <div class="demo-line-label">Plumbing</div>
+          <div class="demo-line-number"><a href="tel:+15632786674">(563) 278-6674</a></div>
+        </div>
+        <div class="demo-line">
+          <div class="demo-line-label">Towing</div>
+          <div class="demo-line-number"><a href="tel:+19204813421">(920) 481-3421</a></div>
+        </div>
+      </div>
     </div>
+  </div>
 </section>
 
-<!-- PAIN POINTS -->
-<section class="pain-section fade-in">
-    <div class="container">
-        <div class="section-label">The problem</div>
-        <h2 class="section-title">Missed calls are killing your business</h2>
-        <div class="pain-grid">
-            <div class="pain-card">
-                <div class="pain-stat">62%</div>
-                <h3>Won't leave a voicemail</h3>
-                <p>Most callers hang up and call the next contractor on Google. You never even know they called.</p>
-            </div>
-            <div class="pain-card">
-                <div class="pain-stat">$1,200</div>
-                <h3>Average lost job value</h3>
-                <p>One missed HVAC install, one missed plumbing emergency. That's $1,200 gone because nobody picked up.</p>
-            </div>
-            <div class="pain-card">
-                <div class="pain-stat">85%</div>
-                <h3>Call during business hours</h3>
-                <p>But you're on a job site. You can't answer the phone when you're up to your elbows in ductwork.</p>
-            </div>
-            <div class="pain-card">
-                <div class="pain-stat">0.5s</div>
-                <h3>AI picks up instantly</h3>
-                <p style="color: var(--green);">Flux answers in under a second. 24 hours a day, 7 days a week, 365 days a year. Zero missed calls.</p>
-            </div>
-        </div>
+<!-- ═══ PAIN POINTS ═══ -->
+<section class="pain-section">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="badge">The Problem</div>
+      <h2 style="margin-top: 16px;">Every Missed Call Costs You Money</h2>
+      <p>Your phone is ringing while you're on a job site. Here's what that really costs.</p>
     </div>
+    <div class="pain-grid">
+      <div class="pain-card reveal">
+        <div class="pain-stat">62%</div>
+        <h3>Won't Leave a Voicemail</h3>
+        <p>Most callers hang up and call your competitor instead of leaving a message.</p>
+      </div>
+      <div class="pain-card reveal">
+        <div class="pain-stat">$1,200</div>
+        <h3>Average Lost Job</h3>
+        <p>One missed emergency HVAC or plumbing call can be a $1,200+ job gone to someone else.</p>
+      </div>
+      <div class="pain-card reveal">
+        <div class="pain-stat">$50K+</div>
+        <h3>Lost Per Year</h3>
+        <p>Contractors lose $45,000-$120,000 annually to unanswered calls. That's real revenue walking away.</p>
+      </div>
+      <div class="pain-card reveal">
+        <div class="pain-stat" style="color: var(--green)">24/7</div>
+        <h3>Customers Call After Hours</h3>
+        <p>Pipes burst at midnight. AC dies on Sunday. If you're not answering, someone else is getting the job.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- HOW IT WORKS -->
-<section class="how-section fade-in">
-    <div class="container">
-        <div class="section-label">How it works</div>
-        <h2 class="section-title">Live in 24 hours. Seriously.</h2>
-        <div class="steps-grid">
-            <div class="step">
-                <div class="step-num">1</div>
-                <h3>Sign up and tell us about your business</h3>
-                <p>Answer a few questions about your services, hours, and how you want calls handled. Takes 10 minutes.</p>
-            </div>
-            <div class="step">
-                <div class="step-num">2</div>
-                <h3>Train your AI receptionist</h3>
-                <p>The AI learns your pricing, services, service area, and FAQs. It answers like someone who works for you.</p>
-            </div>
-            <div class="step">
-                <div class="step-num">3</div>
-                <h3>Forward your calls</h3>
-                <p>Point your existing business number to Flux. Every call gets answered. Every lead gets captured.</p>
-            </div>
-        </div>
+<!-- ═══ HOW IT WORKS ═══ -->
+<section class="how-section" id="how-it-works">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="badge">Simple Setup</div>
+      <h2 style="margin-top: 16px;">Live in 24 Hours. Seriously.</h2>
+      <p>No complicated software. No IT department. Three steps and you're answering every call.</p>
     </div>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-number">1</div>
+        <h3>Sign Up & Set Up Your Business</h3>
+        <p>Tell us your services, hours, pricing, and service area. Takes about 10 minutes.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-number">2</div>
+        <h3>Train Your AI Brain</h3>
+        <p>Add your FAQs, emergency protocols, and booking preferences. The AI learns your business.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-number">3</div>
+        <h3>Forward Your Calls</h3>
+        <p>Keep your existing number. Just forward calls to Flux. After hours, on job sites, or 24/7.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- FEATURES -->
-<section class="features-section fade-in">
-    <div class="container">
-        <div class="section-label">What it does</div>
-        <h2 class="section-title">Everything a great receptionist does. Nothing extra to manage.</h2>
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon blue">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-                </div>
-                <h3>24/7 call answering</h3>
-                <p>Picks up every call in under a second. Nights, weekends, holidays. Never calls in sick.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon green">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                </div>
-                <h3>Books appointments</h3>
-                <p>Connects to your calendar. Books the job while the customer is still on the phone. Sends them a confirmation.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon red">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-                </div>
-                <h3>Emergency routing</h3>
-                <p>Detects real emergencies and calls you immediately. You define what counts. Gas leak at 2 AM? You'll know.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon green">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
-                </div>
-                <h3>SMS confirmations</h3>
-                <p>Texts the customer their booking details. Texts you the lead info. Everyone's on the same page.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon blue">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-                </div>
-                <h3>Call transcripts</h3>
-                <p>Every conversation recorded and transcribed. See exactly what was said. Review calls from your dashboard.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon blue">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-                </div>
-                <h3>Live dashboard</h3>
-                <p>See every call, booking, and lead in real time. Your business at a glance. Works on your phone too.</p>
-            </div>
-        </div>
+<!-- ═══ FEATURES ═══ -->
+<section class="features-section">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="badge">Features</div>
+      <h2 style="margin-top: 16px;">Everything You Need to Never Miss a Call</h2>
     </div>
+    <div class="features-grid">
+      <div class="feature-card reveal">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <h3>24/7 Call Answering</h3>
+        <p>Every call answered within 2 rings. Nights, weekends, holidays. No hold music. No voicemail.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        </div>
+        <h3>Appointment Booking</h3>
+        <p>Books jobs directly into your calendar. Checks availability in real-time. Customers get SMS confirmation.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon" style="background: var(--green-glow); color: var(--green); border-color: rgba(34,197,94,0.15);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        </div>
+        <h3>Emergency Routing</h3>
+        <p>Detects emergencies (burst pipes, no heat, gas leaks) and instantly routes to your on-call technician.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+        </div>
+        <h3>SMS Confirmations</h3>
+        <p>Automatic text confirmations for every booking. Customers know their appointment is locked in.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        </div>
+        <h3>Call Transcripts</h3>
+        <p>Every conversation transcribed and searchable. Know exactly what was said to every customer.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        <h3>Live Dashboard</h3>
+        <p>See every call, booking, and customer in real-time. Full visibility from your phone or computer.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- PRICING -->
-<section class="pricing-section fade-in" id="pricing">
-    <div class="container">
-        <div class="section-label">Simple pricing</div>
-        <h2 class="section-title">One plan. Everything included.</h2>
-        <div class="pricing-card">
-            <div class="pricing-amount">$249<span>/mo</span></div>
-            <p class="pricing-desc">200 minutes included. $0.55/min overage.</p>
-            <ul class="pricing-features">
-                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> 24/7 AI call answering</li>
-                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Appointment booking</li>
-                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Emergency routing</li>
-                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> SMS confirmations</li>
-                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Call transcripts + recordings</li>
-                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Live dashboard</li>
-                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Custom business brain</li>
-                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Unlimited calls (200 min included)</li>
-            </ul>
-            <a href="https://app.getfluxdata.com/signup" class="pricing-cta" onclick="return trackConversion('https://app.getfluxdata.com/signup')">Start Free Trial</a>
-            <p class="pricing-note">No credit card required. Cancel anytime.</p>
-        </div>
+<!-- ═══ PRICING ═══ -->
+<section class="pricing-section" id="pricing">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="badge">Pricing</div>
+      <h2 style="margin-top: 16px;">One Plan. No Surprises.</h2>
+      <p>Less than a part-time receptionist. More reliable than a full-time one.</p>
     </div>
+    <div class="pricing-card reveal">
+      <h3 style="color: var(--text-muted); font-weight: 500;">Flux Receptionist</h3>
+      <div class="pricing-price">$249<span>/mo</span></div>
+      <p class="pricing-minutes">200 minutes included. $0.55/min after that.</p>
+      <ul class="pricing-features">
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          24/7 AI call answering
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          Appointment booking with calendar sync
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          Emergency call routing
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          SMS confirmations to customers
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          Full call transcripts and recordings
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          Live dashboard and analytics
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          Custom business brain (your services, FAQs, pricing)
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          No contracts. Cancel anytime.
+        </li>
+      </ul>
+      <a href="https://app.getfluxdata.com/signup" class="btn btn-primary btn-large pricing-cta" onclick="return trackConversion('https://app.getfluxdata.com/signup')">Start Free Trial</a>
+    </div>
+  </div>
 </section>
 
-<!-- FAQ -->
-<section class="faq-section fade-in" id="faq">
-    <div class="container">
-        <div class="section-label">Questions</div>
-        <h2 class="section-title">Frequently asked</h2>
-        <div class="faq-list">
-            <div class="faq-item">
-                <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
-                    Does it sound like a robot?
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                </button>
-                <div class="faq-a"><div class="faq-a-inner">No. It uses natural, conversational speech. Most callers don't realize they're talking to an AI unless you tell them. Call our demo line and judge for yourself: (855) 329-7357.</div></div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
-                    What happens during a real emergency?
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                </button>
-                <div class="faq-a"><div class="faq-a-inner">You define what counts as an emergency. Gas leak, burst pipe, no heat in winter -- whatever matters for your business. The AI detects those situations and calls or texts you immediately, no matter the time.</div></div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
-                    Can it actually book appointments?
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                </button>
-                <div class="faq-a"><div class="faq-a-inner">Yes. It connects to your calendar and books jobs in real time while the customer is on the phone. The customer gets a text confirmation. You get the details in your dashboard. No follow-up phone tag.</div></div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
-                    What if I already have a business number?
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                </button>
-                <div class="faq-a"><div class="faq-a-inner">Keep it. Just forward your existing number to your Flux Receptionist line. Your customers call the same number they always have. We handle the rest.</div></div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
-                    How fast can I get started?
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                </button>
-                <div class="faq-a"><div class="faq-a-inner">Most businesses are answering calls within 24 hours of signing up. The setup takes about 10 minutes: answer a few questions about your business, and the AI learns the rest.</div></div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
-                    What industries does it work for?
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                </button>
-                <div class="faq-a"><div class="faq-a-inner">Any service business that gets phone calls. HVAC, plumbing, electrical, general contracting, towing, landscaping, pest control, salons, dental offices, medical clinics, auto shops, and more. If customers call you, Flux answers for you.</div></div>
-            </div>
-        </div>
+<!-- ═══ FAQ ═══ -->
+<section class="faq-section" id="faq">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="badge">FAQ</div>
+      <h2 style="margin-top: 16px;">Common Questions</h2>
     </div>
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+          Does it sound like a robot?
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <div class="faq-answer">
+          <p>No. Flux uses advanced AI voice technology that sounds natural and conversational. The best way to judge? Call our demo line at <a href="tel:+18553297357" style="color: var(--blue)">(855) 329-7357</a> and see for yourself.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+          What happens during emergencies?
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <div class="faq-answer">
+          <p>Flux detects emergency keywords (burst pipe, no heat, gas smell) and immediately routes the call to your on-call technician or emergency line. No delays.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+          Can it book appointments?
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <div class="faq-answer">
+          <p>Yes. Flux connects to your calendar, checks availability, and books appointments in real-time. Customers get SMS confirmations automatically.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+          I already have a business phone number. Do I need a new one?
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <div class="faq-answer">
+          <p>No. You keep your existing number. Just forward your calls to Flux when you want AI answering (after hours, on job sites, or 24/7). You stay in control.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+          How fast can I start?
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <div class="faq-answer">
+          <p>Most businesses are live within 24 hours. Sign up, answer a few questions about your business, set up call forwarding, and you're done.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+          What industries does Flux support?
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <div class="faq-answer">
+          <p>HVAC, plumbing, electrical, general contracting, roofing, towing, auto repair, and more. Any home service or field service business that misses calls.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- FINAL CTA -->
-<section class="final-cta fade-in">
-    <div class="container">
-        <h2>Stop losing calls. Start tonight.</h2>
-        <p>Your competitors are answering their phones. Are you?</p>
-        <div class="hero-ctas">
-            <a href="https://app.getfluxdata.com/signup" class="btn-primary" onclick="return trackConversion('https://app.getfluxdata.com/signup')">Start Free Trial</a>
-            <a href="tel:+18553297357" class="btn-secondary">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-                Call Our AI Demo
-            </a>
-        </div>
+<!-- ═══ FINAL CTA ═══ -->
+<section class="final-cta">
+  <div class="container reveal">
+    <h2>Stop Losing Calls. Start Tonight.</h2>
+    <p>Every hour without Flux is another call going to your competitor. Set up takes 10 minutes.</p>
+    <div class="final-cta-buttons">
+      <a href="https://app.getfluxdata.com/signup" class="btn btn-primary btn-large" onclick="return trackConversion('https://app.getfluxdata.com/signup')">Start Free Trial</a>
+      <a href="tel:+18553297357" class="btn btn-secondary btn-large">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+        Call Demo: (855) 329-7357
+      </a>
     </div>
+  </div>
 </section>
 
-<!-- FOOTER -->
+<!-- ═══ FOOTER ═══ -->
 <footer>
-    <div class="container">
-        <div class="footer-links">
-            <a href="https://app.getfluxdata.com/signup">Sign Up</a>
-            <a href="tel:+18553297357">Demo: (855) 329-7357</a>
-            <a href="#pricing">Pricing</a>
-            <a href="#faq">FAQ</a>
-            <a href="mailto:jack@getfluxdata.com">Contact</a>
-            <a href="https://www.linkedin.com/in/jack-angelini-83b7243b2" target="_blank" rel="noopener">LinkedIn</a>
-            <a href="https://x.com/FluxDataHQ" target="_blank" rel="noopener">Twitter</a>
-        </div>
-        <p class="footer-copy">Flux Data Solutions. Built for contractors who are too busy to answer the phone.</p>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">Flux Data Solutions. A division of Gloss Labs LLC.</div>
+      <div class="footer-links">
+        <a href="https://app.getfluxdata.com/signup">Sign Up</a>
+        <a href="tel:+18553297357">Demo Line</a>
+        <a href="mailto:jack@getfluxdata.com">Contact</a>
+      </div>
     </div>
+  </div>
 </footer>
 
-<!-- MOBILE STICKY CTA -->
-<div class="mobile-sticky">
-    <a href="https://app.getfluxdata.com/signup" onclick="return trackConversion('https://app.getfluxdata.com/signup')">Start Free Trial - $249/mo</a>
-</div>
-
+<!-- ═══ SCROLL REVEAL ═══ -->
 <script>
-// FAQ Toggle
-function toggleFaq(btn) {
-    const expanded = btn.getAttribute('aria-expanded') === 'true';
-    // Close all
-    document.querySelectorAll('.faq-q').forEach(q => {
-        q.setAttribute('aria-expanded', 'false');
-        q.nextElementSibling.style.maxHeight = null;
-    });
-    // Open clicked (if was closed)
-    if (!expanded) {
-        btn.setAttribute('aria-expanded', 'true');
-        const answer = btn.nextElementSibling;
-        answer.style.maxHeight = answer.scrollHeight + 'px';
-    }
-}
-
-// Scroll animations
-const observer = new IntersectionObserver((entries) => {
+  const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-        }
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
     });
-}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
 
 </body>
