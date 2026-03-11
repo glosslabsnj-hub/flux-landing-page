@@ -24,8 +24,7 @@
     <link rel="sitemap" type="application/xml" href="https://getfluxdata.com/sitemap.xml">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x26A1;</text></svg>">
 
-    <!-- Google Ads + GA4: CTA click tracking (NOT a conversion -- just measures click-through rate) -->
-    <!-- Real conversion tracking lives in the receptionist app (app.getfluxdata.com) -->
+    <!-- Google Ads + GA4: CTA click tracking -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17970313271"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -104,7 +103,12 @@
         {
           "@type": "Question",
           "name": "What industries does Flux support?",
-          "acceptedAnswer": { "@type": "Answer", "text": "HVAC, plumbing, electrical, towing and roadside assistance, general contracting, roofing, auto repair, and more. Any home service, field service, or dispatch business that misses calls." }
+          "acceptedAnswer": { "@type": "Answer", "text": "HVAC, plumbing, electrical, towing and roadside assistance, general contracting, roofing, auto repair, restaurants, medical offices, car dealerships, and more." }
+        },
+        {
+          "@type": "Question",
+          "name": "What integrations does Flux support?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Flux integrates with Google Calendar, Square, FieldEdge, ServiceTitan, Housecall Pro, Jobber, QuickBooks, HubSpot, Salesforce, Toast, and 15+ more tools. Connect yourself or we set it up for you." }
         }
       ]
     }
@@ -120,28 +124,29 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <style>
       *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
       :root {
-        --bg: #09090b;
-        --bg-subtle: #0f0f12;
-        --bg-card: rgba(255,255,255,0.025);
-        --bg-card-hover: rgba(255,255,255,0.05);
+        --bg: #050505;
+        --bg-subtle: #0a0a0a;
+        --bg-card: rgba(255,255,255,0.03);
+        --bg-card-hover: rgba(255,255,255,0.06);
         --border: rgba(255,255,255,0.06);
         --border-hover: rgba(255,255,255,0.12);
-        --text: #ececef;
-        --text-secondary: #a1a1aa;
-        --text-tertiary: #52525b;
+        --text: #ededed;
+        --text-secondary: #a0a0a0;
+        --text-tertiary: #666;
         --blue: #3B82F6;
         --blue-hover: #2563EB;
-        --blue-muted: rgba(59,130,246,0.1);
-        --blue-glow: rgba(59,130,246,0.15);
+        --blue-muted: rgba(59,130,246,0.12);
+        --blue-glow: rgba(59,130,246,0.2);
         --green: #22c55e;
-        --green-muted: rgba(34,197,94,0.1);
+        --green-muted: rgba(34,197,94,0.12);
         --amber: #f59e0b;
+        --amber-muted: rgba(245,158,11,0.12);
         --radius: 12px;
         --radius-lg: 16px;
         --radius-xl: 20px;
@@ -159,45 +164,43 @@
         overflow-x: hidden;
       }
 
-      /* Subtle grain texture */
-      body::after {
+      body::before {
         content: '';
         position: fixed;
         inset: 0;
-        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
         pointer-events: none;
         z-index: 9999;
-        opacity: 0.5;
+        opacity: 0.4;
       }
 
-      /* Typography */
       h1 {
-        font-size: clamp(2.75rem, 7vw, 4.5rem);
-        font-weight: 800;
-        line-height: 1.02;
-        letter-spacing: -0.04em;
-        color: #fff;
-      }
-      h2 {
-        font-size: clamp(2rem, 4.5vw, 3.25rem);
-        font-weight: 800;
-        line-height: 1.08;
+        font-size: clamp(2.5rem, 6vw, 4.25rem);
+        font-weight: 700;
+        line-height: 1.05;
         letter-spacing: -0.035em;
         color: #fff;
       }
-      h3 { font-size: 1.0625rem; font-weight: 600; line-height: 1.4; color: var(--text); }
+      h2 {
+        font-size: clamp(1.875rem, 4vw, 3rem);
+        font-weight: 700;
+        line-height: 1.1;
+        letter-spacing: -0.03em;
+        color: #fff;
+      }
+      h3 { font-size: 1.125rem; font-weight: 600; line-height: 1.35; color: var(--text); }
       p { color: var(--text-secondary); }
+
       a { color: inherit; text-decoration: none; }
 
-      .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+      .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
 
-      /* Buttons */
       .btn {
         display: inline-flex;
         align-items: center;
         justify-content: center;
         gap: 8px;
-        padding: 13px 26px;
+        padding: 13px 24px;
         border-radius: 10px;
         font-size: 0.9375rem;
         font-weight: 600;
@@ -207,53 +210,50 @@
         text-decoration: none;
         line-height: 1;
         font-family: inherit;
-        white-space: nowrap;
       }
       .btn-primary {
         background: var(--blue);
         color: #fff;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.4), 0 0 0 1px rgba(59,130,246,0.25), inset 0 1px 0 rgba(255,255,255,0.1);
+        box-shadow: 0 1px 2px rgba(0,0,0,0.3), 0 0 0 1px rgba(59,130,246,0.3), inset 0 1px 0 rgba(255,255,255,0.12);
       }
       .btn-primary:hover {
         background: var(--blue-hover);
-        box-shadow: 0 4px 20px rgba(59,130,246,0.35), 0 0 0 1px rgba(59,130,246,0.4), inset 0 1px 0 rgba(255,255,255,0.12);
+        box-shadow: 0 4px 16px rgba(59,130,246,0.3), 0 0 0 1px rgba(59,130,246,0.4), inset 0 1px 0 rgba(255,255,255,0.15);
         transform: translateY(-1px);
       }
       .btn-secondary {
-        background: rgba(255,255,255,0.05);
+        background: rgba(255,255,255,0.06);
         color: var(--text);
-        box-shadow: 0 0 0 1px var(--border), inset 0 1px 0 rgba(255,255,255,0.03);
+        box-shadow: 0 0 0 1px var(--border), inset 0 1px 0 rgba(255,255,255,0.04);
       }
       .btn-secondary:hover {
-        background: rgba(255,255,255,0.08);
-        box-shadow: 0 0 0 1px var(--border-hover), inset 0 1px 0 rgba(255,255,255,0.05);
-        transform: translateY(-1px);
+        background: rgba(255,255,255,0.1);
+        box-shadow: 0 0 0 1px var(--border-hover), inset 0 1px 0 rgba(255,255,255,0.06);
       }
       .btn-green {
         background: var(--green);
         color: #fff;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.4), 0 0 0 1px rgba(34,197,94,0.25), inset 0 1px 0 rgba(255,255,255,0.1);
+        box-shadow: 0 1px 2px rgba(0,0,0,0.3), 0 0 0 1px rgba(34,197,94,0.3), inset 0 1px 0 rgba(255,255,255,0.12);
       }
       .btn-green:hover {
         background: #16a34a;
-        box-shadow: 0 4px 20px rgba(34,197,94,0.3), 0 0 0 1px rgba(34,197,94,0.4);
+        box-shadow: 0 4px 16px rgba(34,197,94,0.25), 0 0 0 1px rgba(34,197,94,0.4);
         transform: translateY(-1px);
       }
       .btn-lg { padding: 16px 32px; font-size: 1rem; border-radius: 12px; }
 
-      /* Badge */
       .badge {
         display: inline-flex;
         align-items: center;
         gap: 6px;
-        padding: 6px 14px;
+        padding: 5px 14px;
         border-radius: 100px;
         font-size: 0.8125rem;
         font-weight: 500;
         letter-spacing: 0.01em;
         background: var(--blue-muted);
         color: var(--blue);
-        border: 1px solid rgba(59,130,246,0.12);
+        border: 1px solid rgba(59,130,246,0.15);
       }
 
       /* ═══ NAV ═══ */
@@ -263,7 +263,7 @@
         left: 0;
         right: 0;
         z-index: 100;
-        background: rgba(9,9,11,0.65);
+        background: rgba(5,5,5,0.7);
         backdrop-filter: blur(20px) saturate(180%);
         -webkit-backdrop-filter: blur(20px) saturate(180%);
         border-bottom: 1px solid var(--border);
@@ -273,7 +273,7 @@
         align-items: center;
         justify-content: space-between;
         height: 56px;
-        max-width: 1120px;
+        max-width: 1100px;
         margin: 0 auto;
         padding: 0 24px;
       }
@@ -286,7 +286,7 @@
         color: #fff;
         letter-spacing: -0.01em;
       }
-      .nav-logo svg { width: 26px; height: 26px; }
+      .nav-logo svg { width: 24px; height: 24px; }
       .nav-links { display: flex; align-items: center; gap: 28px; }
       .nav-link {
         color: var(--text-tertiary);
@@ -304,7 +304,7 @@
 
       /* ═══ HERO ═══ */
       .hero {
-        padding: 140px 0 80px;
+        padding: 140px 0 100px;
         text-align: center;
         position: relative;
         overflow: hidden;
@@ -312,26 +312,26 @@
       .hero::before {
         content: '';
         position: absolute;
-        top: -200px;
+        top: -50%;
         left: 50%;
         transform: translateX(-50%);
-        width: 900px;
-        height: 900px;
-        background: radial-gradient(circle, rgba(59,130,246,0.07) 0%, rgba(59,130,246,0.02) 40%, transparent 70%);
+        width: 800px;
+        height: 800px;
+        background: radial-gradient(circle, rgba(59,130,246,0.08) 0%, transparent 70%);
         pointer-events: none;
       }
       .hero .container { position: relative; }
-      .hero h1 { max-width: 800px; margin: 0 auto 24px; }
+      .hero h1 { max-width: 780px; margin: 0 auto 24px; }
       .hero h1 .accent {
-        background: linear-gradient(135deg, #60a5fa, var(--blue), #818cf8);
+        background: linear-gradient(135deg, var(--blue), #60a5fa);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
       }
       .hero .subtitle {
-        font-size: clamp(1.0625rem, 1.8vw, 1.1875rem);
+        font-size: clamp(1rem, 1.8vw, 1.125rem);
         color: var(--text-secondary);
-        max-width: 520px;
+        max-width: 540px;
         margin: 0 auto 44px;
         line-height: 1.7;
         font-weight: 400;
@@ -341,7 +341,12 @@
         gap: 12px;
         justify-content: center;
         flex-wrap: wrap;
-        margin-bottom: 48px;
+        margin-bottom: 16px;
+      }
+      .hero-trial-note {
+        font-size: 0.8125rem;
+        color: var(--text-tertiary);
+        margin-bottom: 40px;
       }
       .trust-row {
         display: flex;
@@ -356,16 +361,15 @@
       .trust-item svg { width: 14px; height: 14px; color: var(--green); flex-shrink: 0; }
 
       /* ═══ DEMO SECTION ═══ */
-      .demo-section { padding: 40px 0 80px; }
+      .demo-section { padding: 60px 0 80px; }
       .demo-card {
         position: relative;
         border-radius: var(--radius-xl);
         padding: 64px 40px;
         text-align: center;
         overflow: hidden;
-        background: linear-gradient(180deg, rgba(59,130,246,0.04) 0%, rgba(255,255,255,0.015) 100%);
-        border: 1px solid rgba(59,130,246,0.12);
-        backdrop-filter: blur(12px);
+        background: rgba(255,255,255,0.02);
+        border: 1px solid rgba(59,130,246,0.15);
       }
       .demo-card::before {
         content: '';
@@ -373,45 +377,34 @@
         top: 0;
         left: 50%;
         transform: translateX(-50%);
-        width: 50%;
+        width: 60%;
         height: 1px;
-        background: linear-gradient(90deg, transparent, rgba(59,130,246,0.6), transparent);
+        background: linear-gradient(90deg, transparent, rgba(59,130,246,0.5), transparent);
       }
       .demo-card::after {
         content: '';
         position: absolute;
         inset: 0;
-        background: radial-gradient(ellipse at 50% -20%, rgba(59,130,246,0.05), transparent 70%);
+        background: radial-gradient(ellipse at 50% -20%, rgba(59,130,246,0.06), transparent 70%);
         pointer-events: none;
       }
       .demo-card > * { position: relative; z-index: 1; }
-      .demo-eyebrow {
-        font-size: 0.75rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 0.15em;
-        color: var(--green);
-        margin-bottom: 12px;
-      }
       .demo-phone-number {
         display: inline-flex;
         align-items: center;
         gap: 14px;
-        font-size: clamp(2rem, 5vw, 3rem);
-        font-weight: 900;
+        font-size: clamp(2rem, 5vw, 2.75rem);
+        font-weight: 800;
         letter-spacing: -0.02em;
-        margin: 20px 0 12px;
+        margin: 28px 0 12px;
       }
-      .demo-phone-number a {
-        color: #fff;
-        transition: color 0.2s;
-      }
+      .demo-phone-number a { color: #fff; transition: color 0.2s; }
       .demo-phone-number a:hover { color: var(--blue); }
-      .demo-phone-number svg { color: var(--green); flex-shrink: 0; }
+      .demo-phone-number svg { color: var(--blue); flex-shrink: 0; }
       .demo-subtitle {
         font-size: 1.0625rem;
         color: var(--text-secondary);
-        max-width: 400px;
+        max-width: 440px;
         margin: 0 auto 32px;
         line-height: 1.6;
       }
@@ -419,17 +412,17 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 12px;
-        max-width: 600px;
+        max-width: 640px;
         margin: 36px auto 0;
       }
       .demo-line {
-        background: rgba(255,255,255,0.025);
+        background: rgba(255,255,255,0.03);
         border: 1px solid var(--border);
         border-radius: var(--radius);
         padding: 20px 16px;
-        transition: all 0.2s;
+        transition: border-color 0.2s, background 0.2s;
       }
-      .demo-line:hover { border-color: var(--border-hover); background: rgba(255,255,255,0.04); }
+      .demo-line:hover { border-color: var(--border-hover); background: rgba(255,255,255,0.05); }
       .demo-line-label {
         font-size: 0.6875rem;
         font-weight: 600;
@@ -439,7 +432,7 @@
         margin-bottom: 6px;
       }
       .demo-line-number a {
-        font-size: 0.9375rem;
+        font-size: 1rem;
         font-weight: 600;
         color: var(--blue);
         transition: color 0.15s;
@@ -447,23 +440,22 @@
       .demo-line-number a:hover { color: #60a5fa; }
 
       @media (max-width: 640px) {
-        .demo-lines { grid-template-columns: 1fr; max-width: 260px; }
+        .demo-lines { grid-template-columns: 1fr; max-width: 280px; }
       }
 
-      /* ═══ DIVIDER ═══ */
       .section-divider {
         width: 100%;
         height: 1px;
         background: linear-gradient(90deg, transparent, var(--border), transparent);
-        max-width: 1120px;
+        max-width: 1100px;
         margin: 0 auto;
       }
 
       /* ═══ PAIN POINTS ═══ */
-      .pain-section { padding: 100px 0; }
+      .pain-section { padding: 96px 0; }
       .section-header { text-align: center; margin-bottom: 64px; }
       .section-header h2 { margin-top: 16px; margin-bottom: 16px; }
-      .section-header p { max-width: 480px; margin: 0 auto; font-size: 1.0625rem; line-height: 1.7; }
+      .section-header p { max-width: 540px; margin: 0 auto; font-size: 1rem; line-height: 1.7; }
       .pain-grid {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
@@ -474,64 +466,106 @@
       }
       .pain-card {
         background: var(--bg);
-        padding: 40px 28px;
+        padding: 36px 28px;
         transition: background 0.3s;
       }
-      .pain-card:hover { background: rgba(255,255,255,0.015); }
+      .pain-card:hover { background: rgba(255,255,255,0.02); }
       .pain-stat {
-        font-size: 2.5rem;
-        font-weight: 900;
+        font-size: 2.25rem;
+        font-weight: 800;
         color: var(--blue);
         line-height: 1;
-        margin-bottom: 14px;
+        margin-bottom: 12px;
         letter-spacing: -0.03em;
       }
       .pain-card h3 { margin-bottom: 8px; font-size: 1rem; }
-      .pain-card p { font-size: 0.875rem; line-height: 1.65; }
+      .pain-card p { font-size: 0.875rem; line-height: 1.6; }
 
       @media (max-width: 900px) { .pain-grid { grid-template-columns: repeat(2, 1fr); } }
       @media (max-width: 520px) { .pain-grid { grid-template-columns: 1fr; } }
 
       /* ═══ HOW IT WORKS ═══ */
-      .how-section { padding: 100px 0; }
+      .how-section { padding: 96px 0; }
       .steps {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 32px;
+        gap: 48px;
         margin-top: 64px;
+        position: relative;
       }
-      .step {
-        text-align: center;
-        padding: 40px 28px;
-        background: var(--bg-card);
-        border: 1px solid var(--border);
-        border-radius: var(--radius-lg);
-        transition: all 0.3s;
+      .steps::before {
+        content: '';
+        position: absolute;
+        top: 24px;
+        left: calc(16.67% + 24px);
+        right: calc(16.67% + 24px);
+        height: 1px;
+        background: linear-gradient(90deg, var(--border), rgba(59,130,246,0.2), var(--border));
       }
-      .step:hover { border-color: var(--border-hover); background: var(--bg-card-hover); }
+      .step { text-align: center; position: relative; }
       .step-num {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        width: 44px;
-        height: 44px;
+        width: 48px;
+        height: 48px;
         border-radius: 50%;
-        background: var(--blue-muted);
+        background: var(--bg);
         color: var(--blue);
-        font-size: 0.9375rem;
+        font-size: 1rem;
         font-weight: 700;
-        margin-bottom: 20px;
-        border: 1px solid rgba(59,130,246,0.15);
+        margin-bottom: 24px;
+        border: 1px solid rgba(59,130,246,0.2);
+        position: relative;
+        z-index: 1;
       }
       .step h3 { margin-bottom: 8px; }
       .step p { font-size: 0.875rem; max-width: 280px; margin: 0 auto; line-height: 1.7; }
 
       @media (max-width: 700px) {
-        .steps { grid-template-columns: 1fr; max-width: 400px; margin: 64px auto 0; }
+        .steps { grid-template-columns: 1fr; gap: 40px; }
+        .steps::before { display: none; }
       }
 
+      /* ═══ INDUSTRIES ═══ */
+      .industries-section { padding: 96px 0; }
+      .industries-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1px;
+        background: var(--border);
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+      }
+      .industry-card {
+        background: var(--bg);
+        padding: 36px 28px;
+        transition: background 0.3s;
+      }
+      .industry-card:hover { background: rgba(255,255,255,0.02); }
+      .industry-icon { font-size: 1.75rem; margin-bottom: 16px; line-height: 1; }
+      .industry-card h3 { margin-bottom: 8px; font-size: 1rem; }
+      .industry-card p { font-size: 0.8125rem; line-height: 1.6; }
+      .industry-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: 14px;
+      }
+      .industry-tags span {
+        font-size: 0.6875rem;
+        padding: 3px 8px;
+        border-radius: 100px;
+        background: var(--blue-muted);
+        color: var(--blue);
+        font-weight: 500;
+      }
+
+      @media (max-width: 800px) { .industries-grid { grid-template-columns: repeat(2, 1fr); } }
+      @media (max-width: 520px) { .industries-grid { grid-template-columns: 1fr; } }
+
       /* ═══ FEATURES ═══ */
-      .features-section { padding: 100px 0; }
+      .features-section { padding: 96px 0; }
       .features-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -542,45 +576,119 @@
       }
       .feature-card {
         background: var(--bg);
-        padding: 40px 28px;
+        padding: 36px 28px;
         transition: background 0.3s;
       }
-      .feature-card:hover { background: rgba(255,255,255,0.015); }
+      .feature-card:hover { background: rgba(255,255,255,0.02); }
       .feature-icon {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        width: 42px;
-        height: 42px;
+        width: 40px;
+        height: 40px;
         border-radius: 10px;
         margin-bottom: 20px;
         background: var(--blue-muted);
         color: var(--blue);
-        border: 1px solid rgba(59,130,246,0.08);
+        border: 1px solid rgba(59,130,246,0.1);
       }
       .feature-icon svg { width: 20px; height: 20px; }
-      .feature-icon.green {
-        background: var(--green-muted);
-        color: var(--green);
-        border-color: rgba(34,197,94,0.08);
-      }
+      .feature-icon.green { background: var(--green-muted); color: var(--green); border-color: rgba(34,197,94,0.1); }
+      .feature-icon.amber { background: var(--amber-muted); color: var(--amber); border-color: rgba(245,158,11,0.1); }
       .feature-card h3 { margin-bottom: 8px; font-size: 1rem; }
-      .feature-card p { font-size: 0.875rem; line-height: 1.65; }
+      .feature-card p { font-size: 0.875rem; line-height: 1.6; }
 
       @media (max-width: 800px) { .features-grid { grid-template-columns: repeat(2, 1fr); } }
       @media (max-width: 520px) { .features-grid { grid-template-columns: 1fr; } }
 
+      /* ═══ INTEGRATIONS ═══ */
+      .integrations-section { padding: 96px 0; }
+      .integration-groups { margin-top: 64px; }
+      .integration-group { margin-bottom: 32px; }
+      .integration-group:last-child { margin-bottom: 0; }
+      .integration-group-label {
+        font-size: 0.6875rem;
+        font-weight: 600;
+        color: var(--text-tertiary);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: 12px;
+      }
+      .integration-chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .int-chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 16px;
+        border-radius: var(--radius);
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        font-size: 0.8125rem;
+        font-weight: 500;
+        color: var(--text-secondary);
+        transition: border-color 0.2s, background 0.2s;
+      }
+      .int-chip:hover { border-color: var(--border-hover); background: var(--bg-card-hover); }
+      .int-chip .ic { font-size: 1rem; line-height: 1; }
+      .int-chip.self-serve { border-color: rgba(59,130,246,0.15); }
+      .integration-note {
+        margin-top: 24px;
+        font-size: 0.8125rem;
+        color: var(--text-tertiary);
+        font-style: italic;
+      }
+
+      /* ═══ COMPARE ═══ */
+      .compare-section { padding: 96px 0; }
+      .compare-wrap {
+        margin-top: 64px;
+        overflow-x: auto;
+        border-radius: var(--radius-lg);
+        border: 1px solid var(--border);
+      }
+      .compare-table {
+        width: 100%;
+        border-collapse: collapse;
+        min-width: 640px;
+      }
+      .compare-table th, .compare-table td {
+        padding: 16px 20px;
+        text-align: left;
+        font-size: 0.875rem;
+        border-bottom: 1px solid var(--border);
+      }
+      .compare-table thead th {
+        background: rgba(255,255,255,0.03);
+        font-weight: 600;
+        color: var(--text);
+        font-size: 0.8125rem;
+      }
+      .compare-table tbody td { color: var(--text-secondary); }
+      .compare-table tbody tr:last-child td { border-bottom: none; }
+      .compare-table .flux-row td {
+        background: rgba(59,130,246,0.04);
+        color: var(--text);
+        font-weight: 500;
+      }
+      .compare-table .flux-row td:first-child { color: var(--blue); font-weight: 700; }
+      .ck { color: var(--green); }
+      .cx { color: var(--text-tertiary); }
+
       /* ═══ PRICING ═══ */
-      .pricing-section { padding: 100px 0; }
+      .pricing-section { padding: 96px 0; }
       .pricing-card {
-        max-width: 460px;
+        max-width: 480px;
         margin: 0 auto;
         position: relative;
         border-radius: var(--radius-xl);
         overflow: hidden;
-        background: linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
+        background: rgba(255,255,255,0.02);
         border: 1px solid var(--border);
-        padding: 52px 44px;
+        padding: 48px 40px;
         text-align: center;
       }
       .pricing-card::before {
@@ -596,64 +704,45 @@
         display: inline-block;
         background: var(--green-muted);
         color: var(--green);
-        padding: 5px 14px;
+        padding: 4px 12px;
         border-radius: 100px;
         font-size: 0.75rem;
         font-weight: 600;
-        margin-bottom: 20px;
-        border: 1px solid rgba(34,197,94,0.12);
+        margin-bottom: 16px;
+        border: 1px solid rgba(34,197,94,0.15);
       }
-      .pricing-name {
-        font-size: 0.9375rem;
-        color: var(--text-secondary);
-        font-weight: 500;
-        margin-bottom: 4px;
-      }
+      .pricing-name { font-size: 0.9375rem; color: var(--text-secondary); font-weight: 500; margin-bottom: 4px; }
       .pricing-price {
-        font-size: 3.75rem;
-        font-weight: 900;
+        font-size: 3.5rem;
+        font-weight: 800;
         color: #fff;
         line-height: 1;
         margin: 8px 0;
         letter-spacing: -0.04em;
       }
-      .pricing-price span {
-        font-size: 1.125rem;
-        font-weight: 500;
-        color: var(--text-tertiary);
-        letter-spacing: 0;
-      }
-      .pricing-sub {
-        font-size: 0.875rem;
-        color: var(--text-tertiary);
-        margin-bottom: 36px;
-      }
-      .pricing-features {
-        list-style: none;
-        text-align: left;
-        margin-bottom: 36px;
-      }
+      .pricing-price span { font-size: 1.125rem; font-weight: 500; color: var(--text-tertiary); letter-spacing: 0; }
+      .pricing-sub { font-size: 0.875rem; color: var(--text-tertiary); margin-bottom: 32px; }
+      .pricing-features { list-style: none; text-align: left; margin-bottom: 32px; }
       .pricing-features li {
         display: flex;
         align-items: flex-start;
         gap: 10px;
-        padding: 11px 0;
-        font-size: 0.9375rem;
+        padding: 10px 0;
+        font-size: 0.875rem;
         color: var(--text-secondary);
         border-bottom: 1px solid var(--border);
       }
       .pricing-features li:last-child { border-bottom: none; }
-      .pricing-features li svg {
-        width: 16px;
-        height: 16px;
-        color: var(--green);
-        flex-shrink: 0;
-        margin-top: 3px;
-      }
+      .pricing-features li svg { width: 16px; height: 16px; color: var(--green); flex-shrink: 0; margin-top: 2px; }
       .pricing-cta { width: 100%; }
+      .pricing-note {
+        margin-top: 16px;
+        font-size: 0.75rem;
+        color: var(--text-tertiary);
+      }
 
       /* ═══ FAQ ═══ */
-      .faq-section { padding: 100px 0; }
+      .faq-section { padding: 96px 0; }
       .faq-list { max-width: 640px; margin: 64px auto 0; }
       .faq-item { border-bottom: 1px solid var(--border); }
       .faq-q {
@@ -662,7 +751,7 @@
         justify-content: space-between;
         gap: 16px;
         width: 100%;
-        padding: 22px 0;
+        padding: 20px 0;
         background: none;
         border: none;
         color: var(--text);
@@ -674,25 +763,11 @@
         font-family: inherit;
       }
       .faq-q:hover { color: var(--blue); }
-      .faq-q svg {
-        width: 16px;
-        height: 16px;
-        color: var(--text-tertiary);
-        flex-shrink: 0;
-        transition: transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-      }
+      .faq-q svg { width: 16px; height: 16px; color: var(--text-tertiary); flex-shrink: 0; transition: transform 0.25s; }
       .faq-item.open .faq-q svg { transform: rotate(45deg); }
-      .faq-a {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-      }
-      .faq-item.open .faq-a { max-height: 200px; }
-      .faq-a p {
-        font-size: 0.9375rem;
-        line-height: 1.7;
-        padding-bottom: 22px;
-      }
+      .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+      .faq-item.open .faq-a { max-height: 300px; }
+      .faq-a p { font-size: 0.875rem; line-height: 1.7; padding-bottom: 20px; }
 
       /* ═══ FINAL CTA ═══ */
       .final-cta {
@@ -704,25 +779,20 @@
       .final-cta::before {
         content: '';
         position: absolute;
-        bottom: -100px;
+        bottom: 0;
         left: 50%;
         transform: translateX(-50%);
-        width: 900px;
-        height: 500px;
+        width: 800px;
+        height: 400px;
         background: radial-gradient(ellipse at 50% 100%, rgba(59,130,246,0.06), transparent 70%);
         pointer-events: none;
       }
       .final-cta .container { position: relative; }
       .final-cta h2 { margin-bottom: 16px; }
-      .final-cta > .container > p {
-        max-width: 440px;
-        margin: 0 auto 44px;
-        font-size: 1.0625rem;
-        line-height: 1.7;
-      }
-      .final-cta-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+      .final-cta > .container > p { max-width: 440px; margin: 0 auto 40px; font-size: 1rem; line-height: 1.7; }
+      .final-cta-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 12px; }
+      .final-trial-note { font-size: 0.8125rem; color: var(--text-tertiary); }
 
-      /* ═══ FOOTER ═══ */
       footer {
         padding: 40px 0;
         border-top: 1px solid var(--border);
@@ -736,53 +806,36 @@
       }
       .footer-brand { color: var(--text-tertiary); font-size: 0.8125rem; }
       .footer-links { display: flex; gap: 24px; }
-      .footer-links a {
-        color: var(--text-tertiary);
-        font-size: 0.8125rem;
-        transition: color 0.15s;
-      }
+      .footer-links a { color: var(--text-tertiary); font-size: 0.8125rem; transition: color 0.15s; }
       .footer-links a:hover { color: var(--text); }
 
       /* ═══ ANIMATIONS ═══ */
       .reveal {
         opacity: 0;
-        transform: translateY(24px);
-        transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-                    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        transform: translateY(20px);
+        transition: opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
       }
       .reveal.visible { opacity: 1; transform: translateY(0); }
       .reveal-delay-1 { transition-delay: 0.1s; }
       .reveal-delay-2 { transition-delay: 0.2s; }
       .reveal-delay-3 { transition-delay: 0.3s; }
 
-      /* Pulse ring */
       @keyframes pulse-ring {
         0% { box-shadow: 0 0 0 0 rgba(34,197,94,0.4); }
-        70% { box-shadow: 0 0 0 14px rgba(34,197,94,0); }
+        70% { box-shadow: 0 0 0 12px rgba(34,197,94,0); }
         100% { box-shadow: 0 0 0 0 rgba(34,197,94,0); }
       }
       .pulse { animation: pulse-ring 2s infinite; }
 
-      /* Phone icon bounce */
-      @keyframes phone-ring {
-        0%, 100% { transform: rotate(0deg); }
-        10% { transform: rotate(-12deg); }
-        20% { transform: rotate(12deg); }
-        30% { transform: rotate(-8deg); }
-        40% { transform: rotate(8deg); }
-        50% { transform: rotate(0deg); }
-      }
-      .demo-phone-number svg { animation: phone-ring 3s ease-in-out infinite; }
-
       /* ═══ RESPONSIVE ═══ */
       @media (max-width: 640px) {
-        .hero { padding: 120px 0 64px; }
+        .hero { padding: 120px 0 72px; }
         .hero-ctas { flex-direction: column; align-items: center; }
         .hero-ctas .btn { width: 100%; max-width: 340px; }
         .trust-row { gap: 16px; }
-        .demo-card { padding: 48px 20px; }
-        .pain-section, .how-section, .features-section, .pricing-section, .faq-section { padding: 72px 0; }
-        .pain-card, .feature-card { padding: 28px 24px; }
+        .demo-card { padding: 48px 24px; }
+        .pain-section, .how-section, .features-section, .pricing-section, .faq-section, .industries-section, .integrations-section, .compare-section { padding: 72px 0; }
+        .pain-card, .feature-card, .industry-card { padding: 28px 24px; }
         .pricing-card { padding: 36px 24px; }
         .final-cta { padding: 80px 0; }
         .final-cta-buttons { flex-direction: column; align-items: center; }
@@ -793,7 +846,6 @@
       @media (prefers-reduced-motion: reduce) {
         .reveal { transition: none; opacity: 1; transform: none; }
         .pulse { animation: none; }
-        .demo-phone-number svg { animation: none; }
         html { scroll-behavior: auto; }
       }
     </style>
@@ -804,14 +856,15 @@
 <nav>
   <div class="nav-inner">
     <a href="#" class="nav-logo">
-      <svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="26" height="26" rx="6" fill="#3B82F6"/>
-        <path d="M7.5 8.5h11M7.5 13h8M7.5 17.5h9.5" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="24" height="24" rx="5" fill="#3B82F6"/>
+        <path d="M7 8h10M7 12h7M7 16h9" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
       </svg>
       Flux Receptionist
     </a>
     <div class="nav-links">
-      <a href="#how-it-works" class="nav-link">How It Works</a>
+      <a href="#industries" class="nav-link">Industries</a>
+      <a href="#features" class="nav-link">Features</a>
       <a href="#pricing" class="nav-link">Pricing</a>
       <a href="#faq" class="nav-link">FAQ</a>
       <a href="https://app.getfluxdata.com/signup" class="btn btn-primary nav-cta" onclick="return trackConversion('https://app.getfluxdata.com/signup')">Start Free Trial</a>
@@ -822,25 +875,26 @@
 <!-- ═══ HERO ═══ -->
 <section class="hero">
   <div class="container">
-    <div class="badge reveal">AI-Powered Phone Answering</div>
+    <div class="badge reveal">AI-Powered Business Phone System</div>
     <h1 class="reveal reveal-delay-1" style="margin-top: 24px;">
       Every Missed Call Is a<br><span class="accent">Customer Lost Forever</span>
     </h1>
     <p class="subtitle reveal reveal-delay-2">
-      62% of callers who reach voicemail hang up and call your competitor next.
-      Flux answers every call, books the job, and routes emergencies. 24/7.
+      62% of callers who hit voicemail call your competitor next.
+      Flux answers every call, books the job, dispatches drivers, and handles emergencies. 24/7.
     </p>
     <div class="hero-ctas reveal reveal-delay-2">
-      <a href="https://app.getfluxdata.com/signup" class="btn btn-primary btn-lg" onclick="return trackConversion('https://app.getfluxdata.com/signup')">Start Free Trial</a>
+      <a href="https://app.getfluxdata.com/signup" class="btn btn-primary btn-lg" onclick="return trackConversion('https://app.getfluxdata.com/signup')">Start 7-Day Free Trial</a>
       <a href="tel:+18553297357" class="btn btn-secondary btn-lg">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
         Call Our AI: (855) 329-7357
       </a>
     </div>
+    <p class="hero-trial-note reveal reveal-delay-2">No credit card required. Setup in under 10 minutes.</p>
     <div class="trust-row reveal reveal-delay-3">
       <div class="trust-item">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-        $249/mo
+        Starts at $249/mo
       </div>
       <div class="trust-item">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
@@ -850,6 +904,10 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
         Cancel anytime
       </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+        20+ integrations
+      </div>
     </div>
   </div>
 </section>
@@ -858,13 +916,13 @@
 <section class="demo-section">
   <div class="container">
     <div class="demo-card reveal">
-      <div class="demo-eyebrow">Live Demo</div>
-      <h2>Hear It Yourself</h2>
+      <div class="badge" style="background: var(--green-muted); color: var(--green); border-color: rgba(34,197,94,0.15);">Live Demo</div>
+      <h2 style="margin-top: 20px;">Hear It Yourself</h2>
       <div class="demo-phone-number">
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
         <a href="tel:+18553297357">(855) 329-7357</a>
       </div>
-      <p class="demo-subtitle">Call right now. Ask it anything. See how it handles your toughest customer.</p>
+      <p class="demo-subtitle">Call right now. Ask it anything. Try to stump it. This is a real AI receptionist handling a real HVAC business.</p>
       <a href="tel:+18553297357" class="btn btn-green btn-lg pulse">Call the Demo Line Now</a>
       <div class="demo-lines">
         <div class="demo-line">
@@ -927,7 +985,7 @@
     <div class="section-header reveal">
       <div class="badge">Simple Setup</div>
       <h2>Live in 24 Hours. Seriously.</h2>
-      <p>No complicated software. No IT department. Three steps and you're answering every call.</p>
+      <p>No complicated software. No IT department needed. Three steps and you're answering every call.</p>
     </div>
     <div class="steps">
       <div class="step reveal">
@@ -938,12 +996,92 @@
       <div class="step reveal reveal-delay-1">
         <div class="step-num">2</div>
         <h3>Train Your AI Brain</h3>
-        <p>Add your FAQs, emergency protocols, and booking preferences. The AI learns your business.</p>
+        <p>Add your FAQs, emergency protocols, and booking preferences. The AI learns your business inside and out.</p>
       </div>
       <div class="step reveal reveal-delay-2">
         <div class="step-num">3</div>
         <h3>Forward Your Calls</h3>
-        <p>Keep your existing number. Forward calls to Flux when you want. After hours, on-site, or 24/7.</p>
+        <p>Keep your existing number. Just forward calls to Flux. After hours, on-site, or 24/7.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ═══ BUILT FOR YOUR INDUSTRY ═══ -->
+<section class="industries-section" id="industries">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="badge">6 Specialized Modes</div>
+      <h2>Built For Your Industry</h2>
+      <p>Not a generic answering service. Flux is purpose-built for how your specific business works.</p>
+    </div>
+    <div class="industries-grid reveal">
+      <div class="industry-card">
+        <div class="industry-icon">&#x1F527;</div>
+        <h3>Home Services</h3>
+        <p>HVAC, plumbing, electrical, roofing, general contracting. Books appointments, checks availability, quotes services.</p>
+        <div class="industry-tags">
+          <span>Booking</span>
+          <span>Scheduling</span>
+          <span>Service area</span>
+          <span>Pricing</span>
+        </div>
+      </div>
+      <div class="industry-card">
+        <div class="industry-icon">&#x1F6A8;</div>
+        <h3>Towing & Dispatch</h3>
+        <p>Roadside assistance, locksmith, courier, emergency response. Creates dispatch jobs, tracks drivers, calculates ETAs.</p>
+        <div class="industry-tags">
+          <span>Dispatch</span>
+          <span>ETA</span>
+          <span>Driver routing</span>
+          <span>Emergency</span>
+        </div>
+      </div>
+      <div class="industry-card">
+        <div class="industry-icon">&#x1F354;</div>
+        <h3>Restaurants & Food</h3>
+        <p>Takes orders by phone, knows your full menu, handles delivery and pickup, manages kitchen flow.</p>
+        <div class="industry-tags">
+          <span>Orders</span>
+          <span>Menu</span>
+          <span>Delivery</span>
+          <span>Kitchen display</span>
+        </div>
+      </div>
+      <div class="industry-card">
+        <div class="industry-icon">&#x1FA7A;</div>
+        <h3>Medical & Dental</h3>
+        <p>Patient intake, symptom triage, appointment scheduling with HIPAA-aware handling and insurance knowledge.</p>
+        <div class="industry-tags">
+          <span>Triage</span>
+          <span>Patient intake</span>
+          <span>HIPAA</span>
+          <span>Scheduling</span>
+        </div>
+      </div>
+      <div class="industry-card">
+        <div class="industry-icon">&#x1F4B0;</div>
+        <h3>Sales & Dealerships</h3>
+        <p>Car dealerships, real estate, solar, insurance. Captures leads, searches inventory, schedules test drives and showings.</p>
+        <div class="industry-tags">
+          <span>Lead capture</span>
+          <span>Inventory</span>
+          <span>Demos</span>
+          <span>Pipeline</span>
+        </div>
+      </div>
+      <div class="industry-card">
+        <div class="industry-icon">&#x1F3E2;</div>
+        <h3>General Business</h3>
+        <p>Any business that gets phone calls. Flexible booking, customer intake, FAQ handling, and call routing.</p>
+        <div class="industry-tags">
+          <span>Flexible</span>
+          <span>Custom</span>
+          <span>Any industry</span>
+        </div>
       </div>
     </div>
   </div>
@@ -952,11 +1090,12 @@
 <div class="section-divider"></div>
 
 <!-- ═══ FEATURES ═══ -->
-<section class="features-section">
+<section class="features-section" id="features">
   <div class="container">
     <div class="section-header reveal">
-      <div class="badge">Features</div>
-      <h2>Everything You Need to<br>Never Miss a Call</h2>
+      <div class="badge">Full Platform</div>
+      <h2>Way More Than an Answering Service</h2>
+      <p>Flux doesn't just answer calls. It runs your front office.</p>
     </div>
     <div class="features-grid reveal">
       <div class="feature-card">
@@ -964,43 +1103,214 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
         </div>
         <h3>24/7 Call Answering</h3>
-        <p>Every call answered in 2 rings. Nights, weekends, holidays. No hold music. No voicemail.</p>
+        <p>Every call answered in 2 rings. Nights, weekends, holidays. No hold music, no voicemail, no missed customers.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
         </div>
-        <h3>Appointment Booking</h3>
-        <p>Books jobs into your calendar. Checks availability in real-time. Customers get SMS confirmation.</p>
+        <h3>Smart Booking</h3>
+        <p>Books appointments into your calendar in real-time. Checks availability, suggests times, and sends SMS confirmations automatically.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon green">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
         </div>
         <h3>Emergency Routing</h3>
-        <p>Detects emergencies and instantly routes to your on-call tech or dispatches your driver.</p>
+        <p>Detects emergencies instantly. Routes to your on-call tech, dispatches your driver, or escalates to your emergency line. Zero delays.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon amber">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+        </div>
+        <h3>AI Business Brain</h3>
+        <p>Learns your services, pricing, FAQs, policies, and staff. Answers detailed questions about your business like a real employee would.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3>Customer CRM</h3>
+        <p>Every caller becomes a contact. Full history of calls, bookings, and messages. Know who's calling before they even speak.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
         </div>
         <h3>SMS Confirmations</h3>
-        <p>Automatic text confirmations for every booking. Customers know their appointment is set.</p>
+        <p>Automatic text confirmations for every booking. Customers know their appointment is locked in. Reduces no-shows by up to 40%.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
         </div>
-        <h3>Call Transcripts</h3>
-        <p>Every conversation transcribed and searchable. Know exactly what every customer said.</p>
+        <h3>Call Transcripts & Recordings</h3>
+        <p>Every conversation transcribed and searchable. Listen to recordings, review what was said, train your team.</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">
+        <div class="feature-icon green">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
         </div>
-        <h3>Live Dashboard</h3>
-        <p>See every call, booking, and customer in real-time from your phone or computer.</p>
+        <h3>Live Dashboard & Analytics</h3>
+        <p>See every call, booking, and customer in real-time. Track conversion rates, call volume, revenue impact, and AI performance.</p>
       </div>
+      <div class="feature-card">
+        <div class="feature-icon amber">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <h3>Multi-Location Support</h3>
+        <p>Run multiple locations from one account. Each location gets its own hours, services, staff, and phone number. Minutes are pooled.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ═══ INTEGRATIONS ═══ -->
+<section class="integrations-section" id="integrations">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="badge">20+ Integrations</div>
+      <h2>Connects to Your Existing Tools</h2>
+      <p>Flux plugs into the software you already use. Connect yourself or we set it up for you.</p>
+    </div>
+    <div class="integration-groups reveal">
+      <div class="integration-group">
+        <div class="integration-group-label">Connect Yourself (Self-Service)</div>
+        <div class="integration-chips">
+          <div class="int-chip self-serve"><span class="ic">&#x1F4C5;</span> Google Calendar</div>
+          <div class="int-chip self-serve"><span class="ic">&#x1F4CA;</span> Google Sheets</div>
+          <div class="int-chip self-serve"><span class="ic">&#x25A0;</span> Square POS</div>
+          <div class="int-chip self-serve"><span class="ic">&#x26A1;</span> FieldEdge</div>
+          <div class="int-chip self-serve"><span class="ic">&#x1F517;</span> Webhooks / Zapier</div>
+          <div class="int-chip self-serve"><span class="ic">&#x1F5A8;</span> Receipt Printer</div>
+        </div>
+      </div>
+      <div class="integration-group">
+        <div class="integration-group-label">Field Service & Home Services</div>
+        <div class="integration-chips">
+          <div class="int-chip">ServiceTitan</div>
+          <div class="int-chip">Housecall Pro</div>
+          <div class="int-chip">Jobber</div>
+          <div class="int-chip">Workiz</div>
+        </div>
+      </div>
+      <div class="integration-group">
+        <div class="integration-group-label">Restaurants & POS</div>
+        <div class="integration-chips">
+          <div class="int-chip">Toast</div>
+          <div class="int-chip">Clover</div>
+          <div class="int-chip">TouchBistro</div>
+          <div class="int-chip">Lightspeed</div>
+        </div>
+      </div>
+      <div class="integration-group">
+        <div class="integration-group-label">Medical</div>
+        <div class="integration-chips">
+          <div class="int-chip">AthenaHealth</div>
+          <div class="int-chip">Epic EHR</div>
+          <div class="int-chip">Practice Fusion</div>
+        </div>
+      </div>
+      <div class="integration-group">
+        <div class="integration-group-label">Towing & Dispatch</div>
+        <div class="integration-chips">
+          <div class="int-chip">Towbook</div>
+          <div class="int-chip">Onfleet</div>
+          <div class="int-chip">Samsara</div>
+        </div>
+      </div>
+      <div class="integration-group">
+        <div class="integration-group-label">CRM, Sales & Finance</div>
+        <div class="integration-chips">
+          <div class="int-chip">HubSpot</div>
+          <div class="int-chip">Salesforce</div>
+          <div class="int-chip">Pipedrive</div>
+          <div class="int-chip">GoHighLevel</div>
+          <div class="int-chip">QuickBooks</div>
+          <div class="int-chip">Calendly</div>
+          <div class="int-chip">Acuity</div>
+        </div>
+      </div>
+    </div>
+    <p class="integration-note reveal">Self-service integrations connect in one click. Expert-setup integrations are configured by our team during onboarding at no extra cost.</p>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ═══ COMPETITOR COMPARISON ═══ -->
+<section class="compare-section">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="badge">Why Flux</div>
+      <h2>How We Compare</h2>
+      <p>Same job. Fraction of the cost. And you can call our AI right now to prove it.</p>
+    </div>
+    <div class="compare-wrap reveal">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>Provider</th>
+            <th>Price</th>
+            <th>24/7</th>
+            <th>Booking</th>
+            <th>Dispatch</th>
+            <th>Live Demo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="flux-row">
+            <td>Flux Receptionist</td>
+            <td>$249/mo</td>
+            <td class="ck">&#x2713;</td>
+            <td class="ck">&#x2713;</td>
+            <td class="ck">&#x2713;</td>
+            <td class="ck">&#x2713; Call now</td>
+          </tr>
+          <tr>
+            <td>Smith.ai (AI)</td>
+            <td>$97/mo (30 calls)</td>
+            <td class="ck">&#x2713;</td>
+            <td class="ck">&#x2713;</td>
+            <td class="cx">&#x2717;</td>
+            <td class="cx">&#x2717;</td>
+          </tr>
+          <tr>
+            <td>Smith.ai (Human)</td>
+            <td>$292/mo (30 calls)</td>
+            <td class="cx">&#x2717;</td>
+            <td class="ck">&#x2713;</td>
+            <td class="cx">&#x2717;</td>
+            <td class="cx">&#x2717;</td>
+          </tr>
+          <tr>
+            <td>Ruby Receptionist</td>
+            <td>$235/mo (50 min)</td>
+            <td class="cx">&#x2717;</td>
+            <td class="ck">&#x2713;</td>
+            <td class="cx">&#x2717;</td>
+            <td class="cx">&#x2717;</td>
+          </tr>
+          <tr>
+            <td>Sameday AI</td>
+            <td>$349/mo+</td>
+            <td class="ck">&#x2713;</td>
+            <td class="ck">&#x2713;</td>
+            <td class="cx">&#x2717;</td>
+            <td class="cx">&#x2717;</td>
+          </tr>
+          <tr>
+            <td>Part-Time Employee</td>
+            <td>$1,500+/mo</td>
+            <td class="cx">&#x2717;</td>
+            <td class="ck">&#x2713;</td>
+            <td class="cx">&#x2717;</td>
+            <td class="cx">&#x2717;</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </section>
@@ -1012,49 +1322,54 @@
   <div class="container">
     <div class="section-header reveal">
       <div class="badge">Pricing</div>
-      <h2>One Plan. No Surprises.</h2>
+      <h2>Simple Pricing. No Surprises.</h2>
       <p>Less than a part-time receptionist. More reliable than a full-time one.</p>
     </div>
     <div class="pricing-card reveal">
       <div class="pricing-label">7-Day Free Trial</div>
       <div class="pricing-name">Flux Receptionist</div>
       <div class="pricing-price">$249<span>/mo</span></div>
-      <p class="pricing-sub">200 minutes included. $1.50/min after.</p>
+      <p class="pricing-sub">200 minutes included. $0.55/min after. Need more? Plans up to 10,000 min/mo.</p>
       <ul class="pricing-features">
         <li>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-          24/7 AI call answering
+          24/7 AI call answering, booking, and dispatch
         </li>
         <li>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-          Appointment booking with calendar sync
+          AI Business Brain (services, FAQs, pricing, staff)
         </li>
         <li>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-          Emergency call routing & driver dispatch
+          SMS confirmations and customer notifications
         </li>
         <li>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-          SMS confirmations to customers
+          Emergency detection and instant routing
         </li>
         <li>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-          Full call transcripts and recordings
+          Full call transcripts, recordings, and analytics
         </li>
         <li>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-          Live dashboard and analytics
+          Built-in CRM with customer history
         </li>
         <li>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-          Custom business brain (services, FAQs, pricing)
+          20+ integrations (Google Calendar, Square, and more)
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          Multi-location support (+$99/location)
         </li>
         <li>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
           No contracts. Cancel anytime.
         </li>
       </ul>
-      <a href="https://app.getfluxdata.com/signup" class="btn btn-primary btn-lg pricing-cta" onclick="return trackConversion('https://app.getfluxdata.com/signup')">Start Free Trial</a>
+      <a href="https://app.getfluxdata.com/signup" class="btn btn-primary btn-lg pricing-cta" onclick="return trackConversion('https://app.getfluxdata.com/signup')">Start 7-Day Free Trial</a>
+      <p class="pricing-note">No credit card required to start. Pay when you're ready to go live.</p>
     </div>
   </div>
 </section>
@@ -1075,7 +1390,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
         </button>
         <div class="faq-a">
-          <p>No. Flux uses advanced AI voice technology that sounds natural and conversational. The best way to judge? Call our demo line at <a href="tel:+18553297357" style="color: var(--blue)">(855) 329-7357</a> and hear for yourself.</p>
+          <p>No. Flux uses advanced AI voice technology that sounds natural and conversational. Don't take our word for it. Call <a href="tel:+18553297357" style="color: var(--blue)">(855) 329-7357</a> right now and hear for yourself.</p>
         </div>
       </div>
       <div class="faq-item reveal">
@@ -1093,16 +1408,25 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
         </button>
         <div class="faq-a">
-          <p>Yes. Flux connects to your calendar, checks availability, and books appointments in real-time. Customers get SMS confirmations automatically.</p>
+          <p>Yes. Flux connects to your calendar (Google Calendar, Calendly, and more), checks real-time availability, and books appointments on the spot. Customers get SMS confirmations automatically.</p>
         </div>
       </div>
       <div class="faq-item reveal">
         <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          I already have a business phone number. Do I need a new one?
+          Do I need a new phone number?
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
         </button>
         <div class="faq-a">
-          <p>No. Keep your existing number. Just forward calls to Flux when you want AI answering: after hours, on job sites, or 24/7. You stay in control.</p>
+          <p>No. Keep your existing number. Just set up call forwarding to Flux when you want AI answering: after hours, while on job sites, or 24/7. You stay in full control.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          What integrations do you support?
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <div class="faq-a">
+          <p>Google Calendar, Square, FieldEdge, ServiceTitan, Housecall Pro, Jobber, HubSpot, QuickBooks, Toast, Towbook, and 15+ more. Self-service integrations connect in one click. We set up the rest for you at no cost.</p>
         </div>
       </div>
       <div class="faq-item reveal">
@@ -1111,7 +1435,16 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
         </button>
         <div class="faq-a">
-          <p>Most businesses are live within 24 hours. Sign up, answer a few questions about your business, set up call forwarding, and you're done.</p>
+          <p>Most businesses are live within 24 hours. Sign up, answer a few questions about your business, connect your calendar, set up call forwarding, and you're done.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          What if I have multiple locations?
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <div class="faq-a">
+          <p>Flux supports multi-location businesses. Each location gets its own hours, services, staff, and phone number, but everything is managed from one dashboard. Additional locations are $99/mo each. Minutes are pooled across all locations.</p>
         </div>
       </div>
       <div class="faq-item reveal">
@@ -1120,7 +1453,16 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
         </button>
         <div class="faq-a">
-          <p>HVAC, plumbing, electrical, towing and roadside assistance, general contracting, roofing, auto repair, and more. Any home service or dispatch business that misses calls.</p>
+          <p>HVAC, plumbing, electrical, towing, roadside assistance, restaurants, medical offices, dental, car dealerships, general contracting, roofing, auto repair, locksmith, courier, and more. We have 6 specialized modes built for different business types.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          How does the free trial work?
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <div class="faq-a">
+          <p>Sign up, configure your business, and start receiving calls immediately. Your trial lasts 7 days with full access to every feature. No credit card needed upfront. When you're ready to go live permanently, choose your plan and enter payment.</p>
         </div>
       </div>
     </div>
@@ -1131,14 +1473,15 @@
 <section class="final-cta">
   <div class="container reveal">
     <h2>Stop Losing Calls.<br>Start Tonight.</h2>
-    <p>Every hour without Flux is another call going to your competitor. Setup takes 10 minutes.</p>
+    <p>Every hour without Flux is another call going to your competitor. Setup takes 10 minutes. No credit card required.</p>
     <div class="final-cta-buttons">
-      <a href="https://app.getfluxdata.com/signup" class="btn btn-primary btn-lg" onclick="return trackConversion('https://app.getfluxdata.com/signup')">Start Free Trial</a>
+      <a href="https://app.getfluxdata.com/signup" class="btn btn-primary btn-lg" onclick="return trackConversion('https://app.getfluxdata.com/signup')">Start 7-Day Free Trial</a>
       <a href="tel:+18553297357" class="btn btn-secondary btn-lg">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
         Call Demo: (855) 329-7357
       </a>
     </div>
+    <p class="final-trial-note">No credit card required. Full access for 7 days.</p>
   </div>
 </section>
 
@@ -1150,8 +1493,6 @@
       <div class="footer-links">
         <a href="https://app.getfluxdata.com/signup">Sign Up</a>
         <a href="tel:+18553297357">Demo Line</a>
-        <a href="/privacy.html">Privacy</a>
-        <a href="/terms.html">Terms</a>
         <a href="mailto:jack@getfluxdata.com">Contact</a>
       </div>
     </div>
