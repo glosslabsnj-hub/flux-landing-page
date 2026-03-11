@@ -3,52 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stop Wasting 20+ Hours a Week on Manual Tasks | Flux Data Solutions</title>
-    <meta name="description" content="Custom AI automation eliminates 60% of your repetitive business tasks. Free strategy call — we find $10K+ in savings or you pay nothing.">
+    <title>AI Receptionist for Contractors | Never Miss Another Call | Flux Receptionist</title>
+    <meta name="description" content="AI phone receptionist built for HVAC, plumbing, electrical, and towing businesses. Answers calls 24/7, books appointments, routes emergencies. $249/mo. 7-day free trial.">
     <meta name="robots" content="noindex, nofollow">
-    <meta property="og:title" content="Stop Wasting 20+ Hours a Week on Manual Tasks | Flux Data Solutions">
-    <meta property="og:description" content="Custom AI automation eliminates 60% of your repetitive business tasks. Free strategy call — we find $10K+ in savings or you pay nothing.">
+    <meta property="og:title" content="AI Receptionist for Contractors | Flux Receptionist">
+    <meta property="og:description" content="Never miss another service call. AI answers in 2 rings, books jobs, handles emergencies 24/7. $249/mo. Try it free.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://getfluxdata.com/ads">
     <meta property="og:image" content="https://getfluxdata.com/og-image.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Stop Wasting 20+ Hours a Week | Flux Data Solutions">
-    <meta name="twitter:description" content="Custom AI automation eliminates 60% of your repetitive tasks. Free strategy call.">
-    <meta name="twitter:image" content="https://getfluxdata.com/og-image.png">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x26A1;</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    <!-- Google Ads Conversion Tracking -->
+    <!-- Google Ads + GA4 Conversion Tracking -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17970313271"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'AW-17970313271');
+        gtag('config', 'G-FS9HB4ZQKB');
 
-        // Track CTA click as engagement (not a conversion - real conversions fire on signup only)
         function trackConversion(url) {
-            // Pass GCLID and UTM params through to signup for offline conversion tracking
+            var navigated = false;
             var params = new URLSearchParams(window.location.search);
             var forward = ['gclid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term'];
-            var sep = url && url.indexOf('?') === -1 ? '?' : '&';
+            var sep = url.indexOf('?') === -1 ? '?' : '&';
             var extra = '';
             forward.forEach(function(k) { var v = params.get(k); if (v) { extra += sep + k + '=' + encodeURIComponent(v); sep = '&'; } });
-            var dest = url ? url + extra : url;
-            gtag('event', 'cta_click', {
-                'send_to': 'AW-17970313271',
-                'event_callback': function() {
-                    if (dest) { window.open(dest, '_blank'); }
-                }
-            });
-            // Fallback: open URL after 1s if gtag callback doesn't fire
-            setTimeout(function() {
-                if (dest) { window.open(dest, '_blank'); }
-            }, 1000);
+            var dest = url + extra;
+            function go() { if (!navigated && dest) { navigated = true; window.location.href = dest; } }
+            gtag('event', 'cta_click', { 'send_to': 'AW-17970313271', 'event_callback': go });
+            setTimeout(go, 1000);
             return false;
         }
     </script>
@@ -70,7 +57,6 @@
             --gray-50: #f9fafb;
             --white: #ffffff;
             --success: #10b981;
-            --warning: #f59e0b;
             --border: #e5e7eb;
         }
 
@@ -78,7 +64,7 @@
         html { scroll-behavior: smooth; }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             color: var(--dark);
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
@@ -87,19 +73,18 @@
 
         .container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
 
-        /* ANIMATIONS */
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
         @keyframes pulse-glow {
             0%, 100% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.4); }
             50% { box-shadow: 0 0 0 16px rgba(37, 99, 235, 0); }
         }
+        @keyframes pulse-green {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
+            50% { box-shadow: 0 0 0 12px rgba(16, 185, 129, 0); }
+        }
         .fade-in { opacity: 0; transform: translateY(30px); transition: all 0.6s ease; }
         .fade-in.visible { opacity: 1; transform: translateY(0); }
 
-        /* TOP BAR — minimal brand, no nav */
+        /* TOP BAR */
         .top-bar {
             background: var(--white);
             border-bottom: 1px solid var(--border);
@@ -117,7 +102,7 @@
 
         /* HERO */
         .hero {
-            padding: 80px 0 60px;
+            padding: 72px 0 56px;
             background: linear-gradient(160deg, #f0f7ff 0%, #e8f4fd 30%, #faf5ff 60%, #f0f7ff 100%);
             position: relative;
             overflow: hidden;
@@ -149,14 +134,13 @@
             box-shadow: 0 1px 3px rgba(0,0,0,0.04);
         }
         .hero-badge .dot {
-            width: 8px;
-            height: 8px;
+            width: 8px; height: 8px;
             background: var(--success);
             border-radius: 50%;
-            animation: pulse-glow 2s infinite;
+            animation: pulse-green 2s infinite;
         }
         .hero h1 {
-            font-size: 48px;
+            font-size: 46px;
             line-height: 1.1;
             margin-bottom: 20px;
             color: var(--dark);
@@ -172,11 +156,18 @@
         .hero .subtitle {
             font-size: 19px;
             color: var(--gray-500);
-            margin-bottom: 36px;
+            margin-bottom: 32px;
             line-height: 1.7;
             max-width: 640px;
             margin-left: auto;
             margin-right: auto;
+        }
+
+        .hero-ctas {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
         }
         .btn-primary {
             display: inline-flex;
@@ -200,11 +191,29 @@
             box-shadow: 0 8px 25px rgba(37,99,235,0.35);
         }
         .btn-primary svg { flex-shrink: 0; }
+
+        .demo-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--gray-700);
+        }
+        .demo-cta a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 18px;
+            letter-spacing: 0.5px;
+        }
+        .demo-cta a:hover { text-decoration: underline; }
+
         .hero-trust {
             display: flex;
             justify-content: center;
-            gap: 32px;
-            margin-top: 32px;
+            gap: 28px;
+            margin-top: 28px;
         }
         .hero-trust .item {
             display: flex;
@@ -215,10 +224,37 @@
             font-weight: 500;
         }
         .hero-trust .item svg {
-            width: 18px;
-            height: 18px;
+            width: 18px; height: 18px;
             color: var(--success);
             flex-shrink: 0;
+        }
+
+        /* PROBLEM STATS */
+        .problem {
+            padding: 56px 0;
+            background: linear-gradient(135deg, var(--dark) 0%, var(--dark-2) 100%);
+            color: var(--white);
+        }
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            text-align: center;
+        }
+        .problem-card .number {
+            font-size: 48px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #f87171, #ef4444);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+        }
+        .problem-card .label {
+            font-size: 15px;
+            color: var(--gray-400);
+            margin-top: 8px;
+            line-height: 1.5;
         }
 
         /* BENEFITS */
@@ -262,7 +298,6 @@
             background: var(--gray-50);
             border: 1px solid var(--border);
             transition: all 0.3s;
-            text-align: center;
         }
         .benefit-card:hover {
             transform: translateY(-4px);
@@ -270,15 +305,14 @@
             border-color: var(--primary);
         }
         .benefit-card .icon {
-            width: 64px;
-            height: 64px;
+            width: 56px; height: 56px;
             background: var(--primary-light);
-            border-radius: 16px;
+            border-radius: 14px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 28px;
-            margin: 0 auto 20px;
+            font-size: 26px;
+            margin-bottom: 20px;
         }
         .benefit-card h3 {
             font-size: 20px;
@@ -291,96 +325,148 @@
             color: var(--gray-500);
             line-height: 1.6;
         }
-        .benefit-card .stat {
-            display: inline-block;
-            margin-top: 16px;
-            padding: 6px 14px;
-            background: #ecfdf5;
-            color: var(--success);
-            font-size: 14px;
+
+        /* DEMO SECTION */
+        .demo-section {
+            padding: 72px 0;
+            background: var(--gray-50);
+        }
+        .demo-section .section-header { text-align: center; margin-bottom: 40px; }
+        .demo-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .demo-card {
+            background: var(--white);
+            border: 2px solid var(--border);
+            border-radius: 16px;
+            padding: 32px 24px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        .demo-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 8px 24px rgba(37,99,235,0.1);
+        }
+        .demo-card .industry-icon {
+            font-size: 36px;
+            margin-bottom: 12px;
+        }
+        .demo-card h3 {
+            font-size: 18px;
             font-weight: 700;
-            border-radius: 8px;
+            color: var(--dark);
+            margin-bottom: 4px;
+        }
+        .demo-card .biz-name {
+            font-size: 13px;
+            color: var(--gray-400);
+            margin-bottom: 16px;
+        }
+        .demo-card .phone {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            padding: 10px 20px;
+            background: var(--primary-light);
+            border-radius: 10px;
+            transition: all 0.2s;
+        }
+        .demo-card .phone:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+        .demo-card .phone svg {
+            width: 20px; height: 20px;
+            flex-shrink: 0;
+        }
+        .demo-card .stats {
+            margin-top: 16px;
+            font-size: 12px;
+            color: var(--gray-400);
+        }
+        .demo-note {
+            text-align: center;
+            margin-top: 24px;
+            font-size: 14px;
+            color: var(--gray-500);
         }
 
-        /* SOCIAL PROOF */
-        .social-proof {
-            padding: 60px 0;
-            background: linear-gradient(135deg, var(--dark) 0%, var(--dark-2) 100%);
-            color: var(--white);
+        /* HOW IT WORKS */
+        .how-it-works {
+            padding: 80px 0;
+            background: var(--white);
         }
-        .proof-stats {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 48px;
-            flex-wrap: wrap;
+        .how-it-works .section-header { text-align: center; margin-bottom: 48px; }
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            max-width: 900px;
+            margin: 0 auto;
         }
-        .proof-stat { text-align: center; }
-        .proof-stat .number {
-            font-size: 36px;
-            font-weight: 800;
-            color: var(--white);
-            line-height: 1;
-        }
-        .proof-stat .label {
-            font-size: 14px;
-            color: var(--gray-400);
-            margin-top: 6px;
-        }
-        .proof-divider {
-            width: 1px;
-            height: 48px;
-            background: rgba(255,255,255,0.15);
-        }
-        .testimonial {
-            max-width: 680px;
-            margin: 40px auto 0;
+        .step {
             text-align: center;
-            font-size: 18px;
-            font-style: italic;
-            color: var(--gray-300);
-            line-height: 1.7;
+            position: relative;
         }
-        .testimonial .attribution {
+        .step .num {
+            width: 48px; height: 48px;
+            background: var(--primary);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: 800;
+            margin: 0 auto 16px;
+        }
+        .step h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 8px;
+        }
+        .step p {
             font-size: 14px;
-            font-style: normal;
             color: var(--gray-500);
+            line-height: 1.6;
+        }
+        .step .time {
+            display: inline-block;
             margin-top: 12px;
+            padding: 4px 12px;
+            background: #ecfdf5;
+            color: var(--success);
+            font-size: 13px;
+            font-weight: 600;
+            border-radius: 6px;
         }
 
         /* PRICING */
         .pricing {
-            padding: 80px 0;
+            padding: 72px 0;
             background: var(--gray-50);
         }
-        .pricing .section-header { text-align: center; margin-bottom: 48px; }
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-            max-width: 960px;
+        .pricing .section-header { text-align: center; margin-bottom: 40px; }
+        .price-box {
+            max-width: 520px;
             margin: 0 auto;
-        }
-        .price-card {
             background: var(--white);
+            border: 2px solid var(--primary);
             border-radius: 20px;
-            padding: 36px;
-            border: 2px solid var(--border);
-            transition: all 0.3s;
+            padding: 48px;
+            text-align: center;
             position: relative;
-            display: flex;
-            flex-direction: column;
         }
-        .price-card:hover {
-            border-color: var(--primary);
-            transform: translateY(-6px);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.08);
-        }
-        .price-card.featured {
-            border-color: var(--primary);
-            background: linear-gradient(180deg, #f0f6ff 0%, var(--white) 40%);
-        }
-        .price-card.featured::before {
+        .price-box::before {
             content: 'MOST POPULAR';
             position: absolute;
             top: -13px;
@@ -393,50 +479,38 @@
             font-size: 11px;
             font-weight: 700;
             letter-spacing: 1px;
-            white-space: nowrap;
         }
-        .price-card .tier {
-            font-size: 12px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            color: var(--gray-400);
-            margin-bottom: 4px;
-        }
-        .price-card h3 { font-size: 22px; font-weight: 700; margin-bottom: 12px; color: var(--dark); }
-        .price-card .price {
-            font-size: 44px;
-            font-weight: 800;
+        .price-box .price {
+            font-size: 56px;
+            font-weight: 900;
             color: var(--dark);
-            margin: 4px 0 4px;
-            letter-spacing: -1px;
+            letter-spacing: -2px;
         }
-        .price-card .price span {
-            font-size: 16px;
+        .price-box .price span {
+            font-size: 18px;
             font-weight: 500;
             color: var(--gray-400);
             letter-spacing: 0;
         }
-        .price-card .desc {
-            font-size: 14px;
+        .price-box .price-desc {
+            font-size: 16px;
             color: var(--gray-500);
-            margin-bottom: 24px;
-            line-height: 1.6;
+            margin: 8px 0 24px;
         }
-        .price-card ul {
+        .price-box .features {
             list-style: none;
-            margin-bottom: 28px;
-            flex-grow: 1;
+            text-align: left;
+            margin-bottom: 32px;
         }
-        .price-card ul li {
-            font-size: 14px;
-            padding: 9px 0;
+        .price-box .features li {
+            font-size: 15px;
+            padding: 10px 0;
             border-bottom: 1px solid var(--gray-100);
             position: relative;
-            padding-left: 28px;
+            padding-left: 30px;
             color: var(--gray-700);
         }
-        .price-card ul li::before {
+        .price-box .features li::before {
             content: '';
             position: absolute;
             left: 0;
@@ -446,53 +520,49 @@
             background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2310b981'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z'/%3E%3C/svg%3E") no-repeat center;
             background-size: contain;
         }
-        .price-card ul li:last-child { border-bottom: none; }
-        .price-btn {
-            display: block;
-            text-align: center;
-            padding: 14px;
-            border-radius: 12px;
-            text-decoration: none;
+        .price-box .features li:last-child { border-bottom: none; }
+
+        /* VS COMPARISON */
+        .comparison {
+            padding: 72px 0;
+            background: var(--white);
+        }
+        .comparison .section-header { text-align: center; margin-bottom: 40px; }
+        .comparison-table {
+            max-width: 700px;
+            margin: 0 auto;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        .comparison-table th,
+        .comparison-table td {
+            padding: 14px 20px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+            font-size: 15px;
+        }
+        .comparison-table th {
             font-weight: 700;
-            font-size: 15px;
-            transition: all 0.25s;
+            color: var(--dark);
+            background: var(--gray-50);
         }
-        .price-btn.primary {
-            background: var(--primary);
-            color: var(--white);
-        }
-        .price-btn.primary:hover { background: var(--primary-dark); box-shadow: 0 4px 15px rgba(37,99,235,0.3); }
-        .price-btn.outline {
-            border: 2px solid var(--primary);
-            color: var(--primary);
-            background: transparent;
-        }
-        .price-btn.outline:hover { background: var(--primary); color: var(--white); }
-        .pricing-note {
-            text-align: center;
-            margin-top: 32px;
-            font-size: 15px;
-            color: var(--gray-500);
-        }
-        .pricing-note a {
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 600;
-        }
-        .pricing-note a:hover { text-decoration: underline; }
+        .comparison-table th:first-child { border-radius: 8px 0 0 0; }
+        .comparison-table th:last-child { border-radius: 0 8px 0 0; }
+        .comparison-table td { color: var(--gray-700); }
+        .comparison-table td:nth-child(2) { text-align: center; color: var(--gray-400); }
+        .comparison-table td:nth-child(3) { text-align: center; color: var(--success); font-weight: 600; }
+        .comparison-table th:nth-child(2),
+        .comparison-table th:nth-child(3) { text-align: center; }
 
         /* FAQ */
         .faq {
-            padding: 80px 0;
-            background: var(--white);
+            padding: 72px 0;
+            background: var(--gray-50);
         }
         .faq .section-header { text-align: center; margin-bottom: 40px; }
-        .faq-grid {
-            max-width: 700px;
-            margin: 0 auto;
-        }
+        .faq-grid { max-width: 700px; margin: 0 auto; }
         .faq-item {
-            background: var(--gray-50);
+            background: var(--white);
             border: 1px solid var(--border);
             border-radius: 12px;
             margin-bottom: 12px;
@@ -507,7 +577,6 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            transition: color 0.2s;
         }
         .faq-q:hover { color: var(--primary); }
         .faq-q .arrow {
@@ -563,7 +632,7 @@
         .final-cta p {
             font-size: 18px;
             color: var(--gray-400);
-            margin-bottom: 36px;
+            margin-bottom: 32px;
             line-height: 1.7;
         }
         .final-cta .btn-primary {
@@ -571,12 +640,11 @@
             padding: 20px 48px;
         }
         .final-cta .trust-line {
-            margin-top: 24px;
+            margin-top: 20px;
             font-size: 14px;
             color: var(--gray-500);
         }
 
-        /* MINIMAL FOOTER */
         .mini-footer {
             background: #070d1a;
             color: var(--gray-500);
@@ -592,32 +660,35 @@
 
         /* RESPONSIVE */
         @media (max-width: 768px) {
-            .hero { padding: 60px 0 48px; }
+            .hero { padding: 56px 0 44px; }
             .hero h1 { font-size: 32px; }
             .hero .subtitle { font-size: 16px; }
             .btn-primary { font-size: 16px; padding: 16px 32px; }
-            .hero-trust { flex-direction: column; gap: 10px; }
+            .hero-trust { flex-direction: column; gap: 8px; }
+            .problem-grid { grid-template-columns: 1fr; gap: 24px; }
             .benefits-grid { grid-template-columns: 1fr; }
-            .proof-stats { gap: 24px; }
-            .proof-divider { display: none; }
-            .pricing-grid { grid-template-columns: 1fr; }
+            .demo-cards { grid-template-columns: 1fr; }
+            .steps { grid-template-columns: 1fr; gap: 24px; }
             .section-title { font-size: 28px; }
+            .price-box { padding: 32px 24px; }
+            .price-box .price { font-size: 44px; }
+            .comparison-table { font-size: 13px; }
+            .comparison-table th, .comparison-table td { padding: 10px 12px; }
             .final-cta h2 { font-size: 28px; }
             .final-cta .btn-primary { font-size: 16px; padding: 16px 32px; }
-            .faq-q { font-size: 15px; }
         }
         @media (max-width: 480px) {
             .hero h1 { font-size: 28px; }
-            .proof-stats { gap: 16px; }
-            .proof-stat .number { font-size: 28px; }
+            .problem-card .number { font-size: 36px; }
+            .demo-card .phone { font-size: 16px; padding: 8px 16px; }
         }
     </style>
 </head>
 <body>
 
-<!-- TOP BAR — brand only, no navigation -->
+<!-- TOP BAR -->
 <div class="top-bar">
-    <span class="logo">Flux<span>Data</span></span>
+    <span class="logo">Flux <span>Receptionist</span></span>
 </div>
 
 <!-- HERO -->
@@ -625,158 +696,254 @@
     <div class="container">
         <div class="hero-badge">
             <span class="dot"></span>
-            Now accepting new clients
+            3 live demos you can call right now
         </div>
-        <h1>Stop Wasting 20+ Hours a Week on <span class="highlight">Manual Tasks</span></h1>
-        <p class="subtitle">I build custom AI automation systems that eliminate the repetitive work draining your time and revenue. Get a free strategy call and I'll show you exactly where you're leaving money on the table.</p>
-        <a href="https://calendly.com/jack-getfluxdata" class="btn-primary" onclick="trackConversion('https://calendly.com/jack-getfluxdata'); return false;">
-            Book Your Free Strategy Call
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
+        <h1>Never Miss Another <span class="highlight">Service Call</span></h1>
+        <p class="subtitle">AI receptionist built for contractors. Answers every call in 2 rings, books appointments, handles emergencies, and texts you the details. 24/7.</p>
+        <div class="hero-ctas">
+            <a href="https://app.getfluxdata.com/signup" class="btn-primary" onclick="trackConversion('https://app.getfluxdata.com/signup'); return false;">
+                Start Your Free Trial
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <div class="demo-cta">
+                Or call our live HVAC demo: <a href="tel:+18553297357">(855) 329-7357</a>
+            </div>
+        </div>
         <div class="hero-trust">
             <div class="item">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                Free 15-min call
+                7-day free trial
             </div>
             <div class="item">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                No contracts
+                No credit card required
             </div>
             <div class="item">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                $10K+ savings guaranteed
+                Live in under 24 hours
             </div>
         </div>
     </div>
 </section>
 
-<!-- 3 BENEFITS -->
+<!-- PROBLEM STATS -->
+<section class="problem">
+    <div class="container">
+        <div class="problem-grid">
+            <div class="problem-card fade-in">
+                <div class="number">62%</div>
+                <div class="label">of calls to contractors go unanswered during business hours</div>
+            </div>
+            <div class="problem-card fade-in">
+                <div class="number">$1,200</div>
+                <div class="label">average revenue lost per missed emergency call</div>
+            </div>
+            <div class="problem-card fade-in">
+                <div class="number">85%</div>
+                <div class="label">of callers who reach voicemail never call back</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- BENEFITS -->
 <section class="benefits">
     <div class="container">
         <div class="section-header fade-in">
-            <span class="section-label">Why Automate</span>
-            <h2 class="section-title">What Automation Does for Your Business</h2>
-            <p class="section-subtitle">Most small businesses waste 15-25 hours per week on tasks that should be automated. Here's what changes:</p>
+            <span class="section-label">What Flux Does</span>
+            <h2 class="section-title">Your AI Receptionist Handles Everything</h2>
+            <p class="section-subtitle">From the first ring to the booked appointment. No more missed calls, no more voicemail.</p>
         </div>
         <div class="benefits-grid">
             <div class="benefit-card fade-in">
-                <div class="icon">&#9200;</div>
-                <h3>Reclaim Your Time</h3>
-                <p>Eliminate manual data entry, scheduling, and follow-ups that eat up your day. Your team focuses on revenue-generating work instead.</p>
-                <span class="stat">Save 15-25 hrs/week</span>
+                <div class="icon">&#128222;</div>
+                <h3>Answers Every Call</h3>
+                <p>Picks up in 2 rings, 24/7/365. Knows your services, pricing, hours, and service area. Sounds natural, not robotic.</p>
             </div>
             <div class="benefit-card fade-in">
-                <div class="icon">&#128176;</div>
-                <h3>Stop Losing Revenue</h3>
-                <p>Automated follow-ups, faster invoicing, and zero missed leads mean more money actually hitting your bank account.</p>
-                <span class="stat">Recover $10K+/month</span>
+                <div class="icon">&#128197;</div>
+                <h3>Books Appointments</h3>
+                <p>Checks your calendar in real-time, finds open slots, and books the job. Customer gets an SMS confirmation instantly.</p>
             </div>
             <div class="benefit-card fade-in">
-                <div class="icon">&#128200;</div>
-                <h3>Scale Without Hiring</h3>
-                <p>Handle 3x the workload without adding headcount. AI-powered systems run 24/7, perfectly, every time.</p>
-                <span class="stat">3-5x ROI in 90 days</span>
+                <div class="icon">&#128680;</div>
+                <h3>Handles Emergencies</h3>
+                <p>Detects "burst pipe," "no heat," "stranded on highway" and routes to your on-call tech or dispatcher immediately.</p>
+            </div>
+            <div class="benefit-card fade-in">
+                <div class="icon">&#128172;</div>
+                <h3>Texts You Details</h3>
+                <p>After every call, you get a text with caller name, issue, urgency, and whether they booked. Full CRM built in.</p>
+            </div>
+            <div class="benefit-card fade-in">
+                <div class="icon">&#129520;</div>
+                <h3>Learns Your Business</h3>
+                <p>Tell it your services, pricing, FAQs, and staff. It answers like someone who has worked at your company for years.</p>
+            </div>
+            <div class="benefit-card fade-in">
+                <div class="icon">&#128279;</div>
+                <h3>Integrates Everything</h3>
+                <p>Google Calendar, Square, ServiceTitan, Housecall Pro, Jobber, QuickBooks, and 15+ more. Connect in minutes.</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- SOCIAL PROOF -->
-<section class="social-proof">
+<!-- DEMO SECTION -->
+<section class="demo-section">
     <div class="container">
-        <div class="proof-stats">
-            <div class="proof-stat">
-                <div class="number">60%</div>
-                <div class="label">Less Manual Work</div>
+        <div class="section-header fade-in">
+            <span class="section-label">Try It Now</span>
+            <h2 class="section-title">Call a Live Demo. Hear It Yourself.</h2>
+            <p class="section-subtitle">These are real AI receptionists with full business data loaded. Call any number below.</p>
+        </div>
+        <div class="demo-cards">
+            <div class="demo-card fade-in">
+                <div class="industry-icon">&#10052;&#65039;</div>
+                <h3>HVAC Demo</h3>
+                <div class="biz-name">Comfort Zone HVAC</div>
+                <a href="tel:+18553297357" class="phone">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    (855) 329-7357
+                </a>
+                <div class="stats">23 services &middot; 5 staff &middot; 34 knowledge items</div>
             </div>
-            <div class="proof-divider"></div>
-            <div class="proof-stat">
-                <div class="number">30</div>
-                <div class="label">Days to Go Live</div>
+            <div class="demo-card fade-in">
+                <div class="industry-icon">&#128295;</div>
+                <h3>Plumbing Demo</h3>
+                <div class="biz-name">Mobile Pro Plumbing</div>
+                <a href="tel:+15632786674" class="phone">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    (563) 278-6674
+                </a>
+                <div class="stats">19 services &middot; 4 staff &middot; 12 knowledge items</div>
             </div>
-            <div class="proof-divider"></div>
-            <div class="proof-stat">
-                <div class="number">3-5x</div>
-                <div class="label">ROI Within 90 Days</div>
-            </div>
-            <div class="proof-divider"></div>
-            <div class="proof-stat">
-                <div class="number">$180K</div>
-                <div class="label">Saved for One Law Firm</div>
+            <div class="demo-card fade-in">
+                <div class="industry-icon">&#128667;</div>
+                <h3>Towing Demo</h3>
+                <div class="biz-name">Rapid Tow NJ</div>
+                <a href="tel:+19204813421" class="phone">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    (920) 481-3421
+                </a>
+                <div class="stats">12 services &middot; 3 staff &middot; 33 knowledge items</div>
             </div>
         </div>
-        <div class="testimonial fade-in">
-            "We were skeptical about automation — we thought it meant replacing people. Instead, it freed our best people to do their best work. The ROI was obvious within the first month."
-            <div class="attribution">-- Managing Partner, Regional NJ Law Firm</div>
-        </div>
+        <p class="demo-note fade-in">No tricks. No recordings. Real AI answering live, with full business data loaded.</p>
     </div>
 </section>
 
-<!-- MID-PAGE CTA -->
-<section style="padding: 48px 0; background: var(--white); text-align: center;">
+<!-- HOW IT WORKS -->
+<section class="how-it-works">
     <div class="container">
-        <a href="https://calendly.com/jack-getfluxdata" class="btn-primary" onclick="trackConversion('https://calendly.com/jack-getfluxdata'); return false;" style="animation: pulse-glow 2.5s infinite;">
-            Book Your Free Strategy Call
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-        <p style="margin-top: 12px; font-size: 14px; color: var(--gray-500);">15 minutes. No obligation. I'll find your biggest automation opportunities.</p>
+        <div class="section-header fade-in">
+            <span class="section-label">Setup</span>
+            <h2 class="section-title">Live in Under 24 Hours</h2>
+        </div>
+        <div class="steps">
+            <div class="step fade-in">
+                <div class="num">1</div>
+                <h3>Sign Up</h3>
+                <p>Create your account and answer a few questions about your business, services, and hours.</p>
+                <span class="time">5 minutes</span>
+            </div>
+            <div class="step fade-in">
+                <div class="num">2</div>
+                <h3>Customize</h3>
+                <p>Add your services, pricing, FAQs, and staff. Connect your calendar and tools.</p>
+                <span class="time">10 minutes</span>
+            </div>
+            <div class="step fade-in">
+                <div class="num">3</div>
+                <h3>Go Live</h3>
+                <p>Forward your business number to Flux and start answering every call, 24/7.</p>
+                <span class="time">Instant</span>
+            </div>
+        </div>
     </div>
 </section>
 
-<!-- PRICING (secondary option) -->
+<!-- PRICING -->
 <section class="pricing">
     <div class="container">
         <div class="section-header fade-in">
-            <span class="section-label">Pricing</span>
-            <h2 class="section-title">Ready to Get Started Now?</h2>
-            <p class="section-subtitle">Simple, results-driven pricing. Every plan pays for itself.</p>
+            <span class="section-label">Simple Pricing</span>
+            <h2 class="section-title">One Plan. Everything Included.</h2>
         </div>
-        <div class="pricing-grid">
-            <div class="price-card featured fade-in">
-                <span class="tier">Best Value</span>
-                <h3>Revenue X-Ray</h3>
-                <div class="price">$497</div>
-                <p class="desc">AI-powered deep analysis with specific revenue opportunities and ROI projections.</p>
-                <ul>
-                    <li>Full digital presence audit</li>
-                    <li>Competitor landscape analysis</li>
-                    <li>Top 10 automation opportunities</li>
-                    <li>Dollar-impact ROI projections</li>
-                    <li>Custom implementation roadmap</li>
-                    <li>Money-back guarantee</li>
-                </ul>
-                <a href="https://buy.stripe.com/7sY28r8x21uH3Tpezn2wU09" class="price-btn primary" onclick="trackConversion()">Get Your X-Ray</a>
-            </div>
-            <div class="price-card fade-in">
-                <span class="tier">Done For You</span>
-                <h3>Full Implementation</h3>
-                <div class="price">$1,997</div>
-                <p class="desc">Complete automation system designed, built, and deployed end-to-end.</p>
-                <ul>
-                    <li>Everything in Revenue X-Ray</li>
-                    <li>Custom automation build</li>
-                    <li>Integrations &amp; data migration</li>
-                    <li>Staff training &amp; documentation</li>
-                    <li>30 days of hands-on support</li>
-                </ul>
-                <a href="https://buy.stripe.com/cNi8wP9B68X9gGb62R2wU0b" class="price-btn primary" onclick="trackConversion()">Get Started</a>
-            </div>
-            <div class="price-card fade-in">
-                <span class="tier">Ongoing</span>
-                <h3>Management</h3>
-                <div class="price">$297<span>/mo</span></div>
-                <p class="desc">Continuous monitoring, optimization, and expansion of your automations.</p>
-                <ul>
-                    <li>24/7 system monitoring</li>
-                    <li>Monthly optimization reports</li>
-                    <li>Priority support &amp; fixes</li>
-                    <li>New automation additions</li>
-                    <li>Quarterly strategy reviews</li>
-                </ul>
-                <a href="https://buy.stripe.com/5kQeVdeVq6P1blRezn2wU0a" class="price-btn outline" onclick="trackConversion()">Subscribe</a>
-            </div>
+        <div class="price-box fade-in">
+            <div class="price">$249<span>/mo</span></div>
+            <div class="price-desc">200 minutes included. 7-day free trial. Cancel anytime.</div>
+            <ul class="features">
+                <li>24/7 AI call answering</li>
+                <li>Appointment booking with calendar sync</li>
+                <li>Emergency detection and routing</li>
+                <li>SMS confirmations to customers</li>
+                <li>After-call text summaries to you</li>
+                <li>Built-in CRM and call history</li>
+                <li>20+ integrations (Square, ServiceTitan, etc.)</li>
+                <li>Unlimited customization of services and FAQs</li>
+            </ul>
+            <a href="https://app.getfluxdata.com/signup" class="btn-primary" style="width: 100%; justify-content: center;" onclick="trackConversion('https://app.getfluxdata.com/signup'); return false;">
+                Start Free Trial
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
         </div>
-        <p class="pricing-note">Not sure which plan is right? <a href="https://calendly.com/jack-getfluxdata" onclick="trackConversion('https://calendly.com/jack-getfluxdata'); return false;">Book a free strategy call</a> and I'll recommend the best fit.</p>
+    </div>
+</section>
+
+<!-- COMPARISON -->
+<section class="comparison">
+    <div class="container">
+        <div class="section-header fade-in">
+            <span class="section-label">Compare</span>
+            <h2 class="section-title">Flux vs. The Alternatives</h2>
+        </div>
+        <table class="comparison-table fade-in">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Hiring a Receptionist</th>
+                    <th>Flux AI</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Monthly cost</td>
+                    <td>$2,000+</td>
+                    <td>$249</td>
+                </tr>
+                <tr>
+                    <td>Available 24/7</td>
+                    <td>No</td>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <td>Never calls in sick</td>
+                    <td>No</td>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <td>Books appointments</td>
+                    <td>Sometimes</td>
+                    <td>Every time</td>
+                </tr>
+                <tr>
+                    <td>Handles emergencies</td>
+                    <td>If trained</td>
+                    <td>Built in</td>
+                </tr>
+                <tr>
+                    <td>Setup time</td>
+                    <td>2-4 weeks</td>
+                    <td>Under 24 hours</td>
+                </tr>
+                <tr>
+                    <td>Knows all your pricing</td>
+                    <td>After months</td>
+                    <td>Day 1</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </section>
 
@@ -790,47 +957,47 @@
         <div class="faq-grid fade-in">
             <div class="faq-item">
                 <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-                    What kind of tasks can you automate?
+                    Does it sound like a robot?
                     <span class="arrow">&#9660;</span>
                 </div>
                 <div class="faq-a">
-                    <p>Data entry, lead follow-ups, invoice generation, appointment scheduling, email sequences, report generation, CRM updates, social media posting, inventory tracking, and much more. If it's repetitive and rule-based, it can likely be automated.</p>
+                    <p>No. Flux uses advanced AI voice technology that sounds natural and conversational. The best way to judge? Call our demo line at (855) 329-7357 and hear for yourself.</p>
                 </div>
             </div>
             <div class="faq-item">
                 <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-                    How long does implementation take?
+                    What happens during emergencies?
                     <span class="arrow">&#9660;</span>
                 </div>
                 <div class="faq-a">
-                    <p>Most implementations are complete within 30 days. Simple automations can be live in under a week. You'll see progress and quick wins within the first week.</p>
+                    <p>Flux detects emergency keywords like "burst pipe," "no heat," "gas smell," or "stranded on highway" and immediately routes the call to your on-call technician or emergency line. No delays.</p>
                 </div>
             </div>
             <div class="faq-item">
                 <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-                    Do I need technical knowledge?
+                    Do I need a new phone number?
                     <span class="arrow">&#9660;</span>
                 </div>
                 <div class="faq-a">
-                    <p>Absolutely not. Every system comes with staff training and documentation. The automations work in the background -- you and your team keep doing what you do, just faster and with fewer errors.</p>
+                    <p>No. Keep your existing business number. Just set up call forwarding to Flux when you want AI answering (after hours, on job sites, or 24/7). You stay in full control.</p>
                 </div>
             </div>
             <div class="faq-item">
                 <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-                    What if I'm not happy with the results?
+                    What integrations are supported?
                     <span class="arrow">&#9660;</span>
                 </div>
                 <div class="faq-a">
-                    <p>The Revenue X-Ray comes with a money-back guarantee -- if I can't find at least $10,000/month in savings or missed revenue, you pay nothing. For implementations, you get 30 days of support to ensure everything works perfectly.</p>
+                    <p>Google Calendar, Square, ServiceTitan, Housecall Pro, Jobber, FieldEdge, QuickBooks, HubSpot, Salesforce, Toast, and 15+ more. Connect yourself or we help you set it up.</p>
                 </div>
             </div>
             <div class="faq-item">
                 <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-                    What makes you different from other consultants?
+                    Can I cancel anytime?
                     <span class="arrow">&#9660;</span>
                 </div>
                 <div class="faq-a">
-                    <p>You work directly with me -- no salespeople, no project managers, no middlemen. I use cutting-edge AI tools for faster implementation and better results at a fraction of the cost of traditional consultancies.</p>
+                    <p>Yes. No contracts, no cancellation fees. Start with a 7-day free trial, no credit card required. If it is not for you, just don't subscribe.</p>
                 </div>
             </div>
         </div>
@@ -840,32 +1007,28 @@
 <!-- FINAL CTA -->
 <section class="final-cta">
     <div class="container">
-        <h2>Ready to Reclaim 20+ Hours a Week?</h2>
-        <p>Book a free 15-minute strategy call. I'll map your biggest time drains and show you exactly how automation pays for itself.</p>
-        <a href="https://calendly.com/jack-getfluxdata" class="btn-primary" onclick="trackConversion('https://calendly.com/jack-getfluxdata'); return false;">
-            Book Your Free Strategy Call
+        <h2>Stop Losing Calls. Start Booking Jobs.</h2>
+        <p>Every missed call is money walking to your competitor. Flux answers them all, books the appointment, and texts you the details. Try it free for 7 days.</p>
+        <a href="https://app.getfluxdata.com/signup" class="btn-primary" onclick="trackConversion('https://app.getfluxdata.com/signup'); return false;">
+            Start Your Free Trial
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
-        <p class="trust-line">Free. No obligation. No pressure. Just actionable insights for your business.</p>
+        <p class="trust-line">7 days free. No credit card. No contracts. Cancel anytime.</p>
     </div>
 </section>
 
-<!-- MINIMAL FOOTER -->
+<!-- FOOTER -->
 <div class="mini-footer">
-    &copy; 2026 Flux Data Solutions (Gloss Labs LLC) &middot; <a href="mailto:jack@getfluxdata.com">jack@getfluxdata.com</a>
+    &copy; 2026 Flux Receptionist (Flux Data Solutions) &middot; <a href="mailto:jack@getfluxdata.com">jack@getfluxdata.com</a>
 </div>
 
-<!-- MINIMAL JS — FAQ toggle + scroll animations -->
+<!-- JS -->
 <script>
-// Scroll fade-in animations
 var observer = new IntersectionObserver(function(entries) {
     entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-        }
+        if (entry.isIntersecting) { entry.target.classList.add('visible'); }
     });
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-
 document.querySelectorAll('.fade-in').forEach(function(el) { observer.observe(el); });
 </script>
 
