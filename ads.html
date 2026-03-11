@@ -32,15 +32,22 @@
 
         // Track CTA click as engagement (not a conversion - real conversions fire on signup only)
         function trackConversion(url) {
+            // Pass GCLID and UTM params through to signup for offline conversion tracking
+            var params = new URLSearchParams(window.location.search);
+            var forward = ['gclid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term'];
+            var sep = url && url.indexOf('?') === -1 ? '?' : '&';
+            var extra = '';
+            forward.forEach(function(k) { var v = params.get(k); if (v) { extra += sep + k + '=' + encodeURIComponent(v); sep = '&'; } });
+            var dest = url ? url + extra : url;
             gtag('event', 'cta_click', {
                 'send_to': 'AW-17970313271',
                 'event_callback': function() {
-                    if (url) { window.open(url, '_blank'); }
+                    if (dest) { window.open(dest, '_blank'); }
                 }
             });
             // Fallback: open URL after 1s if gtag callback doesn't fire
             setTimeout(function() {
-                if (url) { window.open(url, '_blank'); }
+                if (dest) { window.open(dest, '_blank'); }
             }, 1000);
             return false;
         }
