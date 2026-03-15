@@ -834,6 +834,138 @@
       }
       .pulse { animation: pulse-ring 2s infinite; }
 
+      /* ═══ LEAD FORM ═══ */
+      .lead-form-section { padding: 80px 0; }
+      .lead-form-card {
+        max-width: 520px;
+        margin: 0 auto;
+        background: rgba(255,255,255,0.02);
+        border: 1px solid rgba(59,130,246,0.15);
+        border-radius: var(--radius-xl);
+        padding: 48px 40px;
+        position: relative;
+        overflow: hidden;
+      }
+      .lead-form-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60%;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, rgba(59,130,246,0.5), transparent);
+      }
+      .lead-form-card::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(ellipse at 50% -20%, rgba(59,130,246,0.06), transparent 70%);
+        pointer-events: none;
+      }
+      .lead-form-card > * { position: relative; z-index: 1; }
+      .lead-form-card h2 {
+        font-size: clamp(1.5rem, 3vw, 1.875rem);
+        text-align: center;
+        margin-bottom: 8px;
+      }
+      .lead-form-card .form-subtitle {
+        text-align: center;
+        font-size: 0.9375rem;
+        color: var(--text-secondary);
+        margin-bottom: 32px;
+        line-height: 1.6;
+      }
+      .lead-form-group {
+        margin-bottom: 16px;
+      }
+      .lead-form-group label {
+        display: block;
+        font-size: 0.8125rem;
+        font-weight: 500;
+        color: var(--text-secondary);
+        margin-bottom: 6px;
+      }
+      .lead-form-group input,
+      .lead-form-group select {
+        width: 100%;
+        padding: 12px 16px;
+        border-radius: 10px;
+        border: 1px solid var(--border);
+        background: rgba(255,255,255,0.04);
+        color: var(--text);
+        font-size: 0.9375rem;
+        font-family: inherit;
+        transition: border-color 0.2s, background 0.2s;
+        outline: none;
+        -webkit-appearance: none;
+        appearance: none;
+      }
+      .lead-form-group select {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23a0a0a0' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 14px center;
+        padding-right: 36px;
+      }
+      .lead-form-group input:focus,
+      .lead-form-group select:focus {
+        border-color: var(--blue);
+        background: rgba(59,130,246,0.06);
+      }
+      .lead-form-group input::placeholder { color: var(--text-tertiary); }
+      .lead-form-group select option { background: #111; color: var(--text); }
+      .lead-form-submit {
+        width: 100%;
+        margin-top: 8px;
+      }
+      .lead-form-success {
+        text-align: center;
+        padding: 24px 0;
+        display: none;
+      }
+      .lead-form-success .success-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        background: var(--green-muted);
+        color: var(--green);
+        margin-bottom: 16px;
+        border: 1px solid rgba(34,197,94,0.2);
+      }
+      .lead-form-success .success-icon svg { width: 28px; height: 28px; }
+      .lead-form-success h3 {
+        font-size: 1.25rem;
+        color: #fff;
+        margin-bottom: 8px;
+      }
+      .lead-form-success p {
+        font-size: 0.9375rem;
+        color: var(--text-secondary);
+        line-height: 1.6;
+      }
+      .lead-form-demo-note {
+        text-align: center;
+        margin-top: 24px;
+        font-size: 0.8125rem;
+        color: var(--text-tertiary);
+        line-height: 1.6;
+      }
+      .lead-form-demo-note a {
+        color: var(--blue);
+        font-weight: 600;
+        transition: color 0.15s;
+      }
+      .lead-form-demo-note a:hover { color: #60a5fa; }
+      .lead-form-error {
+        color: #ef4444;
+        font-size: 0.8125rem;
+        margin-top: 4px;
+        display: none;
+      }
+
       /* ═══ RESPONSIVE ═══ */
       @media (max-width: 640px) {
         .hero { padding: 120px 0 72px; }
@@ -841,6 +973,8 @@
         .hero-ctas .btn { width: 100%; max-width: 340px; }
         .trust-row { gap: 16px; }
         .demo-card { padding: 48px 24px; }
+        .lead-form-card { padding: 36px 24px; }
+        .lead-form-section { padding: 60px 0; }
         .pain-section, .how-section, .features-section, .pricing-section, .faq-section, .industries-section, .integrations-section, .compare-section { padding: 72px 0; }
         .pain-card, .feature-card, .industry-card { padding: 28px 24px; }
         .pricing-card { padding: 36px 24px; }
@@ -945,6 +1079,52 @@
           <div class="demo-line-number"><a href="tel:+19204813421">(920) 481-3421</a></div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ LEAD CAPTURE FORM ═══ -->
+<section class="lead-form-section" id="demo-form">
+  <div class="container">
+    <div class="lead-form-card reveal">
+      <div id="leadFormFields">
+        <h2>Want to Hear It For Your Business?</h2>
+        <p class="form-subtitle">Drop your info and we'll call you within 24 hours with a personalized demo.</p>
+        <form id="leadCaptureForm" onsubmit="return submitLeadForm(event)">
+          <div class="lead-form-group">
+            <label for="leadBizName">Business Name *</label>
+            <input type="text" id="leadBizName" name="business_name" placeholder="e.g. Smith's HVAC" required>
+            <div class="lead-form-error" id="bizNameError">Please enter your business name.</div>
+          </div>
+          <div class="lead-form-group">
+            <label for="leadPhone">Your Phone Number *</label>
+            <input type="tel" id="leadPhone" name="phone" placeholder="(555) 123-4567" required>
+            <div class="lead-form-error" id="phoneError">Please enter a valid phone number.</div>
+          </div>
+          <div class="lead-form-group">
+            <label for="leadBizType">Business Type</label>
+            <select id="leadBizType" name="business_type">
+              <option value="">Select your trade...</option>
+              <option value="HVAC">HVAC</option>
+              <option value="Plumbing">Plumbing</option>
+              <option value="Electrical">Electrical</option>
+              <option value="Towing">Towing</option>
+              <option value="General Contractor">General Contractor</option>
+              <option value="Roofing">Roofing</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-green btn-lg lead-form-submit">We'll Call You</button>
+        </form>
+      </div>
+      <div class="lead-form-success" id="leadFormSuccess">
+        <div class="success-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h3>Got it!</h3>
+        <p>We'll call you within 24 hours with a live demo customized for your business.</p>
+      </div>
+      <div class="lead-form-demo-note">Or call our live demo right now: <a href="tel:+18553297357">(855) 329-7357</a></div>
     </div>
   </div>
 </section>
@@ -1514,6 +1694,53 @@
     });
   }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+<!-- ═══ LEAD FORM HANDLER ═══ -->
+<script>
+  function submitLeadForm(e) {
+    e.preventDefault();
+    var form = document.getElementById('leadCaptureForm');
+    var bizName = document.getElementById('leadBizName').value.trim();
+    var phone = document.getElementById('leadPhone').value.trim();
+    var bizType = document.getElementById('leadBizType').value;
+    var bizNameErr = document.getElementById('bizNameError');
+    var phoneErr = document.getElementById('phoneError');
+    var valid = true;
+
+    bizNameErr.style.display = 'none';
+    phoneErr.style.display = 'none';
+
+    if (!bizName) { bizNameErr.style.display = 'block'; valid = false; }
+    var phoneDigits = phone.replace(/\D/g, '');
+    if (phoneDigits.length < 7) { phoneErr.style.display = 'block'; valid = false; }
+    if (!valid) return false;
+
+    var btn = form.querySelector('.lead-form-submit');
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+
+    fetch('https://lenard.getfluxdata.com/webhooks/lead-form', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ business_name: bizName, phone: phone, business_type: bizType || 'Not specified', source: window.location.pathname })
+    }).then(function() {
+      document.getElementById('leadFormFields').querySelector('form').style.display = 'none';
+      document.getElementById('leadFormFields').querySelector('h2').style.display = 'none';
+      document.getElementById('leadFormFields').querySelector('.form-subtitle').style.display = 'none';
+      document.getElementById('leadFormSuccess').style.display = 'block';
+      if (typeof gtag === 'function') {
+        gtag('event', 'lead_form_submit', { 'send_to': 'AW-17970313271', 'event_category': 'lead', 'event_label': bizType });
+      }
+    }).catch(function() {
+      document.getElementById('leadFormFields').querySelector('form').style.display = 'none';
+      document.getElementById('leadFormFields').querySelector('h2').style.display = 'none';
+      document.getElementById('leadFormFields').querySelector('.form-subtitle').style.display = 'none';
+      document.getElementById('leadFormSuccess').style.display = 'block';
+    });
+
+    return false;
+  }
 </script>
 
 </body>
