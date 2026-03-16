@@ -841,38 +841,22 @@
     </div>
 </section>
 
-<!-- SOCIAL PROOF -->
+<!-- TRY IT YOURSELF -->
 <section class="social-proof" style="padding: 56px 0; background: var(--white); border-bottom: 1px solid var(--border);">
     <div class="container">
         <div style="text-align: center; margin-bottom: 36px;">
-            <span class="section-label">What Towing Operators Say</span>
-            <h2 class="section-title" style="font-size: 30px;">Built for Towing. Trusted by Towing.</h2>
+            <span class="section-label">Try It Yourself</span>
+            <h2 class="section-title" style="font-size: 30px;">Don't Take Our Word for It</h2>
         </div>
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
-            <div style="background: var(--gray-50); border: 1px solid var(--border); border-radius: 16px; padding: 28px;">
-                <div style="display: flex; gap: 4px; margin-bottom: 12px; color: #f59e0b; font-size: 18px;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                <p style="font-size: 15px; color: var(--gray-700); line-height: 1.6; margin-bottom: 16px;">"I called the demo line expecting a clunky robot. Instead it knew towing pricing, captured the vehicle location, and texted me the dispatch details. I signed up the same day."</p>
-                <div style="font-weight: 600; font-size: 14px; color: var(--dark);">Carlos M.</div>
-                <div style="font-size: 13px; color: var(--gray-500);">Towing Company Owner, Texas</div>
-            </div>
-            <div style="background: var(--gray-50); border: 1px solid var(--border); border-radius: 16px; padding: 28px;">
-                <div style="display: flex; gap: 4px; margin-bottom: 12px; color: #f59e0b; font-size: 18px;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                <p style="font-size: 15px; color: var(--gray-700); line-height: 1.6; margin-bottom: 16px;">"We were losing half our after-hours calls to voicemail. First week with Flux, it dispatched 6 roadside jobs we would have missed. Paid for itself day one."</p>
-                <div style="font-weight: 600; font-size: 14px; color: var(--dark);">Mike T.</div>
-                <div style="font-size: 13px; color: var(--gray-500);">Towing &amp; Recovery, New Jersey</div>
-            </div>
-            <div style="background: var(--gray-50); border: 1px solid var(--border); border-radius: 16px; padding: 28px;">
-                <div style="display: flex; gap: 4px; margin-bottom: 12px; color: #f59e0b; font-size: 18px;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                <p style="font-size: 15px; color: var(--gray-700); line-height: 1.6; margin-bottom: 16px;">"My dispatcher handles 200+ calls a week now. The AI qualifies every call before it gets to us. We save 15 hours a week on phone time alone."</p>
-                <div style="font-weight: 600; font-size: 14px; color: var(--dark);">James D.</div>
-                <div style="font-size: 13px; color: var(--gray-500);">Towing Company, Florida</div>
-            </div>
+        <div style="background: var(--gray-50); border: 1px solid var(--border); border-radius: 16px; padding: 40px; text-align: center; max-width: 700px; margin: 0 auto;">
+            <p style="font-size: 18px; color: var(--gray-700); line-height: 1.7; margin-bottom: 24px;">Call the demo line right now and hear the AI in action. Pretend you're a customer. If you're not impressed in 30 seconds, we're not for you.</p>
+            <a href="tel:+19204813421" style="display: inline-block; font-size: 28px; font-weight: 800; color: var(--primary); text-decoration: none; margin-bottom: 8px;">(920) 481-3421</a>
+            <p style="font-size: 14px; color: var(--gray-500);">Live Towing demo line. Available 24/7.</p>
         </div>
         <div style="text-align: center; margin-top: 32px; display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
-            <div style="font-size: 14px; color: var(--gray-500);"><strong style="font-size: 22px; color: var(--dark);">2,400+</strong><br>Calls answered this month</div>
-            <div style="font-size: 14px; color: var(--gray-500);"><strong style="font-size: 22px; color: var(--dark);">98.7%</strong><br>Call answer rate</div>
-            <div style="font-size: 14px; color: var(--gray-500);"><strong style="font-size: 22px; color: var(--dark);">< 3 sec</strong><br>Average answer time</div>
-            <div style="font-size: 14px; color: var(--gray-500);"><strong style="font-size: 22px; color: var(--dark);">4.9/5</strong><br>Customer satisfaction</div>
+            <div style="font-size: 14px; color: var(--gray-500);"><strong style="font-size: 22px; color: var(--dark);">3</strong><br>Live demo lines</div>
+            <div style="font-size: 14px; color: var(--gray-500);"><strong style="font-size: 22px; color: var(--dark);">24/7</strong><br>Availability</div>
+            <div style="font-size: 14px; color: var(--gray-500);"><strong style="font-size: 22px; color: var(--dark);">$249/mo</strong><br>All-inclusive pricing</div>
         </div>
     </div>
 </section>
@@ -961,6 +945,52 @@
             </div>
         </div>
         <p class="demo-note fade-in">No tricks. No recordings. Real AI answering live, with full business data loaded.</p>
+    </div>
+</section>
+
+<!-- ═══ LEAD CAPTURE FORM ═══ -->
+<section class="lead-form-section" id="demo-form">
+    <div class="container">
+        <div class="lead-form-card fade-in">
+            <div id="leadFormFields">
+                <h2>Want to Hear It For Your Business?</h2>
+                <p class="form-subtitle">Drop your info and we'll call you within 24 hours with a personalized demo.</p>
+                <form id="leadCaptureForm" onsubmit="return submitLeadForm(event)">
+                    <div class="lead-form-group">
+                        <label for="leadBizName">Business Name *</label>
+                        <input type="text" id="leadBizName" name="business_name" placeholder="e.g. Rapid Tow Services" required>
+                        <div class="lead-form-error" id="bizNameError">Please enter your business name.</div>
+                    </div>
+                    <div class="lead-form-group">
+                        <label for="leadPhone">Your Phone Number *</label>
+                        <input type="tel" id="leadPhone" name="phone" placeholder="(555) 123-4567" required>
+                        <div class="lead-form-error" id="phoneError">Please enter a valid phone number.</div>
+                    </div>
+                    <div class="lead-form-group">
+                        <label for="leadBizType">Business Type</label>
+                        <select id="leadBizType" name="business_type">
+                            <option value="">Select your trade...</option>
+                            <option value="HVAC">HVAC</option>
+                            <option value="Plumbing">Plumbing</option>
+                            <option value="Electrical">Electrical</option>
+                            <option value="Towing" selected>Towing</option>
+                            <option value="General Contractor">General Contractor</option>
+                            <option value="Roofing">Roofing</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="lead-form-submit">We'll Call You</button>
+                </form>
+            </div>
+            <div class="lead-form-success" id="leadFormSuccess">
+                <div class="success-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <h3>Got it!</h3>
+                <p>We'll call you within 24 hours with a live demo customized for your business.</p>
+            </div>
+            <div class="lead-form-demo-note">Or call our live demo right now: <a href="tel:+19204813421">(920) 481-3421</a></div>
+        </div>
     </div>
 </section>
 
@@ -1187,6 +1217,41 @@ var observer = new IntersectionObserver(function(entries) {
     });
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 document.querySelectorAll('.fade-in').forEach(function(el) { observer.observe(el); });
+</script>
+
+<script>
+function submitLeadForm(e) {
+    e.preventDefault();
+    var bizName = document.getElementById('leadBizName').value.trim();
+    var phone = document.getElementById('leadPhone').value.trim();
+    var bizType = document.getElementById('leadBizType').value;
+    var bizNameErr = document.getElementById('bizNameError');
+    var phoneErr = document.getElementById('phoneError');
+    var valid = true;
+    bizNameErr.style.display = 'none';
+    phoneErr.style.display = 'none';
+    if (!bizName) { bizNameErr.style.display = 'block'; valid = false; }
+    if (phone.replace(/\D/g, '').length < 7) { phoneErr.style.display = 'block'; valid = false; }
+    if (!valid) return false;
+    var btn = document.querySelector('.lead-form-submit');
+    btn.disabled = true; btn.textContent = 'Sending...';
+    fetch('https://lenard.getfluxdata.com/webhooks/lead-form', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ business_name: bizName, phone: phone, business_type: bizType || 'Not specified', source: window.location.pathname })
+    }).then(function() {
+        document.getElementById('leadCaptureForm').style.display = 'none';
+        document.getElementById('leadFormFields').querySelector('h2').style.display = 'none';
+        document.getElementById('leadFormFields').querySelector('.form-subtitle').style.display = 'none';
+        document.getElementById('leadFormSuccess').style.display = 'block';
+        if (typeof gtag === 'function') { gtag('event', 'lead_form_submit', { 'send_to': 'AW-17970313271', 'event_category': 'lead', 'event_label': bizType }); }
+    }).catch(function() {
+        document.getElementById('leadCaptureForm').style.display = 'none';
+        document.getElementById('leadFormFields').querySelector('h2').style.display = 'none';
+        document.getElementById('leadFormFields').querySelector('.form-subtitle').style.display = 'none';
+        document.getElementById('leadFormSuccess').style.display = 'block';
+    });
+    return false;
+}
 </script>
 
 </body>
