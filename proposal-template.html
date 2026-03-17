@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Proposal - Flux Data Solutions</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; line-height: 1.6; color: #1a2332; background: #f5f7fa; }
+        .proposal { max-width: 850px; margin: 0 auto; background: white; padding: 60px; box-shadow: 0 4px 6px rgba(0,0,0,0.07); }
+        .header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 50px; padding-bottom: 30px; border-bottom: 2px solid #e5e7eb; }
+        .logo-section h1 { background: linear-gradient(135deg, #1a56db 0%, #0ea5e9 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-size: 28px; font-weight: 700; margin-bottom: 4px; }
+        .logo-section p { color: #6b7280; font-size: 13px; font-weight: 500; }
+        .proposal-meta { text-align: right; }
+        .proposal-meta p { color: #6b7280; font-size: 13px; margin-bottom: 8px; }
+        .proposal-meta strong { display: block; color: #1a2332; font-size: 14px; margin-top: 8px; }
+        section { margin-bottom: 40px; }
+        .section-title { font-size: 16px; font-weight: 700; color: #1a2332; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.5px; padding-bottom: 8px; border-bottom: 2px solid #0ea5e9; display: inline-block; }
+        .client-intro { background: linear-gradient(135deg, rgba(26,86,219,0.05) 0%, rgba(14,165,233,0.05) 100%); padding: 20px; border-radius: 8px; margin-bottom: 20px; }
+        .client-intro p { font-size: 15px; line-height: 1.7; color: #1a2332; }
+        .deliverables { display: flex; flex-direction: column; gap: 16px; }
+        .deliverable { background: #f9fafb; padding: 16px; border-left: 4px solid #0ea5e9; border-radius: 4px; }
+        .deliverable h3 { font-size: 14px; font-weight: 700; color: #1a56db; margin-bottom: 6px; }
+        .deliverable p { font-size: 14px; color: #4b5563; line-height: 1.6; }
+        .timeline { background: #f9fafb; padding: 24px; border-radius: 8px; }
+        .timeline-item { display: flex; gap: 16px; margin-bottom: 16px; }
+        .timeline-item:last-child { margin-bottom: 0; }
+        .timeline-marker { flex-shrink: 0; width: 32px; height: 32px; background: linear-gradient(135deg, #1a56db 0%, #0ea5e9 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 13px; }
+        .timeline-content h4 { font-size: 14px; font-weight: 700; color: #1a2332; margin-bottom: 2px; }
+        .timeline-content p { font-size: 13px; color: #6b7280; }
+        .pricing-options { display: flex; flex-direction: column; gap: 16px; }
+        .pricing-tier { border: 2px solid #e5e7eb; border-radius: 8px; padding: 20px; }
+        .pricing-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 12px; }
+        .pricing-tier h3 { font-size: 15px; font-weight: 700; color: #1a56db; }
+        .pricing-amount { font-size: 20px; font-weight: 700; color: #0ea5e9; }
+        .pricing-amount small { font-size: 13px; color: #6b7280; font-weight: 500; }
+        .pricing-description { font-size: 14px; color: #4b5563; line-height: 1.6; }
+        .cta-section { background: linear-gradient(135deg, #1a56db 0%, #0ea5e9 100%); padding: 32px; border-radius: 8px; text-align: center; margin: 40px 0; }
+        .cta-section h2 { color: white; font-size: 18px; margin-bottom: 12px; }
+        .cta-section p { color: rgba(255,255,255,0.9); font-size: 14px; margin-bottom: 20px; line-height: 1.6; }
+        .cta-button { display: inline-block; background: white; color: #1a56db; padding: 12px 32px; border-radius: 6px; font-weight: 700; font-size: 14px; text-decoration: none; border: 2px solid white; }
+        .about { background: #f9fafb; padding: 20px; border-radius: 8px; font-size: 13px; color: #4b5563; line-height: 1.7; border-left: 4px solid #1a56db; }
+        .about strong { color: #1a2332; }
+        @media print { body { background: white; } .proposal { max-width: 100%; margin: 0; padding: 40px; box-shadow: none; } }
+    </style>
+</head>
+<body>
+    <div class="proposal">
+        <div class="header">
+            <div class="logo-section">
+                <h1>Flux Data Solutions</h1>
+                <p>Business Automation & AI</p>
+            </div>
+            <div class="proposal-meta">
+                <p>Proposal Date</p>
+                <strong>{{date}}</strong>
+                <p style="margin-top: 16px;">Prepared For</p>
+                <strong>{{contact_name}}</strong>
+                <strong>{{company}}</strong>
+            </div>
+        </div>
+
+        <section>
+            <h2 class="section-title">The Challenge</h2>
+            <div class="client-intro">
+                <p>{{company}} operates in the {{industry}} space where {{challenge}}. This creates friction in your operations, delays revenue, and keeps your team stuck on repetitive manual work instead of driving growth.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title">Our Solution</h2>
+            <div class="deliverables">
+                <div class="deliverable">
+                    <h3>1. {{solution_1_title}}</h3>
+                    <p>{{solution_1_description}}</p>
+                </div>
+                <div class="deliverable">
+                    <h3>2. {{solution_2_title}}</h3>
+                    <p>{{solution_2_description}}</p>
+                </div>
+                <div class="deliverable">
+                    <h3>3. {{solution_3_title}}</h3>
+                    <p>{{solution_3_description}}</p>
+                </div>
+                <div class="deliverable">
+                    <h3>4. {{solution_4_title}}</h3>
+                    <p>{{solution_4_description}}</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title">Implementation Timeline</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker">1</div>
+                    <div class="timeline-content">
+                        <h4>Week 1: Discovery & Planning</h4>
+                        <p>In-depth audit of current processes, pain points, and integration requirements.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">2</div>
+                    <div class="timeline-content">
+                        <h4>Week 2-3: Build & Integration</h4>
+                        <p>Design and deploy your custom automation system with full testing.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">3</div>
+                    <div class="timeline-content">
+                        <h4>Week 4: Training & Launch</h4>
+                        <p>Team training, documentation, and production launch with 30 days of support.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title">Investment Options</h2>
+            <div class="pricing-options">
+                <div class="pricing-tier">
+                    <div class="pricing-header">
+                        <h3>Revenue X-Ray Diagnostic</h3>
+                        <div class="pricing-amount">$497 <small>one-time</small></div>
+                    </div>
+                    <p class="pricing-description">AI-powered analysis identifying specific automation opportunities, efficiency gains, and revenue recovery potential. Includes ROI projections and prioritized action roadmap.</p>
+                </div>
+                <div class="pricing-tier">
+                    <div class="pricing-header">
+                        <h3>Full Implementation</h3>
+                        <div class="pricing-amount">$1,997 <small>one-time</small></div>
+                    </div>
+                    <p class="pricing-description">Complete custom automation system designed, built, tested, and deployed. Includes architecture design, full integration, team training, documentation, and 30 days of support.</p>
+                </div>
+                <div class="pricing-tier">
+                    <div class="pricing-header">
+                        <h3>Ongoing Management</h3>
+                        <div class="pricing-amount">$297 <small>/month</small></div>
+                    </div>
+                    <p class="pricing-description">Continuous optimization, monitoring, and expansion. Monthly performance reviews, system upgrades, troubleshooting, and proactive improvements.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="cta-section">
+            <h2>Ready to Eliminate Manual Work?</h2>
+            <p>Let's discuss how automation can transform {{company}}'s operations.</p>
+            <a href="https://calendly.com/jack-getfluxdata" class="cta-button">Schedule Your Strategy Call</a>
+        </div>
+
+        <section>
+            <h2 class="section-title">About</h2>
+            <div class="about">
+                <p><strong>Flux Data Solutions</strong> builds custom AI automation systems for small businesses. We specialize in eliminating manual work across client intake, scheduling, follow-ups, invoicing, and data management — so you can focus on growing your business, not running it.</p>
+                <p style="margin-top: 8px;"><strong>Jack Angelini</strong> | jack@getfluxdata.com | (609) 731-8641 | getfluxdata.com</p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
